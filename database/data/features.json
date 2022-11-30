@@ -1,0 +1,371 @@
+[
+    {
+        "Id": 1,
+        "isNumeric": 0,
+        "measure": "Temperatura",
+        "slug": null,
+        "unit": "Grados Cent\u00edgrados",
+        "symbol": "\u00b0C",
+        "description": null
+    },
+    {
+        "Id": 2,
+        "isNumeric": 0,
+        "measure": "Distancia",
+        "slug": null,
+        "unit": "Metro",
+        "symbol": "m",
+        "description": null
+    },
+    {
+        "Id": 3,
+        "isNumeric": 0,
+        "measure": "Masa",
+        "slug": null,
+        "unit": "Kilogramo",
+        "symbol": "kg",
+        "description": null
+    },
+    {
+        "Id": 4,
+        "isNumeric": 0,
+        "measure": "Volumen",
+        "slug": null,
+        "unit": "Kilogramo",
+        "symbol": "kg",
+        "description": null
+    },
+    {
+        "Id": 5,
+        "isNumeric": 0,
+        "measure": "Area",
+        "slug": null,
+        "unit": "Metro Cuadrado",
+        "symbol": "m2",
+        "description": null
+    },
+    {
+        "Id": 6,
+        "isNumeric": 0,
+        "measure": "\u00c1ngulo",
+        "slug": null,
+        "unit": "Grado",
+        "symbol": "\u00b0",
+        "description": null
+    },
+    {
+        "Id": 7,
+        "isNumeric": 0,
+        "measure": "Potencia",
+        "slug": null,
+        "unit": "Caballo de Potencia",
+        "symbol": "hp",
+        "description": null
+    },
+    {
+        "Id": 8,
+        "isNumeric": 0,
+        "measure": "Energ\u00eda",
+        "slug": null,
+        "unit": "julio",
+        "symbol": "j",
+        "description": null
+    },
+    {
+        "Id": 9,
+        "isNumeric": 0,
+        "measure": "Presi\u00f3n",
+        "slug": null,
+        "unit": "Pascal",
+        "symbol": "Pa",
+        "description": null
+    },
+    {
+        "Id": 10,
+        "isNumeric": 0,
+        "measure": "Tiempo",
+        "slug": null,
+        "unit": "Hora",
+        "symbol": "h",
+        "description": null
+    },
+    {
+        "Id": 11,
+        "isNumeric": 0,
+        "measure": "Fuerza",
+        "slug": null,
+        "unit": "Newton",
+        "symbol": "N",
+        "description": null
+    },
+    {
+        "Id": 12,
+        "isNumeric": 0,
+        "measure": "Densidad",
+        "slug": null,
+        "unit": "Gramo por Cent\u00edmetro C\u00fabico",
+        "symbol": "g/cc",
+        "description": null
+    },
+    {
+        "Id": 13,
+        "isNumeric": 0,
+        "measure": "Velocidad",
+        "slug": null,
+        "unit": "Kil\u00f3metros por Hora",
+        "symbol": "km/h",
+        "description": null
+    },
+    {
+        "Id": 14,
+        "isNumeric": 0,
+        "measure": "Valor Monetario",
+        "slug": null,
+        "unit": "D\u00f3lar",
+        "symbol": "$",
+        "description": null
+    },
+    {
+        "Id": 15,
+        "isNumeric": 0,
+        "measure": "Aceleraci\u00f3n",
+        "slug": null,
+        "unit": "Metro por Segundos cuadrados",
+        "symbol": "m/s2",
+        "description": null
+    },
+    {
+        "Id": 16,
+        "isNumeric": 0,
+        "measure": "Aceleraci\u00f3n Angular",
+        "slug": null,
+        "unit": "Radianes por Segundo Cuadrado",
+        "symbol": "rad/s2",
+        "description": null
+    },
+    {
+        "Id": 17,
+        "isNumeric": 0,
+        "measure": "Velocidad Angular",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 18,
+        "isNumeric": 0,
+        "measure": "Capacitancia",
+        "slug": null,
+        "unit": "Faradio",
+        "symbol": "columbio/volt",
+        "description": null
+    },
+    {
+        "Id": 19,
+        "isNumeric": 0,
+        "measure": "Carga",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 20,
+        "isNumeric": 0,
+        "measure": "Corriente",
+        "slug": null,
+        "unit": "Amperio",
+        "symbol": "a",
+        "description": null
+    },
+    {
+        "Id": 21,
+        "isNumeric": 0,
+        "measure": "Voltaje",
+        "slug": null,
+        "unit": "Voltio",
+        "symbol": "volt",
+        "description": null
+    },
+    {
+        "Id": 22,
+        "isNumeric": 0,
+        "measure": "Inductancia",
+        "slug": null,
+        "unit": "Henry",
+        "symbol": "h",
+        "description": null
+    },
+    {
+        "Id": 23,
+        "isNumeric": 0,
+        "measure": "Flujo Magn\u00e9tico",
+        "slug": null,
+        "unit": "Weber",
+        "symbol": "Wb",
+        "description": null
+    },
+    {
+        "Id": 24,
+        "isNumeric": 0,
+        "measure": "Iluminaci\u00f3n",
+        "slug": null,
+        "unit": "Lumen",
+        "symbol": "Lm",
+        "description": null
+    },
+    {
+        "Id": 25,
+        "isNumeric": 0,
+        "measure": "Luminancia",
+        "slug": null,
+        "unit": "Lumen por segundo",
+        "symbol": "Lm/s",
+        "description": null
+    },
+    {
+        "Id": 26,
+        "isNumeric": 0,
+        "measure": "Calor Espec\u00edfico",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 27,
+        "isNumeric": 0,
+        "measure": "Conductividad T\u00e9rmica",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 28,
+        "isNumeric": 0,
+        "measure": "Torque",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 29,
+        "isNumeric": 0,
+        "measure": "Viscosidad",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 30,
+        "isNumeric": 0,
+        "measure": "Covertura",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 31,
+        "isNumeric": 0,
+        "measure": "Serial",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 32,
+        "isNumeric": 0,
+        "measure": "C\u00f3digo",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 33,
+        "isNumeric": 0,
+        "measure": "Modelo",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 34,
+        "isNumeric": 0,
+        "measure": "Tipo",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 35,
+        "isNumeric": 0,
+        "measure": "Color",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 36,
+        "isNumeric": 0,
+        "measure": "Marca",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 37,
+        "isNumeric": 0,
+        "measure": "Amperios",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 38,
+        "isNumeric": 0,
+        "measure": "Extensi\u00f2n",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 39,
+        "isNumeric": 0,
+        "measure": "Familia",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 40,
+        "isNumeric": 0,
+        "measure": "Genero",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    },
+    {
+        "Id": 41,
+        "isNumeric": 0,
+        "measure": "Di\u00e1metro",
+        "slug": null,
+        "unit": null,
+        "symbol": null,
+        "description": null
+    }
+]

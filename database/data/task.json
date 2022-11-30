@@ -1,0 +1,32 @@
+[
+    {
+        "task": "Inspecciones sensoriales",
+        "detail": "son inspecciones que se realizan con los sentidos, sin necesidad de instrumentos de medida o medios técnicos adicionales.Lecturas y anotación de parámetros de funcionamiento, con instrumentos que están instalados en los equipos."
+    },
+    {
+        "task": "Tareas de lubricación",
+        "detail": "Verificaciones mecánicas, como medición de holguras, de alineación, de espesor, de apriete de pernos, de instrumentos de medida, de funcionamiento de lazos de control, etc. Pueden requerir de una intervención para que determinados parámetros se ajusten a unos valores preestablecidos."
+    },
+    {
+        "task": "Verificaciones eléctricas",
+        "detail": "como medición de intensidad de corriente, verificación de puestas a tierra, verificación del funcionamiento de paradas de emergencia, verificación de conexiones, etc."
+    },
+    {
+        "task": "Análisis y mediciones de variables con instrumentos externos",
+        "detail": "como analizadores de vibraciones, termografías, análisis de aceites, etc."
+    },
+    {
+        "task": "Limpiezas",
+        "detail": "que pueden ser sencillas o de cierta complejidad técnica."
+    },
+    {
+        "task": "Configuración",
+        "detail": "en equipos programables o que admitan diferentes modos de funcionamiento.Verificación del correcto funcionamiento de equipos de medida"
+    },
+    { "task": "Calibración de instrumentos de medida.", "detail": "" },
+    { "task": "Chequeo de lazos de control.", "detail": "" },
+    {
+        "task": "Sustitución o reacondicionamiento condicional de piezas sujetas o propensas al desgaste.",
+        "detail": "Sustitución o reacondicionamiento sistemático de piezas sujetas o propensas al desgaste."
+    }
+]

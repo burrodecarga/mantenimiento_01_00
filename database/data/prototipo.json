@@ -1,0 +1,310 @@
+[
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"desplasamiento positivo",
+    "cha_2":"reciprocante",
+    "cha_3":"piston",
+    "cha_4":""
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"desplasamiento positivo",
+    "cha_2":"reciprocante",
+    "cha_3":"diafragma",
+    "cha_4":""
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"desplasamiento positivo",
+    "cha_2":"rotatoria",
+    "cha_3":"rotor simple",
+    "cha_4":"aspas"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"rotatoria",
+    "cha_3":"rotor simple",
+    "cha_4":"pistón"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"rotatoria",
+    "cha_3":"rotor simple",
+    "cha_4":"elemento flexible"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"rotatoria",
+    "cha_3":"rotor simple",
+    "cha_4":"tornillo"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"rotatoria",
+    "cha_3":"rotor múltiple",
+    "cha_4":"engranajes"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"rotatoria",
+    "cha_3":"rotor múltiple",
+    "cha_4":"lobulos"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"rotatoria",
+    "cha_3":"rotor múltiple",
+    "cha_4":"balancines"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"rotatoria",
+    "cha_3":"rotor múltiple",
+    "cha_4":"tornillos"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"cetrífugas",
+    "cha_3":"flujo radial",
+    "cha_4":"impulsor abierto"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"cetrífugas",
+    "cha_3":"flujo radial",
+    "cha_4":"impulsor semi-abierto"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"cetrífugas",
+    "cha_3":"flujo radial",
+    "cha_4":"impulsor cerrado"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"cetrífugas",
+    "cha_3":"flujo axial",
+    "cha_4":"impulsor abierto"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"cetrífugas",
+    "cha_3":"flujo axial",
+    "cha_4":"impulsor cerrado"
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"cetrífugas",
+    "cha_3":"flujo mixto",
+    "cha_4":""
+  },
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"periféricas",
+    "cha_3":"uni-paso",
+    "cha_4":""
+  },
+
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"periféricas",
+    "cha_3":"multi-paso",
+    "cha_4":""
+  },
+
+  {
+    "name":"Bomba Hidraúlica",
+    "cha_1":"dinámicas",
+    "cha_2":"especiales",
+    "cha_3":"electromagnéticas",
+    "cha_4":""
+  },
+  {
+    "name":"compresor",
+    "cha_1":"pistón",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"compresor",
+    "cha_1":"tornillo",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"compresor",
+    "cha_1":"pistón",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"ventilador",
+    "cha_1":"centrífugo",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"ventilador",
+    "cha_1":"axial",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"ventilador",
+    "cha_1":"especial",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"caldera",
+    "cha_1":"pirotubular",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"caldera",
+    "cha_1":"acotubular",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"motor",
+    "cha_1":"eléctrico",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"motor",
+    "cha_1":"gasolina",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"motor",
+    "cha_1":"gas",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"motor",
+    "cha_1":"gasoil",
+    "cha_2":"",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"eléctrico",
+    "cha_2":"auto",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"eléctrico",
+    "cha_2":"camión",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"eléctrico",
+    "cha_2":"bus",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gasolina",
+    "cha_2":"auto",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gasolina",
+    "cha_2":"camión",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gasolina",
+    "cha_2":"bus",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gas",
+    "cha_2":"auto",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gas",
+    "cha_2":"camión",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gas",
+    "cha_2":"bus",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gasoil",
+    "cha_2":"auto",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gasoil",
+    "cha_2":"camión",
+    "cha_3":"",
+    "cha_4":""
+  },
+  {
+    "name":"vehículo",
+    "cha_1":"gasoil",
+    "cha_2":"bus",
+    "cha_3":"",
+    "cha_4":""
+  }
+
+
+
+
+
+]

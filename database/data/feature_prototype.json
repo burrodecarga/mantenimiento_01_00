@@ -1,0 +1,380 @@
+[
+    {
+        "id": 1,
+        "feature_id": 7,
+        "prototype_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 2,
+        "feature_id": 9,
+        "prototype_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 3,
+        "feature_id": 20,
+        "prototype_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 4,
+        "feature_id": 21,
+        "prototype_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 5,
+        "feature_id": 31,
+        "prototype_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 6,
+        "feature_id": 33,
+        "prototype_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 7,
+        "feature_id": 36,
+        "prototype_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 8,
+        "feature_id": 34,
+        "prototype_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 9,
+        "feature_id": 37,
+        "prototype_id": 29,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 10,
+        "feature_id": 36,
+        "prototype_id": 29,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 11,
+        "feature_id": 33,
+        "prototype_id": 29,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 12,
+        "feature_id": 21,
+        "prototype_id": 29,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 13,
+        "feature_id": 7,
+        "prototype_id": 29,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 14,
+        "feature_id": 31,
+        "prototype_id": 34,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 15,
+        "feature_id": 36,
+        "prototype_id": 34,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 16,
+        "feature_id": 33,
+        "prototype_id": 34,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 17,
+        "feature_id": 34,
+        "prototype_id": 34,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 18,
+        "feature_id": 35,
+        "prototype_id": 34,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 1,
+        "feature_id": 7,
+        "prototype_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 2,
+        "feature_id": 9,
+        "prototype_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 3,
+        "feature_id": 20,
+        "prototype_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 4,
+        "feature_id": 21,
+        "prototype_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 5,
+        "feature_id": 31,
+        "prototype_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 6,
+        "feature_id": 33,
+        "prototype_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 7,
+        "feature_id": 36,
+        "prototype_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 8,
+        "feature_id": 34,
+        "prototype_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 9,
+        "feature_id": 37,
+        "prototype_id": 28,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 10,
+        "feature_id": 36,
+        "prototype_id": 28,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 11,
+        "feature_id": 33,
+        "prototype_id": 28,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 12,
+        "feature_id": 21,
+        "prototype_id": 28,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 13,
+        "feature_id": 7,
+        "prototype_id": 28,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 14,
+        "feature_id": 31,
+        "prototype_id": 33,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 15,
+        "feature_id": 36,
+        "prototype_id": 33,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 16,
+        "feature_id": 33,
+        "prototype_id": 33,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 17,
+        "feature_id": 34,
+        "prototype_id": 33,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 18,
+        "feature_id": 35,
+        "prototype_id": 33,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 1,
+        "feature_id": 7,
+        "prototype_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 2,
+        "feature_id": 9,
+        "prototype_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 3,
+        "feature_id": 20,
+        "prototype_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 4,
+        "feature_id": 21,
+        "prototype_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 5,
+        "feature_id": 31,
+        "prototype_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 6,
+        "feature_id": 33,
+        "prototype_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 7,
+        "feature_id": 36,
+        "prototype_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 8,
+        "feature_id": 34,
+        "prototype_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 9,
+        "feature_id": 37,
+        "prototype_id": 20,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 10,
+        "feature_id": 36,
+        "prototype_id": 20,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 11,
+        "feature_id": 33,
+        "prototype_id": 20,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 12,
+        "feature_id": 21,
+        "prototype_id": 20,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 13,
+        "feature_id": 7,
+        "prototype_id": 20,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 14,
+        "feature_id": 31,
+        "prototype_id": 30,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 15,
+        "feature_id": 36,
+        "prototype_id": 30,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 16,
+        "feature_id": 33,
+        "prototype_id": 30,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 17,
+        "feature_id": 34,
+        "prototype_id": 30,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 18,
+        "feature_id": 35,
+        "prototype_id": 30,
+        "created_at": null,
+        "updated_at": null
+    }
+]

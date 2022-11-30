@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "servicio de limpieza y desmalezamiento",
+        "slug": "servicio-de-limpieza-y-desmalezamiento",
+        "price": 37783.1,
+        "supply": "Hoeger PLC",
+        "description": "Unde ducimus sed repudiandae eaque. Dolorum est et soluta velit a veniam. Sint consectetur perspiciatis nulla laborum.",
+        "created_at": "2022-11-18T14:47:16.000000Z",
+        "updated_at": "2022-11-18T14:47:16.000000Z"
+    },
+    {
+        "id": 2,
+        "name": "bobinado de motores",
+        "slug": "bobinado-de-motores",
+        "price": 18522.57,
+        "supply": "Nikolaus Ltd",
+        "description": "Omnis consequuntur quos unde. Ut quasi officia laborum eum nesciunt non quia. Nisi nihil nisi ea eaque qui ut quis eum.",
+        "created_at": "2022-11-18T14:47:16.000000Z",
+        "updated_at": "2022-11-18T14:47:16.000000Z"
+    },
+    {
+        "id": 3,
+        "name": "taller mec\u00e1nico",
+        "slug": "taller-mecanico",
+        "price": 12083.75,
+        "supply": "Berge, Hansen and Barrows",
+        "description": "Minus ea ut corporis voluptas qui occaecati. Cum eum blanditiis quia qui.",
+        "created_at": "2022-11-18T14:47:16.000000Z",
+        "updated_at": "2022-11-18T14:47:16.000000Z"
+    },
+    {
+        "id": 4,
+        "name": "servicio de tratamiento industrial",
+        "slug": "servicio-de-tratamiento-industrial",
+        "price": 10125.11,
+        "supply": "Batz-Casper",
+        "description": "Voluptatem ad dicta laboriosam et ut. Voluptatem maxime et ea.",
+        "created_at": "2022-11-18T14:47:16.000000Z",
+        "updated_at": "2022-11-18T14:47:16.000000Z"
+    }
+]

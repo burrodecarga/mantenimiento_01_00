@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "prototype_id": 1,
+        "name": "equipo-2231100210353535",
+        "slug": "equipo-2231100210353535",
+        "description": "Bomba de Almac\u00e9n",
+        "location": "almac\u00e9n",
+        "service": "1",
+        "created_at": "2022-10-31T14:16:55.000000Z",
+        "updated_at": "2022-10-31T14:26:01.000000Z"
+    },
+    {
+        "id": 2,
+        "prototype_id": 1,
+        "name": "equipo-2231100210111111",
+        "slug": "equipo-2231100210111111",
+        "description": "Bomba de Estacionamiento",
+        "location": "estacionamiento",
+        "service": "11",
+        "created_at": "2022-10-31T14:24:33.000000Z",
+        "updated_at": "2022-10-31T14:25:39.000000Z"
+    },
+    {
+        "id": 3,
+        "prototype_id": 1,
+        "name": "equipo-2231100210454545",
+        "slug": "equipo-2231100210454545",
+        "description": "Bomba de patio de montaje",
+        "location": "montaje",
+        "service": "1",
+        "created_at": "2022-10-31T14:25:11.000000Z",
+        "updated_at": "2022-10-31T14:25:11.000000Z"
+    },
+    {
+        "id": 4,
+        "prototype_id": 36,
+        "name": "equipo-2231100210090909",
+        "slug": "equipo-2231100210090909",
+        "description": "Cami\u00f3n de Reparto",
+        "location": "estacionamiento",
+        "service": "6",
+        "created_at": "2022-10-31T14:26:43.000000Z",
+        "updated_at": "2022-10-31T14:26:43.000000Z"
+    },
+    {
+        "id": 5,
+        "prototype_id": 23,
+        "name": "equipo-2231100210565656",
+        "slug": "equipo-2231100210565656",
+        "description": "Ventilador centr\u00edfugo de espacios cerrados.",
+        "location": "montaje",
+        "service": "8",
+        "created_at": "2022-10-31T14:27:43.000000Z",
+        "updated_at": "2022-10-31T14:27:43.000000Z"
+    },
+    {
+        "id": 6,
+        "prototype_id": 21,
+        "name": "equipo-2231100210585858",
+        "slug": "equipo-2231100210585858",
+        "description": "Compresor de 1200 psi",
+        "location": "producci\u00f3n",
+        "service": "1",
+        "created_at": "2022-10-31T14:28:49.000000Z",
+        "updated_at": "2022-10-31T14:28:49.000000Z"
+    }
+]

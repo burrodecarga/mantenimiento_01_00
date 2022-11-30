@@ -1,0 +1,30 @@
+      Sistem::create(['name'=>'Áreas Verdes','slug'=> 'areas-verdes','description'=>'jardines y áreas verdes']);
+      Sistem::create(['name' => 'eléctrico', 'slug' => 'electrico', 'description' => 'Subestaciones, casetas de transformadores']);
+      Sistem::create(['name' => 'aguas blancas', 'slug' => 'aguas-blancas', 'description' => 'aguas-blancas']);
+      Sistem::create(['name' => 'aguas servidas', 'slug' => 'aguas-servidas', 'description' => 'aguas servidas']);
+      Sistem::create(['name' => 'edificios e infraestructuras', 'slug' => 'edificios-e-infrestructura', 'description' => 'edificios e infraestructuras']);
+      Sistem::create(['name' => 'transporte', 'slug' => 'transporte', 'description' => 'trasporte']);
+
+    Subsistem::create(['sistem_id'=>2, 'name' => 'jardín central', 'slug' => 'jardin-central', 'description' => 'jardines y áreas verdes']);
+    Subsistem::create(['sistem_id'=>3, 'name' => 'sub estación 10 MBA', 'slug' => 'sub-estacion-10-mba', 'description' => 'suministro princial']);
+    Subsistem::create(['sistem_id'=>3, 'name' => 'transformadores 160 KVA', 'slug' => 'tranformadores-160-kva', 'description' => 'suministro secundario']);
+
+    Subsistem::create(['sistem_id' => 3, 'name' => 'seccionadores', 'slug' => 'seccionadores', 'description' => 'interruptores principales']);
+
+    Subsistem::create(['sistem_id' => 3, 'name' => 'tablero de distribución', 'slug' => 'tablero-de-distribucion', 'description' => 'interruptores secundarios']);
+
+    Subsistem::create(['sistem_id' => 3, 'name' => 'chiller agua helada', 'slug' => 'chiller-agua-helada', 'description' => 'acondicionadores principales']);
+
+    Subsistem::create(['sistem_id' => 3, 'name' => 'aire acondicionado', 'slug' => 'aire-acondicionado', 'description' => 'acondicionadores principales']);
+
+    Subsistem::create(['sistem_id' => 4, 'name' => 'pozo profundo', 'slug' => 'pozo-profundo', 'description' => 'suministro principal']);
+    Subsistem::create(['sistem_id' => 4, 'name' => 'tanque australiano', 'slug' => 'tanque-australiano', 'description' => 'depósito  principal']);
+    Subsistem::create(['sistem_id' => 4, 'name' => 'filtros', 'slug' => 'filtros', 'description' => 'filtros principales']);
+    Subsistem::create(['sistem_id' => 4, 'name' => 'tanque subterraneo', 'slug' => 'tanque-subterraneo', 'description' => 'depósito  principal']);
+    Subsistem::create(['sistem_id' => 4, 'name' => 'bomba centrífuga', 'slug' => 'bomba-centrifuga', 'description' => 'depósito  principal']);
+
+    Subsistem::create(['sistem_id' => 5, 'name' => 'pozo séptico', 'slug' => 'pozo-septico', 'description' => 'depósito principal']);
+    Subsistem::create(['sistem_id' => 5, 'name' => 'tanque de procesamiento', 'slug' => 'tanque-de-procesamiento', 'description' => 'depósito  principal']);
+    Subsistem::create(['sistem_id' => 5, 'name' => 'barredoras', 'slug' => 'barredoras', 'description' => 'barredoras principales']);
+    Subsistem::create(['sistem_id' => 5, 'name' => 'bomba sand-piper', 'slug' => 'bomba-sand-piper', 'description' => 'bomba  principal']);
+    Subsistem::create(['sistem_id' => 5, 'name' => 'bomba centrífuga', 'slug' => 'bomba-centrifuga', 'description' => 'depósito  principal']);

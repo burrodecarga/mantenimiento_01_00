@@ -220,7 +220,9 @@ class PlanController extends Controller
 
         $timelines = Timeline::all();
         $plan_start = $this->plan_init($plan->id);
-        $plan_work = $this->plan_work($plan->id);
+        $work_start = $plan_start;
+        $work_end = $this->plan_end($plan->id);
+
         $plan_specialties = $plan->goals->unique('specialty_id')->pluck('specialty_id');
         $plan_teams = Team::whereIn('specialty_id', $plan_specialties)->get();
 
@@ -228,49 +230,66 @@ class PlanController extends Controller
         $rest_start = Carbon::parse($rest_start)->addHour($plan->rest_time_hours);
         $rest_end = Carbon::parse($rest_start)->addHour($plan->rest_hours);
         $duration = 0;
+        $week = 0;
 
         foreach ($timelines as $timeline) {
             if ($timeline->position == 1) {
+
                 $timeline->start = $this->plan_init($plan->id);
+                $plan_start = $this->plan_init($plan->id);
                 $timeline->end = $plan_start->addHours($timeline->duration);
-                $duration = 0;
+
             } else {
 
                 $timeline->start = $plan_start;
                 $timeline->end = $plan_start->addHours($timeline->duration);
-                 if ($timeline->start->between($rest_start, $rest_end) || $timeline->end->between($rest_start, $rest_end)) {
-                     $timeline->end = $timeline->end->addHours($plan->rest_hours);
-                 }
+
+                if ($plan->work_shift != 3) {
+                if ($timeline->start->hour >= $work_end->hour) {
+                    $plan_start->addDay();
+                    if ($plan_start->dayOfWeek == 0) {$plan_start->next('Monday');}
+                    $plan_start->hour = $work_start->hour;
+                    $timeline->start = $plan_start;
+                    $timeline->end = $plan_start->addHours($timeline->duration);
+                }}
+
             }
 
+            $duration = $duration + $timeline->duration;
+            $week = $week + $timeline->duration;
+
+            if ($plan->work_shift != 3) {
+                if ($plan->work_shift == 2 && $duration >= 16) {
+                    $plan_start->addDay();
+                    if ($plan_start->dayOfWeek == 0) {$plan_start->next('Monday');}
+                    $plan_start->hour = $plan->work_time->hour;
+                    $duration = 0;
+                }
+
+                if ($plan->work_shift == 1 && $duration >= 8) {
+                    $plan_start->addDay();
+                    if ($plan_start->dayOfWeek == 0) {$plan_start->next('Monday');}
+                    $plan_start->hour = $plan->work_time->hour;
+                    $duration = 0;
+                }
+
+                if ($plan->work_shift <= 2 && $week >= $plan->weekly_shift * $plan->work_shift) {
+                    $plan_start->next('Monday');
+                    $plan_start->hour = $plan->work_time->hour;
+                    $week = 0;
+                }}
+
             $timeline->save();
-             $duration = $duration + $timeline->duration;
-              if($plan->work_shift==1 && $duration >=8){
-                  $plan_start = $plan_start->addDay();
-                  $timeline->start = $timeline->start->addDay();
-                   $timeline->start->hour=$plan_work->hour;
-                  $this->plan_init($plan->id);
-              }
-
-              if($plan->work_shift==2 && $duration >=16){
-                  $plan_start = $plan_start->addDay();
-                  $this->plan_init($plan->id);
-              }
-
-
 
         }
 
         return view('mant.plans.timeline', compact('timelines', 'rest_start', 'rest_end'));
     }
 
-
-
-
     private function delete_table($plan)
     {
         DB::statement("SET foreign_key_checks=0");
-        Timeline::where('plan_id', $plan)->truncate();
+        Timeline::where('plan_id', $plan)->delete();
         DB::statement("SET foreign_key_checks=1");
         //Timeline::where('plan_id', $plan->id)->delete();
     }
@@ -283,15 +302,14 @@ class PlanController extends Controller
         return $plan_start;
     }
 
-    private function plan_work($id)
+    private function plan_end($id)
     {
         $plan = Plan::find($id);
-        $plan_work = $plan->start->toDateString() . ' ' . $plan->work_time->toTimeString();
-        $plan_work = Carbon::parse($plan_work)->addHours($plan->daily_shift);
-        return $plan_work;
+        $plan_start = $plan->start->toDateString() . ' ' . $plan->work_time->toTimeString();
+        $plan_start = Carbon::parse($plan_start);
+
+        $plan_start->addHours($plan->daily_shift * $plan->work_shift);
+        return $plan_start;
     }
-
-
-
 
 }

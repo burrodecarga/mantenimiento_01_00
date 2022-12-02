@@ -16,47 +16,47 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($timelines as $goal)
+                            @foreach ($timelines as $timeline)
                                 <tr>
-                                    <td width="5%">{{ $goal->id }}</td>
-                                    <td width="5%">{{ $goal->position }}
+                                    <td width="5%">{{ $timeline->id }}</td>
+                                    <td width="5%">{{ $timeline->position }}
                                     </td>
                                     <td width="20%">
-                                        <div>
-                                            <p class="text-gray-700 font-bold text-xs">
-                                                {{ $goal->fecha($goal->start)}}
+                                        <div class="text-center">
+                                            <p class="text-gray-700 text-xs">
+                                                {{ $timeline->fecha($timeline->start)}}
                                              </p>
-                                             <p class="text-gray-700 font-bold text-xs">
-                                                tiempo Estimado: {{ $goal->duration }} hrs.
+                                             <p class="text-gray-700 text-xs">
+                                                tiempo Estimado: {{ $timeline->duration }} hrs.
                                             </p>
                                         </div>
                                     </td>
                                     <td width="10%">
                                         <div>
-                                            <p class="text-gray-700 font-bold text-xs">
-                                                {{ $goal->start->format('H:i A') }}
+                                            <p class="text-gray-700 text-xs">
+                                                {{ $timeline->start->format('H:i') }}
                                             </p>
 
                                         </div>
                                     </td>
                                     <td width="10%">
                                         <div>
-                                            <p class="text-gray-700 font-bold text-xs">
-                                                {{ $goal->end->format('H:i A') }}
+                                            <p class="text-gray-700 text-xs">
+                                                {{ $timeline->end->format('H:i') }}
                                             </p>
                                         </div>
                                     </td>
                                     <td width="30%">
                                         <div>
-                                            <p class="flex justify-between items-center text-gray-700 font-bold text-xs">
-                                                <span>{{ $goal->task }} </span>
+                                            <p class="flex justify-between items-center text-gray-700 text-xs">
+                                                <span>{{ $timeline->task }} </span>
                                             </p>
                                         </div>
                                     </td>
                                     <td width="20%">
                                         <div>
-                                            <p class="text-gray-700 font-bold text-xs">{{ $goal->equipment_id }}</p>
-                                            <p class="text-gray-700 font-bold text-xs">{{ $goal->specialty() }}</p>
+                                            <p class="text-gray-700 text-xs">{{ $timeline->equipment() }}</p>
+                                            <p class="text-gray-700 font-bold text-xs">{{ $timeline->specialty() }}</p>
                                         </div>
                                     </td>
                                 </tr>
@@ -132,5 +132,4 @@
             })
         </script>
     @endpush
-
 </x-app-layout>

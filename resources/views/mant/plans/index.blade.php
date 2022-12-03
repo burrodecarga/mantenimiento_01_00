@@ -110,6 +110,12 @@
                                                 <i class="w-full text-xs icono text-green-600 fa-solid fa-clock-rotate-left">
                                                     <span class="text-xs p-2">Generar Plan</span>    </i>
                                         </a>
+
+                                        <a class="col-span-3 w-full" href="{{ route('plans.calendar', $plan->id) }}"
+                                            title="{{ __('Calendar plan ') . $plan->task }}">
+                                                <i class="w-full text-xs icono text-blue-600 fa-solid fa-calendar">
+                                                    <span class="text-xs p-2">Calendario</span>    </i>
+                                        </a>
                                      </td>
                         </tr>
                     @endforeach

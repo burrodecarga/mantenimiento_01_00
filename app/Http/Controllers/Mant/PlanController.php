@@ -286,6 +286,25 @@ class PlanController extends Controller
         return view('mant.plans.timeline', compact('timelines', 'rest_start', 'rest_end'));
     }
 
+
+    public function calendar(Plan $plan){
+
+        $timelines = Timeline::where('plan_id', $plan->id)->get();
+        $events = [];
+
+        foreach ($timelines as $timeline){
+            $events[]=[
+                'id'=>$timeline->id,
+                'title' =>$timeline->task,
+                'start'=>$timeline->start,
+                'end'=>$timeline->end
+            ];
+        }
+
+        return view('mant.plans.calendar',['events'=>$events]);
+    }
+    
+
     private function delete_table($plan)
     {
         DB::statement("SET foreign_key_checks=0");
@@ -311,5 +330,6 @@ class PlanController extends Controller
         $plan_start->addHours($plan->daily_shift * $plan->work_shift);
         return $plan_start;
     }
+
 
 }

@@ -80,10 +80,10 @@
                             <td class="grid grid-cols-3 gap-4 items-center justify-between">
                                 <a href="{{ route('plans.show', $plan->id) }}"
                                     title="{{ __('add equipment to plan ') . $plan->task }}"><i
-                                        class="icono text-blue-500 fa-solid fa-eye"></i></a>
-                                <a href="{{ route('plans.edit', $plan->id) }}"
-                                    title="{{ __('edit plan ') . $plan->task }}"><i
-                                        class="icono text-green-500 fa-solid fa-pen-to-square"></i></a>
+                                        class="icono text-blue-500 fa-solid fa-clipboard-list"></i></a>
+                                <a href="{{ route('plans.sequence', $plan->id) }}"
+                                    title="{{ __('sequence of plan ') . $plan->task }}"><i
+                                        class="icono text-green-500 fa-solid fa-arrow-up-1-9"></i></a>
 
                                 <form action="{{ route('plans.destroy', $plan->id) }}" method="POST"
                                     class="form-delete">
@@ -93,15 +93,15 @@
                                             class="icono text-red-500 fa-solid fa-trash-can"></i></button>
                                 </form>
                                 <a href="{{ route('plans.protocols', $plan->id) }}"
-                                    title="{{ __('protocols of plan ') . $plan->task }}"><i
+                                    title="{{ __('add protocols of plan ') . $plan->task }}"><i
                                         class="icono text-green-500 fa fa-file-invoice"></i>
                                     </a>
                                     <a href="{{ route('plans.resources', $plan->id) }}"
-                                        title="{{ __('protocols of plan ') . $plan->task }}">
+                                        title="{{ __('add resources to plan ') . $plan->task }}">
                                             <i class="icono text-blue-500 fa-solid fa-dumpster"></i>
                                         </a>
                                         <a href="{{ route('plans.teams', $plan->id) }}"
-                                            title="{{ __('protocols of plan ') . $plan->task }}">
+                                            title="{{ __('add teams to plan ') . $plan->task }}">
                                                 <i class="icono text-blue-500 fa-solid fa-users"></i>
                                         </a>
 
@@ -191,5 +191,4 @@
         </script>
     @endpush
 </x-app-layout>
-@burrodecarga
 

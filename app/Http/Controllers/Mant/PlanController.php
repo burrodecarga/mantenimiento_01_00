@@ -303,7 +303,11 @@ class PlanController extends Controller
 
         return view('mant.plans.calendar',['events'=>$events]);
     }
-    
+
+    public function sequence(Plan $plan){
+
+    }
+
 
     private function delete_table($plan)
     {

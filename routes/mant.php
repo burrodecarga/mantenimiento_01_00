@@ -17,6 +17,8 @@ Route::post('/fail/despeje/{fail}',[FailController::class,'despeje'])->name('fai
 Route::get('/fail/repareid',[FailController::class,'repareid'])->name('fails.repareid');
 Route::resource('/plans',PlanController::class)->names('plans');
 Route::get('/plans/calendar/{plan}',[PlanController::class,'calendar'])->name('plans.calendar');
+Route::get('/plans/sequence/{plan}', [PlanController::class, 'sequence'])->name('plans.sequence');
+
 Route::get('/plans/timeline/{plan}',[PlanController::class,'timeline'])->name('plans.timeline');
 
 Route::get('/plans/protocols/{plan}',[PlanController::class,'protocols'])->name('plans.protocols');

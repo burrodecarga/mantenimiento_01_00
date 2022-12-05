@@ -74,13 +74,13 @@ class PlanController extends Controller
             $request->request->add(['work_overtime' => 0]);
         }
 
-$start_time = Carbon::createFromTimestamp(strtotime($request->start_time))->hour;
-$rest_time = Carbon::createFromTimestamp(strtotime($request->rest_time))->hour;
-$rest_time_hours = $rest_time - $start_time;
-$work_time = $request->start_time;
-$request->request->add(['work_time' => $work_time]);
-$request->request->add(['rest_time_hours' => $rest_time_hours]);
-$request->request->remove('rest_time');
+        $start_time = Carbon::createFromTimestamp(strtotime($request->start_time))->hour;
+        $rest_time = Carbon::createFromTimestamp(strtotime($request->rest_time))->hour;
+        $rest_time_hours = $rest_time - $start_time;
+        $work_time = $request->start_time;
+        $request->request->add(['work_time' => $work_time]);
+        $request->request->add(['rest_time_hours' => $rest_time_hours]);
+        $request->request->remove('rest_time');
 
         Plan::create($request->all());
         return redirect()->route('plans.index')->with('success', 'Plan de mantenimiento creado correctamente.');
@@ -316,6 +316,10 @@ $request->request->remove('rest_time');
     public function sequence(Plan $plan)
     {
         $timelines = Timeline::where('plan_id', $plan->id)->get()->unique('equipment_id');
+        if($timelines->first()->sequence == 0){
+            $timelines->first()->sequence =1;
+            $timelines->first()->save();
+        }
         return view('mant.plans.sequence', compact('timelines', 'plan'));
 
     }
@@ -325,16 +329,16 @@ $request->request->remove('rest_time');
         $timelines = Timeline::where('plan_id', $plan->id)->get()->unique('equipment_id');
         $id = $timelines->first()->equipment_id;
         $ids = $request->input('ids');
-        if(!in_array($id,$ids)){
-array_push($ids,$id);
+        if (!in_array($id, $ids)) {
+            array_push($ids, $id);
         }
         Timeline::where('plan_id', $plan->id)->update(array('sequence' => 0));
 
-        Timeline::where('plan_id', $plan->id)->where('position','1')->whereIn('equipment_id', $ids)->update(array('sequence' => 1));
+        Timeline::where('plan_id', $plan->id)->where('position', '1')->whereIn('equipment_id', $ids)->update(array('sequence' => 1));
 
         Goal::where('plan_id', $plan->id)->update(array('sequence' => 0));
 
-        Goal::where('plan_id', $plan->id)->where('position','1')->whereIn('equipment_id', $ids)->update(array('sequence' => 1));
+        Goal::where('plan_id', $plan->id)->where('position', '1')->whereIn('equipment_id', $ids)->update(array('sequence' => 1));
 
         $timelines = Timeline::where('plan_id', $plan->id)->get()->unique('equipment_id');
 

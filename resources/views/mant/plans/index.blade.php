@@ -111,6 +111,11 @@
                                                     <span class="text-xs p-2">Generar Plan</span>    </i>
                                         </a>
 
+                                        <a class="col-span-3 w-full" href="{{ route('plans.sequence', $plan->id) }}"
+                                            title="{{ __('sequence of plan ') . $plan->task }}"><i
+                                                class="w-full icono text-green-500 fa-solid fa-arrow-up-1-9">
+                                                <span class="text-xs p-2">Secuencia</span></i></a>
+
                                         <a class="col-span-3 w-full" href="{{ route('plans.calendar', $plan->id) }}"
                                             title="{{ __('Calendar plan ') . $plan->task }}">
                                                 <i class="w-full text-xs icono text-blue-600 fa-solid fa-calendar">

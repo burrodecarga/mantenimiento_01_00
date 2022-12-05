@@ -233,7 +233,7 @@ class PlanController extends Controller
         $week = 0;
 
         foreach ($timelines as $timeline) {
-            if ($timeline->position == 1 && $timeline->sequence ==1) {
+            if ($timeline->position == 1 && $timeline->sequence == 1) {
 
                 $timeline->start = $this->plan_init($plan->id);
                 $plan_start = $this->plan_init($plan->id);
@@ -245,13 +245,13 @@ class PlanController extends Controller
                 $timeline->end = $plan_start->addHours($timeline->duration);
 
                 if ($plan->work_shift != 3) {
-                if ($timeline->start->hour >= $work_end->hour) {
-                    $plan_start->addDay();
-                    if ($plan_start->dayOfWeek == 0) {$plan_start->next('Monday');}
-                    $plan_start->hour = $work_start->hour;
-                    $timeline->start = $plan_start;
-                    $timeline->end = $plan_start->addHours($timeline->duration);
-                }}
+                    if ($timeline->start->hour >= $work_end->hour) {
+                        $plan_start->addDay();
+                        if ($plan_start->dayOfWeek == 0) {$plan_start->next('Monday');}
+                        $plan_start->hour = $work_start->hour;
+                        $timeline->start = $plan_start;
+                        $timeline->end = $plan_start->addHours($timeline->duration);
+                    }}
 
             }
 
@@ -286,38 +286,52 @@ class PlanController extends Controller
         return view('mant.plans.timeline', compact('timelines', 'rest_start', 'rest_end'));
     }
 
-
-    public function calendar(Plan $plan){
+    public function calendar(Plan $plan)
+    {
 
         $timelines = Timeline::where('plan_id', $plan->id)->get();
         $events = [];
 
-        foreach ($timelines as $timeline){
-            $events[]=[
-                'id'=>$timeline->id,
-                'title' =>$timeline->task,
-                'start'=>$timeline->start,
-                'end'=>$timeline->end
+        foreach ($timelines as $timeline) {
+            $events[] = [
+                'id' => $timeline->id,
+                'title' => $timeline->task,
+                'start' => $timeline->start,
+                'end' => $timeline->end,
             ];
         }
 
-        return view('mant.plans.calendar',['events'=>$events]);
+        return view('mant.plans.calendar', ['events' => $events]);
     }
 
-    public function sequence(Plan $plan){
-           $timelines = Timeline::where('plan_id',$plan->id)->get()->unique('equipment_id');
-return view('mant.plans.sequence', compact('timelines', 'plan'));
-
-    }
-
-    public function sequence_update(Request $request,Plan $plan){
-      $ids = $request->input('ids');
-      Timeline::where('plan_id',$plan->id)->whereNotIn('equipment_id',$ids)->update(array('sequence'=>0));
-      $timelines = Timeline::where('plan_id',$plan->id)->get()->unique('equipment_id');
-      return view('mant.plans.sequence', compact('timelines', 'plan'));
+    public function sequence(Plan $plan)
+    {
+        $timelines = Timeline::where('plan_id', $plan->id)->get()->unique('equipment_id');
+        return view('mant.plans.sequence', compact('timelines', 'plan'));
 
     }
 
+    public function sequence_update(Request $request, Plan $plan)
+    {
+        $timelines = Timeline::where('plan_id', $plan->id)->get()->unique('equipment_id');
+        $id = $timelines->first()->equipment_id;
+        $ids = $request->input('ids');
+        if(!in_array($id,$ids)){
+array_push($ids,$id);
+        }
+        Timeline::where('plan_id', $plan->id)->update(array('sequence' => 0));
+
+        Timeline::where('plan_id', $plan->id)->where('position','1')->whereIn('equipment_id', $ids)->update(array('sequence' => 1));
+
+        Goal::where('plan_id', $plan->id)->update(array('sequence' => 0));
+
+        Goal::where('plan_id', $plan->id)->where('position','1')->whereIn('equipment_id', $ids)->update(array('sequence' => 1));
+
+        $timelines = Timeline::where('plan_id', $plan->id)->get()->unique('equipment_id');
+
+        return view('mant.plans.sequence', compact('timelines', 'plan'));
+
+    }
 
     private function delete_table($plan)
     {
@@ -344,6 +358,5 @@ return view('mant.plans.sequence', compact('timelines', 'plan'));
         $plan_start->addHours($plan->daily_shift * $plan->work_shift);
         return $plan_start;
     }
-
 
 }

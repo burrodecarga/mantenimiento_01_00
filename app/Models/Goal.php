@@ -11,7 +11,9 @@ class Goal extends Model
 
     protected $guarded = [];
 
-    protected $attributes = [];
+    protected $attributes = [
+        'sequence'=>0
+    ];
 
     public function plan(){
         return $this->belongsTo(Plan::class);

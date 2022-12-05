@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('task');
             $table->text('detail')->nullable();
             $table->integer('frecuency')->default(1);//veces al año
+$table->integer('sequence')->default(0);
+
             $table->integer('duration')->default(1);//horas
             $table->string('permissions')->default('N/A');
             $table->string('security')->default('N/A');

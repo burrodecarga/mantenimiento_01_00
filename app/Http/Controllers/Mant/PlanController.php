@@ -73,6 +73,15 @@ class PlanController extends Controller
         } else {
             $request->request->add(['work_overtime' => 0]);
         }
+
+$start_time = Carbon::createFromTimestamp(strtotime($request->start_time))->hour;
+$rest_time = Carbon::createFromTimestamp(strtotime($request->rest_time))->hour;
+$rest_time_hours = $rest_time - $start_time;
+$work_time = $request->start_time;
+$request->request->add(['work_time' => $work_time]);
+$request->request->add(['rest_time_hours' => $rest_time_hours]);
+$request->request->remove('rest_time');
+
         Plan::create($request->all());
         return redirect()->route('plans.index')->with('success', 'Plan de mantenimiento creado correctamente.');
 

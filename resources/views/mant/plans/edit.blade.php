@@ -60,7 +60,7 @@
                                 @for ($i = 1; $i <= 8; $i++)
                                     <option value="{{ $i }}"
                                         @if ($i == $plan->daily_shift) selected @endif>
-                                        {{ $i . ' horas por semana' }}</option>
+                                        {{ $i . ' horas por día' }}</option>
                                 @endfor
                             </select>
                             <x-jet-input-error for="daily_shift" />
@@ -80,7 +80,7 @@
                                 @for ($i = 1; $i <= 8; $i++)
                                     <option value="{{ $i }}"
                                         @if ($i == $plan->rest_hours) selected @endif>
-                                        {{ $i . ' horas por semana' }}</option>
+                                        {{ $i . ' horas por día' }}</option>
                                 @endfor
                             </select>
                             <x-jet-input-error for="rest_hours" />

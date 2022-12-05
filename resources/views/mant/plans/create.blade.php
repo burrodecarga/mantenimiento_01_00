@@ -53,7 +53,7 @@
                                 for="daily_shift" />
                             <select name="daily_shift" class="w-full rounded-lg">
                                 @for ($i = 1; $i <= 8; $i++)
-                                    <option value="{{ $i }}" @if($i==$plan->daily_shift) selected @endif>{{ $i . ' horas por semana' }}</option>
+                                    <option value="{{ $i }}" @if($i==$plan->daily_shift) selected @endif>{{ $i . ' horas por día' }}</option>
                                 @endfor
                             </select>
                             <x-jet-input-error for="daily_shift" />
@@ -71,7 +71,7 @@
                                 for="rest_hours" />
                             <select name="rest_hours" class="w-full rounded-lg">
                                 @for ($i = 1; $i <= 8; $i++)
-                                    <option value="{{ $i }}" @if($i==$plan->rest_hours) selected @endif>{{ $i . ' horas por semana' }}</option>
+                                    <option value="{{ $i }}" @if($i==$plan->rest_hours) selected @endif>{{ $i . ' horas por día' }}</option>
                                 @endfor
                             </select>
                             <x-jet-input-error for="rest_hours" />

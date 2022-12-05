@@ -20,6 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('equipment_id');
             $table->string('specialty_id');
             $table->integer('position')->default(1);
+$table->integer('sequence')->default(1);
+
             $table->unsignedBigInteger('restriction')->nullable();
             $table->integer('priority')->default(1);
             $table->integer('status')->default(0);

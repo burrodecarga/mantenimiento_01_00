@@ -233,7 +233,7 @@ class PlanController extends Controller
         $week = 0;
 
         foreach ($timelines as $timeline) {
-            if ($timeline->position == 1) {
+            if ($timeline->position == 1 && $timeline->sequence ==1) {
 
                 $timeline->start = $this->plan_init($plan->id);
                 $plan_start = $this->plan_init($plan->id);
@@ -305,7 +305,8 @@ class PlanController extends Controller
     }
 
     public function sequence(Plan $plan){
-
+           $timelines = Timeline::where('plan_id',$plan->id)->get()->unique('equipment_id');
+           return view('mant.plans.sequence', compact('timelines'));
     }
 
 

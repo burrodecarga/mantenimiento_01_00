@@ -1,18 +1,23 @@
 <x-app-layout>
 <div class="container ">
-    <div class="card mx-auto my-6 max-w-lg">
+    <div class="card mx-auto my-6 max-w-2xl">
         <div class="card-body">
             <h1 class="text-gray-400 text-center font-bold uppercase">secuencia de tareas </h1>
-            <form action="">
+            <form action="{{ route('plans.sequence_update',$plan->id) }}" method="POST">
+                @csrf
+                @method('post')
                 @foreach($timelines as $t)
 <div class="grid grid-cols-6 gap-x-2 items-center">
       <input type="checkbox" name="ids[]" value="{{ $t->equipment_id }}" class="check mx-2" @if($t->sequence==1) checked @endif/>
     <x-jet-label class="col-span-3 italic my-2 capitalize" value="{{ $t->equipment() }}"
     for="name" />
-    <x-jet-label class="italic my-2 capitalize" value="{{ 'pos.' .$t->position }}"
+    @if($t->sequence==1)
+    <x-jet-label class="col-span-2 italic my-2 capitalize" value="{{ 'inicia: ' .$plan->start->format('d-m-Y h:i A') }}"
         for="name" />
-        <x-jet-label class="italic my-2 capitalize" value="{{'seq.'.$t->sequence }}"
+        @else
+        <x-jet-label class="col-span-2 italic my-2 capitalize" value="sigue"
             for="name" />
+            @endif
 
 </div>
 

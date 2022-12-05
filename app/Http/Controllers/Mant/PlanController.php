@@ -306,7 +306,16 @@ class PlanController extends Controller
 
     public function sequence(Plan $plan){
            $timelines = Timeline::where('plan_id',$plan->id)->get()->unique('equipment_id');
-           return view('mant.plans.sequence', compact('timelines'));
+return view('mant.plans.sequence', compact('timelines', 'plan'));
+
+    }
+
+    public function sequence_update(Request $request,Plan $plan){
+      $ids = $request->input('ids');
+      Timeline::where('plan_id',$plan->id)->whereNotIn('equipment_id',$ids)->update(array('sequence'=>0));
+      $timelines = Timeline::where('plan_id',$plan->id)->get()->unique('equipment_id');
+      return view('mant.plans.sequence', compact('timelines', 'plan'));
+
     }
 
 

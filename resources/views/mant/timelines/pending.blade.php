@@ -10,7 +10,6 @@
                         <th>Task</th>
                         <th>Start</th>
                         <th>End</th>
-                        <th>Status</th>
                         <th>Teams</th>
                         <th class="text-center">Action</th>
                     </tr>
@@ -41,36 +40,15 @@
 
                             </td>
 
-
-                            <td width="10%" class="text-right text-xs text-gray-400">
-                                <p class="text-gray-400 font-bold text-xs">
-                                    @if ($timeline->status == 0)
-                                        Activa
-                                    @else
-                                        Reparada
-                                    @endif
-                                </p>
-                            </td>
-
-                            <td width="19%" class="text-justify text-xs text-gray-400">
-
+                            <td width="26%" class="text-justify text-xs text-gray-400">
+                                @foreach ($timeline->boss() as $b)
+                                    <p class="text-red-400 font-bold text-xs">{{ $b->user->name }}</p>
+                                @endforeach
                             </td>
 
                             <td class="text-center flex items-center justify-between">
-                                <a href=""
-                                    title="{{ __('view daitl of timeline ') . $timeline->name }}"><i
+                                <a href="{{ route('timelines.boss',$timeline->id) }}" title="{{ __('assign boss') . $timeline->name }}"><i
                                         class="icono text-blue-600 fa-solid fa-people-group"></i></a>
-                                <a href=""
-                                    title="{{ __('edit timeline ') . $timeline->name }}"><i
-                                        class="icono text-green-500 fa-solid fa-pen-to-square"></i></a>
-
-                                <form action="" method="POST"
-                                    class="form-delete">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit"><i
-                                            class="icono text-red-500 fa-solid fa-trash-can"></i></button>
-                                </form>
 
                             </td>
 
@@ -116,7 +94,7 @@
                         "infoFiltered": ""
                     },
                     "columnDefs": [{
-                        "targets": [6],
+                        "targets": [5],
                         "orderable": false
                     }]
                 });

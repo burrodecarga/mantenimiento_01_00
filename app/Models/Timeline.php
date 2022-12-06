@@ -31,6 +31,10 @@ class Timeline extends Model
         return Equipment::find($this->equipment_id)->location();
     }
 
+    public function boss(){
+        return $teams = Team::where('specialty_id',$this->specialty_id)->get();
+    }
+
 
 
 

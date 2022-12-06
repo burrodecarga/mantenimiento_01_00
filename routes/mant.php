@@ -22,6 +22,9 @@ Route::get('/plans/calendar/{plan}',[PlanController::class,'calendar'])->name('p
 Route::get('/plans/sequence/{plan}', [PlanController::class, 'sequence'])->name('plans.sequence');
 Route::post('/plans/sequence_update/{plan}', [PlanController::class, 'sequence_update'])->name('plans.sequence_update');
 Route::get('/timelines/pending', [TimelineController::class, 'pending'])->name('timelines.pending');
+Route::get('/timelines/boss/{timeline}', [TimelineController::class, 'boss'])->name('timelines.boss');
+Route::post('/timelines/worker/{timeline}', [TimelineController::class, 'worker'])->name('timelines.worker');
+
 
 
 

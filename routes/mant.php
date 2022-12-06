@@ -4,6 +4,8 @@ use App\Http\Controllers\Mant\FailController;
 use App\Http\Controllers\Mant\GoalController;
 use App\Http\Controllers\Mant\PlanController;
 use App\Http\Controllers\Mant\TeamController;
+use App\Http\Controllers\Mant\TimelineController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,6 +21,8 @@ Route::resource('/plans',PlanController::class)->names('plans');
 Route::get('/plans/calendar/{plan}',[PlanController::class,'calendar'])->name('plans.calendar');
 Route::get('/plans/sequence/{plan}', [PlanController::class, 'sequence'])->name('plans.sequence');
 Route::post('/plans/sequence_update/{plan}', [PlanController::class, 'sequence_update'])->name('plans.sequence_update');
+Route::get('/timelines/pending', [TimelineController::class, 'pending'])->name('timelines.pending');
+
 
 
 Route::get('/plans/timeline/{plan}',[PlanController::class,'timeline'])->name('plans.timeline');

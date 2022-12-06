@@ -34,6 +34,8 @@ class Timeline extends Model
 
 
 
+
+
     public function fecha($date){
         return $this->dateStr($date);
     }

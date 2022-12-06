@@ -60,7 +60,7 @@ class RoleSeeder extends Seeder
 
         $tecnico = Role::create(['name' => 'tecnico']);
         $tecnicoPermissions = [
-            '127', '128',
+            '127', '128','137'
         ];
         $tecnico->givePermissionTo($tecnicoPermissions);
 

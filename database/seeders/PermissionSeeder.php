@@ -202,5 +202,8 @@ Permission::create(['name'=>'plans.show','permission'=>'plans view']);
 //listado de permisos para replacements 136
 Permission::create(['name'=>'timelines.pending','permission'=>'timelines pending']);
 
+//listado de permisos para replacements 137
+Permission::create(['name' => 'timelines.assigned', 'permission' => 'timelines assigned']);
+
         }
 }

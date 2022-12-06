@@ -48,8 +48,8 @@
                                 @else
                                 <div class="bg-red-200 text-center p-3">
                                 <p class="text-gray-600 font-bold text-xs">Personal Disponible</p>
-                                @foreach ($timeline->boss() as $team)
-                                    <p class="text-gray-600 font-bold text-xs">{{ $team->name }}</p>
+                                @foreach ($timeline->boss() as $b)
+                                    <p class="text-gray-600 font-bold text-xs">{{ $b->user->name }}</p>
                                 @endforeach
                                 </div>
                                 @endif

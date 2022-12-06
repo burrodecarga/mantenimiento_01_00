@@ -22,6 +22,7 @@ $navlinks=[
 ['name'=>'repareid','route'=>'fails.repareid','active'=>request()->routeIs('fails.repareid')],
 ['name'=>'plans','route'=>'plans.index','active'=>request()->routeIs('plans.index')],
 ['name'=>'timelines','route'=>'timelines.pending','active'=>request()->routeIs('timelines.pending')],
+['name'=>'timelines','route'=>'timelines.assigned','active'=>request()->routeIs('timelines.assigned')],
 
 
 

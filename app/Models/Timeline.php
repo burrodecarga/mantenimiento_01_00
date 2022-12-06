@@ -37,7 +37,8 @@ class Timeline extends Model
 
 
     public function assigned(){
-        return $team = Team::find($this->user_id);
+return $team = Team::find($this->team_id);
+
     }
 
 

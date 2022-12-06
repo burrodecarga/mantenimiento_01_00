@@ -12,6 +12,7 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Role</th>
                         <th>Salary</th>
                         <th class="text-center">Action</th>
                     </tr>
@@ -19,7 +20,8 @@
                 <tbody>
                     @foreach ($employes as $user)
                         <tr>
-                            <td width="50%">{{ $user->name }}</td>
+                            <td width="35%">{{ $user->name }}</td>
+                            <td width="15%">{{ $user->getRoleNames()->join('') }}</td>
                             <td width="30%">{{ $user->profile->salary }}</td>
                             <td  class="text-center flex items-center justify-between">
                                 {{-- <a href="{{ route('employes.show',$user->id) }}" title="{{ __('view daitl of user ').$user->name }}"><i class="text-blue-500 fa-solid fa-eye"></i></a> --}}

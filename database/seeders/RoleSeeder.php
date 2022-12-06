@@ -47,6 +47,7 @@ class RoleSeeder extends Seeder
 
         $rrhh = Role::create(['name' => 'rrhh']);
         $rrhhPermissions = [
+            '15','18','19',
             '105', '106', '107', '108', '109', '110', '111',
         ];
         $rrhh->givePermissionTo($rrhhPermissions);

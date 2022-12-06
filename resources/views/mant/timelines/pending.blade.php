@@ -16,9 +16,10 @@
                 </thead>
                 <tbody>
                     @foreach ($timelines as $timeline)
-                        <tr>
+                        <tr class="even:bg-blue-200 odd:bg-white">
                             <td width="20%">
                                 <p class="text-gray-400 font-bold text-sm">{{ $timeline->equipment() }}</p>
+                                <p class="text-gray-400 font-bold text-xs">{{ $timeline->location() }}</p>
 
                             </td>
                             <td width="20%">
@@ -41,10 +42,10 @@
                             </td>
 
                             <td width="26%" class="text-justify text-xs text-gray-400">
-                                @if($timeline->user_id)
+                                @if($timeline->team_id)
                                 <div class="bg-green-200 text-center p-3">
                                 <p class="text-gray-600 font-bold text-xs">Personal Responsable</p>
-                                <p class="text-gray-600 font-bold text-xs">{{ $timeline->assigned()->user->name }}</p></div>
+                                <p class="text-gray-600 font-bold text-xs">{{ $timeline->assigned()->name }}</p></div>
                                 @else
                                 <div class="bg-red-200 text-center p-3">
                                 <p class="text-gray-600 font-bold text-xs">Personal Disponible</p>
@@ -55,7 +56,7 @@
                                 @endif
                             </td>
 
-                            <td class="text-center flex items-center justify-between">
+                            <td class="text-center">
                                 <a href="{{ route('timelines.boss',$timeline->id) }}" title="{{ __('assign boss') . $timeline->name }}"><i
                                         class="icono text-blue-600 fa-solid fa-people-group"></i></a>
 

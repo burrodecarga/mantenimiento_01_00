@@ -18,10 +18,10 @@ class TimelineController extends Controller
     public function assigned()
     {
 
-        $teamId = auth()->user()->teams->first()->id;
-        $team = Team::find($teamId);
-        $timelines = Timeline::where('status', 0)->where('user_id',$team->user_id)->get();
-        dd($team->name,$team->id,$timelines,auth()->user()->id);
+$userId = auth()->user()->id;
+$team = Team::where('user_id', $userId)->first();
+$timelines = Timeline::where('status', 0)->where('team_id', $team->id)->get();
+
         return view('mant.timelines.assigned', compact('timelines'));
     }
 
@@ -34,7 +34,8 @@ class TimelineController extends Controller
          $request->validate([
             'workers_id'=>'required',
          ]);
-$timeline->user_id = $request->input('workers_id');
+$timeline->team_id = $request->input('workers_id');
+
 
          $timeline->save();
          return redirect()->route('timelines.pending')->with('success','Responsable asignado Correctamente');

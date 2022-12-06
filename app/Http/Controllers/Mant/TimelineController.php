@@ -23,7 +23,8 @@ class TimelineController extends Controller
          $request->validate([
             'workers_id'=>'required',
          ]);
-         $timeline->workers_id = $request->input('workers_id');
+$timeline->user_id = $request->input('workers_id');
+
          $timeline->save();
          return redirect()->route('timelines.pending')->with('success','Responsable asignado Correctamente');
     }

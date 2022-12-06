@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('protocol_id');
             $table->unsignedBigInteger('equipment_id');
             $table->string('specialty_id');
+$table->unsignedBigInteger('user_id')->nullable();
+
             $table->integer('position')->default(1);
 $table->integer('sequence')->default(1);
 

@@ -41,9 +41,18 @@
                             </td>
 
                             <td width="26%" class="text-justify text-xs text-gray-400">
+                                @if($timeline->user_id)
+                                <div class="bg-green-200 text-center p-3">
+                                <p class="text-gray-600 font-bold text-xs">Personal Responsable</p>
+                                <p class="text-gray-600 font-bold text-xs">{{ $timeline->assigned()->user->name }}</p></div>
+                                @else
+                                <div class="bg-red-200 text-center p-3">
+                                <p class="text-gray-600 font-bold text-xs">Personal Disponible</p>
                                 @foreach ($timeline->boss() as $b)
-                                    <p class="text-red-400 font-bold text-xs">{{ $b->user->name }}</p>
+                                    <p class="text-gray-600 font-bold text-xs">{{ $b->user->name }}</p>
                                 @endforeach
+                                </div>
+                                @endif
                             </td>
 
                             <td class="text-center flex items-center justify-between">

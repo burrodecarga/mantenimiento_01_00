@@ -7,6 +7,8 @@ use App\Models\Replacement;
 use App\Models\Service;
 use App\Models\Supply;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+
 
 class GoalSeeder extends Seeder
 {

@@ -71,7 +71,7 @@ class UserSeeder extends Seeder
         $user->assignRole('supervisor');
 
         $user= User::create([
-            'name' => 'Tecnico Edwin Henriquez',
+            'name' => 'Jefe de Team de tareas',
             'email' => 'tecnico@gmail.com',
             'email_verified_at' => now(),
             'password' =>  bcrypt('123'),
@@ -81,7 +81,7 @@ class UserSeeder extends Seeder
         $user->assignRole('tecnico');
 
         $team = Team::create([
-            'name' => 'Equipo de Tareas Edwin',
+            'name' => 'Equipo de Tareas',
             'specialty_id' => Specialty::all()->random()->id,
             'user_id' => $user->id,
             'personal_team' => true,

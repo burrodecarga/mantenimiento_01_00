@@ -113,7 +113,8 @@ class FailController extends Controller
 
     public function tasks(){
 
-        $team = auth()->user()->team;
+$team = auth()->user()->teams()->first();
+
         $fails = $team->fails()->where('status',0)->get();
         return view('mant.fails.tasks',compact('fails'));
     }
@@ -121,7 +122,8 @@ class FailController extends Controller
 
     public function repareid(){
 
-        $team = auth()->user()->team;
+$team = auth()->user()->teams()->first();
+
         $fails = $team->fails()->where('status',1)->get();
         return view('mant.fails.repareid',compact('fails'));
     }

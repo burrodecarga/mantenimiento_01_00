@@ -61,12 +61,9 @@
                             <td class="text-center">
                                 <a href="{{ route('timelines.boss',$timeline->id) }}" title="{{ __('assign boss') . $timeline->name }}"><i
                                         class="icono text-blue-600 fa-solid fa-people-group"></i></a>
-
                             </td>
-
                         </tr>
                     @endforeach
-
                 </tbody>
             </table>
         </div>

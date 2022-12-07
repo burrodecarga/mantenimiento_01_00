@@ -7,7 +7,6 @@ use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\Team as JetstreamTeam;
-
 class Team extends JetstreamTeam
 {
     use HasFactory;
@@ -74,9 +73,18 @@ class Team extends JetstreamTeam
         $cost=0;
         foreach($this->users as $p){
 
-            $cost= $p->profile->salary+$cost;
+            if($p->profile){
+                $cost= $p->profile->salary+$cost;
+            }
+
         }
-        $cost = User::find($this->user_id)->profile->salary+$cost;
+
+       $profile = Profile::where('user_id',$this->user_id)->get();
+       $salary=0;
+       foreach($profile as $p){
+        $salary = $p->salary;
+       }
+        $cost = $salary+$cost;
         return $cost;
     }
 

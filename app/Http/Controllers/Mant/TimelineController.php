@@ -19,6 +19,13 @@ class TimelineController extends Controller
     {
 
         $team = auth()->user()->teams()->first();
+        if (!$team) {
+            $team = auth()->user()->team;
+            if (!$team) {
+                return redirect()->route('dashboard')->with('fail', 'Usuario no está asignado a ningún equipo de tareas');
+            }
+        }
+
         $timelines = Timeline::where('status', 0)->where('team_id', $team->id)->get();
 
         return view('mant.timelines.assigned', compact('timelines'));

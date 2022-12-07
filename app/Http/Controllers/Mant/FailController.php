@@ -115,6 +115,13 @@ class FailController extends Controller
 
 $team = auth()->user()->teams()->first();
 
+if (!$team) {
+    $team = auth()->user()->team;
+    if (!$team) {
+        return redirect()->route('dashboard')->with('fail', 'Usuario no está asignado a ningún equipo de tareas');
+    }
+}
+
         $fails = $team->fails()->where('status',0)->get();
         return view('mant.fails.tasks',compact('fails'));
     }
@@ -123,6 +130,13 @@ $team = auth()->user()->teams()->first();
     public function repareid(){
 
 $team = auth()->user()->teams()->first();
+
+if (!$team) {
+    $team = auth()->user()->team;
+    if (!$team) {
+        return redirect()->route('dashboard')->with('fail', 'Usuario no está asignado a ningún equipo de tareas');
+    }
+}
 
         $fails = $team->fails()->where('status',1)->get();
         return view('mant.fails.repareid',compact('fails'));

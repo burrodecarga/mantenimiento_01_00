@@ -35,6 +35,8 @@ class Timeline extends Model
         return $teams = Team::where('specialty_id',$this->specialty_id)->get();
     }
 
+    
+
 
     public function assigned(){
 return $team = Team::find($this->team_id);

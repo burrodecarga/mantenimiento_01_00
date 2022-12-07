@@ -48,4 +48,9 @@ class TimelineController extends Controller
         return redirect()->route('timelines.pending')->with('success', 'Responsable asignado Correctamente');
     }
 
+    public function work(Timeline $timeline)
+    {
+        return view('mant.timelines.work', compact('timeline'));
+    }
+
 }

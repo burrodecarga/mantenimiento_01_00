@@ -68,6 +68,14 @@ class Team extends JetstreamTeam
         return $this->belongsToMany(Goal::class)->withTimestamps();
     }
 
+    public function bossName(){
+        $user= User::find($this->user_id);
+        if($user){
+            return $user->name;
+        }else{
+            return 'name error';
+        }
+    }
 
     public function cost(){
         $cost=0;

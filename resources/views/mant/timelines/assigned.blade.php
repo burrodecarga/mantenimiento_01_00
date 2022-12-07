@@ -10,7 +10,7 @@
                         <th>Task</th>
                         <th>Start</th>
                         <th>End</th>
-                        <th>Teams</th>
+                        <th>Detail</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -19,6 +19,7 @@
                         <tr>
                             <td width="20%">
                                 <p class="text-gray-400 font-bold text-sm">{{ $timeline->equipment() }}</p>
+                                <p class="text-gray-400 font-bold text-xs">{{ $timeline->location() }}</p>
 
                             </td>
                             <td width="20%">
@@ -41,21 +42,23 @@
                             </td>
 
                             <td width="26%" class="text-justify text-xs text-gray-400">
-                                @if($timeline->user_id)
-                                <div class="bg-green-200 text-center p-3">
-                                <p class="text-gray-600 font-bold text-xs">Personal Responsable</p>
-                                <p class="text-gray-600 font-bold text-xs">{{ $timeline->assigned()->user->name }}</p></div>
-                                @else
-                                <div class="bg-red-200 text-center p-3">
-                                <p class="text-gray-600 font-bold text-xs">Personal Disponible</p>
-                                @foreach ($timeline->boss() as $b)
-                                    <p class="text-gray-600 font-bold text-xs">{{ $b->user->name }}</p>
+                                <p>{{ $timeline->detail }}</p>
+                                <hr>
+                                @foreach($timeline->replacements() as $r)
+                                <p>{{ $r->quantity.' : '.$r->name }}</p>
                                 @endforeach
-                                </div>
-                                @endif
+                                <hr>
+                                @foreach($timeline->supplies() as $r)
+                                <p>{{ $r->quantity.' : '.$r->name }}</p>
+                                @endforeach
+                                <hr>
+                                @foreach($timeline->services() as $r)
+                                <p>{{ $r->quantity.' : '.$r->name }}</p>
+                                @endforeach
+
                             </td>
 
-                            <td class="text-center flex items-center justify-between">
+                            <td class="text-center">
                                 <a href="{{ route('timelines.boss',$timeline->id) }}" title="{{ __('assign boss') . $timeline->name }}"><i
                                         class="icono text-blue-600 fa-solid fa-people-group"></i></a>
 

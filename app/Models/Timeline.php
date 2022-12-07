@@ -41,6 +41,27 @@ return $team = Team::find($this->team_id);
 
     }
 
+    public function replacements(){
+        $goal = Goal::where('protocol_id',$this->protocol_id)
+                    ->where('equipment_id',$this->equipment_id)->first();
+        return $goal->replacements;
+    }
+
+    public function services(){
+        $goal = Goal::where('protocol_id',$this->protocol_id)
+                    ->where('equipment_id',$this->equipment_id)->first();
+        return $goal->services;
+    }
+
+    public function supplies(){
+        $goal = Goal::where('protocol_id',$this->protocol_id)
+                    ->where('equipment_id',$this->equipment_id)->first();
+        return $goal->supplies;
+    }
+
+
+
+
 
 
 

@@ -31,6 +31,7 @@ Route::get('/timelines/pending', [TimelineController::class, 'pending'])->name('
 
 
 
+
 Route::get('/plans/timeline/{plan}',[PlanController::class,'timeline'])->name('plans.timeline');
 
 Route::get('/plans/protocols/{plan}',[PlanController::class,'protocols'])->name('plans.protocols');

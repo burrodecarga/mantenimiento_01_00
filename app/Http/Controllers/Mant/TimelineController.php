@@ -18,29 +18,27 @@ class TimelineController extends Controller
     public function assigned()
     {
 
-$userId = auth()->user()->id;
-$team = Team::where('user_id', $userId)->first();
-$timelines = Timeline::where('status', 0)->where('team_id', $team->id)->get();
+        $team = auth()->user()->teams()->first();
+        $timelines = Timeline::where('status', 0)->where('team_id', $team->id)->get();
 
         return view('mant.timelines.assigned', compact('timelines'));
     }
 
-    public function boss(Timeline $timeline){
+    public function boss(Timeline $timeline)
+    {
         $teams = $timeline->boss();
-        return view('mant.timelines.boss',compact('teams','timeline'));
+        return view('mant.timelines.boss', compact('teams', 'timeline'));
     }
 
-    public function worker(Request $request, Timeline $timeline ){
-         $request->validate([
-            'workers_id'=>'required',
-         ]);
-$timeline->team_id = $request->input('workers_id');
+    public function worker(Request $request, Timeline $timeline)
+    {
+        $request->validate([
+            'workers_id' => 'required',
+        ]);
+        $timeline->team_id = $request->input('workers_id');
 
-
-         $timeline->save();
-         return redirect()->route('timelines.pending')->with('success','Responsable asignado Correctamente');
+        $timeline->save();
+        return redirect()->route('timelines.pending')->with('success', 'Responsable asignado Correctamente');
     }
-
-
 
 }

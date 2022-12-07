@@ -9,6 +9,7 @@ use App\Models\Zone;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class TeamSeeder extends Seeder
 {
     /**
@@ -22,6 +23,11 @@ class TeamSeeder extends Seeder
             $zones = Zone::all()->random()->pluck('id');
             $team->zones()->attach($zones);
             $users = User::all()->random(4)->pluck('id');
+$role = Role::find(7);
+foreach ($users as $user) {
+    User::find($user)->assignRole($role);
+}
+
             $team->users()->attach($users);
         });
 

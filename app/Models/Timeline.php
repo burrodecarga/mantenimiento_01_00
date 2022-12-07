@@ -35,7 +35,7 @@ class Timeline extends Model
         return $teams = Team::where('specialty_id',$this->specialty_id)->get();
     }
 
-    
+
 
 
     public function assigned(){
@@ -60,6 +60,12 @@ return $team = Team::find($this->team_id);
                     ->where('equipment_id',$this->equipment_id)->first();
         return $goal->supplies;
     }
+
+    public function comments()
+    {
+        return $this->morphToMany(Comment::class, 'commentable');
+    }
+
 
 
 

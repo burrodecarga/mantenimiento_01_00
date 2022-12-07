@@ -50,7 +50,11 @@ class TimelineController extends Controller
 
     public function work(Timeline $timeline)
     {
-        return view('mant.timelines.work', compact('timeline'));
+$user = auth()->user();
+$team = $user->teams()->first();
+
+return view('mant.timelines.work', compact('timeline', 'team'));
+
     }
 
 }

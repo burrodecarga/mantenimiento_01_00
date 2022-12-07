@@ -67,12 +67,12 @@
                         <h1 class="text-xl font-bold text-gray-500">Despeje de falla</h1>
                         <hr class="mt-2 mb-3">
                         <div class="">
-                            <form method="POST" action="{{ route('timelines.despeje', $timeline->id) }}" class="p-2 text-sm">
+                            <form method="POST" action="" class="p-2 text-sm">
                                 @method('post')
                                 @csrf
                                 <div class=" ml-2 w-full">
                                     <x-jet-input-error for="users" />
-                                    @foreach (auth()->user()->team->users as $t)
+                                    @foreach ($team->users as $t)
                                         <div class="flex justify-start items-center gap-3">
                                             <input type="checkbox" value="{{ $t->id }}" name="users[]">
                                             <label>{{ $t->name }}</label>

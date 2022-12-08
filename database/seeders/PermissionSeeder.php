@@ -205,5 +205,8 @@ Permission::create(['name'=>'timelines.pending','permission'=>'timelines pending
 //listado de permisos para replacements 137
 Permission::create(['name' => 'timelines.assigned', 'permission' => 'timelines assigned']);
 
+//listado de permisos para CEO 138
+Permission::create(['name' => 'statistics.index', 'permission' => 'statistics index']);
+
         }
 }

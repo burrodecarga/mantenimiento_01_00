@@ -47,7 +47,7 @@ class RoleSeeder extends Seeder
 
         $rrhh = Role::create(['name' => 'rrhh']);
         $rrhhPermissions = [
-            '15','18','19',
+            '15', '18', '19',
             '105', '106', '107', '108', '109', '110', '111',
         ];
         $rrhh->givePermissionTo($rrhhPermissions);
@@ -55,21 +55,27 @@ class RoleSeeder extends Seeder
         $supervisor = Role::create(['name' => 'supervisor']);
         $supervisorPermissions = [
             '112', '113', '114', '115', '116', '117', '118',
-            '119', '120', '121', '122', '123', '124', '125','136'
+            '119', '120', '121', '122', '123', '124', '125', '136',
         ];
         $supervisor->givePermissionTo($supervisorPermissions);
 
         $tecnico = Role::create(['name' => 'tecnico']);
         $tecnicoPermissions = [
-            '127', '128','137'
+            '127', '128', '137',
         ];
         $tecnico->givePermissionTo($tecnicoPermissions);
 
         $jefe = Role::create(['name' => 'jefe']);
         $jefePermissions = [
-            '129', '130','131', '132', '133', '134', '135',
+            '129', '130', '131', '132', '133', '134', '135',
         ];
         $jefe->givePermissionTo($jefePermissions);
+
+        $ceo = Role::create(['name' => 'ceo']);
+        $ceoPermissions = [
+            '138',
+        ];
+        $ceo->givePermissionTo($ceoPermissions);
 
     }
 }

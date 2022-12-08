@@ -42,6 +42,8 @@ $this->call(ToolSeeder::class);
 $this->call(PlanSeeder::class);
 
 $this->call(GoalSeeder::class);
+$this->call(TimelineSeeder::class);
+
 
     }
 }

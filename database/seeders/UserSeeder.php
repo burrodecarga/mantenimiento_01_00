@@ -97,6 +97,16 @@ class UserSeeder extends Seeder
 
         $user->assignRole('jefe');
 
+$user = User::create([
+    'name' => 'CEO Edwin Henriquez',
+    'email' => 'ceo@gmail.com',
+    'email_verified_at' => now(),
+    'password' => bcrypt('123'),
+    'remember_token' => Str::random(10),
+]);
+
+$user->assignRole('ceo');
+
 
         User::factory(4)->create()->each(function($user) use($team){
             $user->profile->salary = rand(3000,50000);

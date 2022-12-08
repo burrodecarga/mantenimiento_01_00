@@ -25,7 +25,6 @@ class FailController extends Controller
     {
         $fails = Fail::orderBy('status','asc')
                        ->get();
-
         return view('mant.fails.index',compact('fails'));
     }
 
@@ -63,6 +62,7 @@ class FailController extends Controller
          }
 
          $resume = Resume::where('fail',$fail->id)->first();
+         if($resume == null){return redirect()->route('fails.repareid')->with('success','Falla reparada sin resumen.');}
          $w=str_split($resume->workers);
          $users = User::find($w);
          return view('mant.fails.show', compact('resume','fail','users'));
@@ -146,7 +146,10 @@ if (!$team) {
 
 
     public function repair(Fail $fail){
-        return view('mant.fails.repair',compact('fail'));
+$user = auth()->user();
+$team = $user->teams()->first();
+return view('mant.fails.repair', compact('fail', 'team'));
+
     }
 
     public function despeje(Request $request, Fail $fail){

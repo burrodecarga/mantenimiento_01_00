@@ -72,7 +72,7 @@
                                 @csrf
                                 <div class=" ml-2 w-full">
                                     <x-jet-input-error for="users" />
-                                    @foreach (auth()->user()->team->users as $t)
+                                    @foreach ($team->users as $t)
                                         <div class="flex justify-start items-center gap-3">
                                             <input type="checkbox" value="{{ $t->id }}" name="users[]">
                                             <label>{{ $t->name }}</label>

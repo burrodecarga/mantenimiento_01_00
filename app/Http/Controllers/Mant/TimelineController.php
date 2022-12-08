@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Mant;
 use App\Http\Controllers\Controller;
 use App\Models\Team;
 use App\Models\Timeline;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TimelineController extends Controller
@@ -22,7 +23,7 @@ class TimelineController extends Controller
         if (!$team) {
             $team = auth()->user()->team;
             if (!$team) {
-                return redirect()->route('dashboard')->with('fail', 'Usuario no está asignado a ningún equipo de tareas');
+                return redirect()->route('dashboard')->with('timeline', 'Usuario no está asignado a ningún equipo de tareas');
             }
         }
 
@@ -64,27 +65,28 @@ class TimelineController extends Controller
         $timeline->done= now();
         $this->resume($timeline,$workers);
         $timeline->save();
-        return redirect()->route('fails.tasks')->with('success','Falla reparada.');
+return redirect()->route('timelines.assigned')->with('success', 'Tarea Realizada.');
+
 
     }
 
-    public function resume(Fail $fail, $workers){
+    public function resume(Timeline $timeline, $workers){
 
-        $failreplacementstotal=0;
+        $timelinereplacementstotal=0;
 
-        foreach($fail->replacements as $r){
-            $failreplacementstotal =$failreplacementstotal+$r->pivot->total;
+        foreach($timeline->replacements as $r){
+            $timelinereplacementstotal =$timelinereplacementstotal+$r->pivot->total;
         }
 
 
-        $failsupliestotal=0;
-        foreach($fail->supplies as $r){
-            $failsupliestotal =$failsupliestotal+$r->pivot->total;
+        $timelinesupliestotal=0;
+        foreach($timeline->supplies as $r){
+            $timelinesupliestotal =$timelinesupliestotal+$r->pivot->total;
         }
 
-        $failservicestotal=0;
-        foreach($fail->services as $r){
-            $failservicestotal =$failservicestotal+$r->pivot->total;
+        $timelineservicestotal=0;
+        foreach($timeline->services as $r){
+            $timelineservicestotal =$timelineservicestotal+$r->pivot->total;
         }
 
         $totalworkers=0;
@@ -99,24 +101,18 @@ class TimelineController extends Controller
 
         }
 
-       $time = $fail->reported_at->diffInHours($fail->repareid_ad);
-       $days = $fail->reported_at->diffInDays($fail->repareid_ad);
+       $time = $timeline->start->diffInHours($timeline->done);
+       $days = $timeline->start->diffInDays($timeline->done);
 
 
 
-        Resume::create([
-        'fail'=>$fail->id,
-        'equipment'=>$fail->equipment_id,
-        'type'=>0,
-        'total_replacement' =>$failreplacementstotal,
-        'total_supply' =>$failsupliestotal,
-        'total_service' =>$failservicestotal,
+        $timeline->update([
+        'total_replacement' =>$timelinereplacementstotal,
+        'total_supply' =>$timelinesupliestotal,
+        'total_service' =>$timelineservicestotal,
         'total_workers' =>$totalworkers,
-        'workers' => $str,
-        'total'=>($failreplacementstotal+$failsupliestotal+$failservicestotal+$totalworkers),
-        'reported_at'=>$fail->reported_at,
-        'repareid_at'=>$fail->repareid_at,
-        'assigned_at'=>$fail->assigned_at,
+        'workers_id' => $str,
+        'total'=>($timelinereplacementstotal+$timelinesupliestotal+$timelineservicestotal+$totalworkers),
         'time'=>$time,
         'days'=>$days
 

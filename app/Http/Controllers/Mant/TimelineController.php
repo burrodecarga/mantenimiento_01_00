@@ -56,4 +56,73 @@ class TimelineController extends Controller
 
     }
 
+    public function despeje(Request $request, Timeline $timeline){
+        $workers = $request->validate([
+            'users'=>'required',
+           ]);
+        $timeline->status =1;
+        $timeline->done= now();
+        $this->resume($timeline,$workers);
+        $timeline->save();
+        return redirect()->route('fails.tasks')->with('success','Falla reparada.');
+
+    }
+
+    public function resume(Fail $fail, $workers){
+
+        $failreplacementstotal=0;
+
+        foreach($fail->replacements as $r){
+            $failreplacementstotal =$failreplacementstotal+$r->pivot->total;
+        }
+
+
+        $failsupliestotal=0;
+        foreach($fail->supplies as $r){
+            $failsupliestotal =$failsupliestotal+$r->pivot->total;
+        }
+
+        $failservicestotal=0;
+        foreach($fail->services as $r){
+            $failservicestotal =$failservicestotal+$r->pivot->total;
+        }
+
+        $totalworkers=0;
+        $str='';
+
+        foreach($workers as $key=>$w){
+          $str = implode(',',$w);
+           $users = User::find($w);
+           foreach($users as $u){
+               $totalworkers= $totalworkers+$u->profile->salary;
+           }
+
+        }
+
+       $time = $fail->reported_at->diffInHours($fail->repareid_ad);
+       $days = $fail->reported_at->diffInDays($fail->repareid_ad);
+
+
+
+        Resume::create([
+        'fail'=>$fail->id,
+        'equipment'=>$fail->equipment_id,
+        'type'=>0,
+        'total_replacement' =>$failreplacementstotal,
+        'total_supply' =>$failsupliestotal,
+        'total_service' =>$failservicestotal,
+        'total_workers' =>$totalworkers,
+        'workers' => $str,
+        'total'=>($failreplacementstotal+$failsupliestotal+$failservicestotal+$totalworkers),
+        'reported_at'=>$fail->reported_at,
+        'repareid_at'=>$fail->repareid_at,
+        'assigned_at'=>$fail->assigned_at,
+        'time'=>$time,
+        'days'=>$days
+
+     ]);
+    }
+
+
+
 }

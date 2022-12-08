@@ -29,6 +29,8 @@ Route::get('/timelines/boss/{timeline}', [TimelineController::class, 'boss'])->n
 Route::post('/timelines/worker/{timeline}', [TimelineController::class, 'worker'])->name('timelines.worker');
 Route::get('/timelines/pending', [TimelineController::class, 'pending'])->name('timelines.pending');
 Route::get('/timelines/work/{timeline}', [TimelineController::class, 'work'])->name('timelines.work');
+Route::post('/timeline/despeje/{timeline}', [TimelineController::class, 'despeje'])->name('timelines.despeje');
+
 
 
 

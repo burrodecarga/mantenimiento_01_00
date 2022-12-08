@@ -64,10 +64,10 @@
                         @livewire('mant.timelines.timeline-comment-list', ['timeline' => $timeline])
                     </div>
                     <div class="bg-gray-100">
-                        <h1 class="text-xl font-bold text-gray-500">Despeje de falla</h1>
+                        <h1 class="text-xl font-bold text-gray-500">Finalizar Tarea</h1>
                         <hr class="mt-2 mb-3">
                         <div class="">
-                            <form method="POST" action="" class="p-2 text-sm">
+                            <form method="POST" action="{{ route('timelines.despeje',$timeline->id) }}" class="p-2 text-sm">
                                 @method('post')
                                 @csrf
                                 <div class=" ml-2 w-full">
@@ -79,7 +79,7 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                <button class="btn btn-blue mt-2 ml-2">Despejar</button>
+                                <button class="btn btn-blue mt-2 ml-2">Tarea Ejecutada</button>
                             </form>
                         </div>
                     </div>

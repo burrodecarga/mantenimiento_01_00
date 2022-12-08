@@ -8,6 +8,6 @@ class CeoController extends Controller
 {
     public function index()
     {
-
+ 
     }
 }

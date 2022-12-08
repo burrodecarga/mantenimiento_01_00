@@ -26,7 +26,8 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $user->assignRole('admin');
+$user->syncRoles(['admin']);
+
 
         $user= User::create([
             'name' => 'Planer Edwin Henriquez',
@@ -36,7 +37,8 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $user->assignRole('planner');
+$user->syncRoles(['planner']);
+
 
 
         $user= User::create([
@@ -47,7 +49,8 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $user->assignRole('storer');
+$user->syncRoles(['storer']);
+
 
 
         $user= User::create([
@@ -58,7 +61,8 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $user->assignRole('rrhh');
+$user->syncRoles(['rrhh']);
+
 
         $user= User::create([
             'name' => 'Supervisor Edwin Henriquez',
@@ -68,7 +72,8 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $user->assignRole('supervisor');
+$user->syncRoles(['supervisor']);
+
 
         $user= User::create([
             'name' => 'Jefe de Team de tareas',
@@ -78,7 +83,8 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $user->assignRole('tecnico');
+$user->syncRoles(['tecnico']);
+
 
         $team = Team::create([
             'name' => 'Equipo de Tareas',
@@ -95,7 +101,8 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        $user->assignRole('jefe');
+$user->syncRoles(['jefe']);
+
 
 $user = User::create([
     'name' => 'CEO Edwin Henriquez',
@@ -105,10 +112,9 @@ $user = User::create([
     'remember_token' => Str::random(10),
 ]);
 
-$user->assignRole('ceo');
+$user->syncRoles(['ceo']);
 
-
-        User::factory(4)->create()->each(function($user) use($team){
+User::factory(4)->create()->each(function($user) use($team){
             $user->profile->salary = rand(3000,50000);
             $user->profile->save();
             $team->users()->attach($user->id);

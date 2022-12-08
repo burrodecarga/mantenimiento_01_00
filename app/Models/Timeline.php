@@ -43,23 +43,36 @@ return $team = Team::find($this->team_id);
 
     }
 
-    public function replacements(){
+    public function fnReplacements(){
         $goal = Goal::where('protocol_id',$this->protocol_id)
                     ->where('equipment_id',$this->equipment_id)->first();
         return $goal->replacements;
     }
 
-    public function services(){
+    public function fnServices(){
         $goal = Goal::where('protocol_id',$this->protocol_id)
                     ->where('equipment_id',$this->equipment_id)->first();
         return $goal->services;
     }
 
-    public function supplies(){
+    public function fnSupplies(){
         $goal = Goal::where('protocol_id',$this->protocol_id)
                     ->where('equipment_id',$this->equipment_id)->first();
         return $goal->supplies;
     }
+
+    public function replacements(){
+        return $this->belongsToMany(Replacement::class)->withPivot('id','price','quantity','total')->withTimestamps();
+    }
+
+    public function supplies(){
+        return $this->belongsToMany(Supply::class)->withPivot('id','price','quantity','total')->withTimestamps();
+    }
+
+    public function services(){
+        return $this->belongsToMany(Service::class)->withPivot('id','price','total')->withTimestamps();
+    }
+
 
     public function comments()
     {

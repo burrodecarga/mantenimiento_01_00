@@ -20,4 +20,8 @@ class Service extends Model
         return $this->belongsToMany(Goal::class)->withPivot('id','price','quantity','total')->withTimestamps();
     }
 
+    public function timelines(){
+        return $this->belongsToMany(Timeline::class)->withPivot('id','price','total')->withTimestamps();
+    }
+
 }

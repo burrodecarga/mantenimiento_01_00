@@ -44,15 +44,15 @@
                             <td width="26%" class="text-justify text-xs text-gray-400">
                                 <p>{{ $timeline->detail }}</p>
                                 <hr>
-                                @foreach($timeline->replacements() as $r)
+                                @foreach($timeline->fnReplacements() as $r)
                                 <p>{{ $r->quantity.' : '.$r->name }}</p>
                                 @endforeach
                                 <hr>
-                                @foreach($timeline->supplies() as $r)
+                                @foreach($timeline->fnSupplies() as $r)
                                 <p>{{ $r->quantity.' : '.$r->name }}</p>
                                 @endforeach
                                 <hr>
-                                @foreach($timeline->services() as $r)
+                                @foreach($timeline->fnServices() as $r)
                                 <p>{{ $r->quantity.' : '.$r->name }}</p>
                                 @endforeach
 

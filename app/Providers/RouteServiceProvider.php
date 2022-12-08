@@ -61,6 +61,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/mant.php'));
 
+Route::middleware('web', 'auth', 'role_or_permission:ceo|super-admin')
+    ->prefix('ceo')
+    ->namespace($this->namespace)
+    ->group(base_path('routes/ceo.php'));
+
 
 
 

@@ -12,11 +12,10 @@ class DatosService implements DatosServiceInterface
         echo "Funciona correctamente";
     }
 
-    public function failCost(){
+    public function timelinesCostByTask(){
 
     $timelines = Timeline::withSum('replacements','replacement_timeline.total')
                          ->withSum('supplies','supply_timeline.total')
-                         ->withSum('services','service_timeline.price')
                          ->withSum('services','service_timeline.total')->get();
 
         return $timelines;

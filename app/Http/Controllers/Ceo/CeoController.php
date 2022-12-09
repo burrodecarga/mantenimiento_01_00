@@ -9,6 +9,9 @@ class CeoController extends Controller
 {
     public function index(DatosServiceInterface $datosServiceInterface)
     {
-      $datosServiceInterface->prueba();
+$timelines = $datosServiceInterface->timelineCostByTask();
+dd(json_decode($timelines));
+return view('ceo.index');
+
     }
 }

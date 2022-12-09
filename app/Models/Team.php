@@ -84,7 +84,6 @@ class Team extends JetstreamTeam
             if($p->profile){
                 $cost= $p->profile->salary+$cost;
             }
-
         }
 
        $profile = Profile::where('user_id',$this->user_id)->get();

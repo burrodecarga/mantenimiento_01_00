@@ -204,7 +204,7 @@ return view('mant.fails.repair', compact('fail', 'team'));
         Resume::create([
         'fail'=>$fail->id,
         'equipment'=>$fail->equipment_id,
-        'type'=>0,
+        'type'=>$fail->type,
         'total_replacement' =>$failreplacementstotal,
         'total_supply' =>$failsupliestotal,
         'total_service' =>$failservicestotal,

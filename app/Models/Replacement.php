@@ -23,6 +23,7 @@ class Replacement extends Model
         return $this->belongsToMany(Timeline::class)->withPivot('id','price','quantity','total')->withTimestamps();
     }
 
+   
 
 
 }

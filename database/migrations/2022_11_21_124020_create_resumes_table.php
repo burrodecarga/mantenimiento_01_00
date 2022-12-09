@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('fail');
             $table->unsignedBigInteger('equipment');
-            $table->integer('type')->default(0);
+            $table->string('type');
             $table->float('total_replacement', 12, 2)->default(0);
             $table->float('total_supply', 12, 2)->default(0);
             $table->float('total_service', 12, 2)->default(0);

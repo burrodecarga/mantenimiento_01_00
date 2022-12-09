@@ -79,6 +79,14 @@ return $team = Team::find($this->team_id);
         return $this->morphToMany(Comment::class, 'commentable');
     }
 
+    public function replacement(){
+         $r = Replacement::Find($this->replacement_id);
+         if($r){
+            return $r->name;
+         }
+    }
+
+
 
 
 

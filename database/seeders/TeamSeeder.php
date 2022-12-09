@@ -6,10 +6,8 @@ use App\Models\Fail;
 use App\Models\Team;
 use App\Models\User;
 use App\Models\Zone;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
-
 
 class TeamSeeder extends Seeder
 {
@@ -20,15 +18,15 @@ class TeamSeeder extends Seeder
      */
     public function run()
     {
-        Team::factory(8)->create()->each(function($team){
+        Team::factory(8)->create()->each(function ($team) {
             $zones = Zone::all()->random()->pluck('id');
             $team->zones()->attach($zones);
-            $users = User::where('id','>',7)->get()->random(4)->pluck('id');
-$role = Role::find(7);
-foreach ($users as $user) {
-User::find($user)->assignRole($role);
+            $users = User::where('id', '>', 7)->get()->random(4)->pluck('id');
+            $role = Role::find(7);
+            foreach ($users as $user) {
+                User::find($user)->assignRole($role);
 
-}
+            }
 
             $team->users()->attach($users);
         });

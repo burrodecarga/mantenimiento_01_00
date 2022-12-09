@@ -115,7 +115,6 @@ return redirect()->route('timelines.assigned')->with('success', 'Tarea Realizada
         'total'=>($timelinereplacementstotal+$timelinesupliestotal+$timelineservicestotal+$totalworkers),
         'time'=>$time,
         'days'=>$days
-
      ]);
     }
 

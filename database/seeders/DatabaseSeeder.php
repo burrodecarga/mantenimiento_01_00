@@ -33,7 +33,7 @@ $this->call(PrototypeSeeder::class);
 
 $this->call(FailSeeder::class);
 Equipment::factory(30)->create();
-Fail::factory(30)->create();
+Fail::factory(230)->create();
 $this->call(TeamSeeder::class);
 $this->call(ReplacementSeeder::class);
 $this->call(ServiceSeeder::class);

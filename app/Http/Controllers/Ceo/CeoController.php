@@ -9,9 +9,14 @@ class CeoController extends Controller
 {
     public function index(DatosServiceInterface $datosServiceInterface)
     {
-$timelines = $datosServiceInterface->timelineCostByTask();
-dd(json_decode($timelines));
-return view('ceo.index');
+$resp = $datosServiceInterface->gastosDeFallas();
+
+foreach ($resp as $r){
+   $repuestos[]=['name'=>'repuestos','y'=>floatval($r->repuestos)];
+   $insumos[]=['name'=>'insumos','y'=>floatval($r->insumos)];
+   $servicios[]=['name'=>'servicios','y'=>floatval($r->servicios)];
+}
+return view('ceo.index',compact('repuestos','insumos','servicios'));
 
     }
 }

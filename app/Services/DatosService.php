@@ -22,5 +22,15 @@ class DatosService implements DatosServiceInterface
     }
 
 
-   
+    public function gastosDeMantenimiento(){
+
+        $gm=Timeline::select(DB::raw('DAY(start) as mes'),DB::raw('SUM(total_replacement) as repuestos_mant'), DB::raw('SUM(total_supply) as insumos_mant'),DB::raw('SUM(total_service) as servicios_mant'),DB::raw('SUM(total_workers) as personal_mant'),DB::raw('SUM(total) as costos_mant'))
+        ->groupBy('mes')->get();
+        return $gm;
+    }
+
+
+    public function gastosDeFallas(){
+
+    }
 }

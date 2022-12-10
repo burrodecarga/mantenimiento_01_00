@@ -9,14 +9,10 @@ class CeoController extends Controller
 {
     public function index(DatosServiceInterface $datosServiceInterface)
     {
-$resp = $datosServiceInterface->gastosDeFallas();
+    $resp = $datosServiceInterface->gastosDeMantenimiento();
+    dd($resp);
 
-foreach ($resp as $r){
-   $repuestos[]=['name'=>'repuestos','y'=>floatval($r->repuestos)];
-   $insumos[]=['name'=>'insumos','y'=>floatval($r->insumos)];
-   $servicios[]=['name'=>'servicios','y'=>floatval($r->servicios)];
-}
-return view('ceo.index',compact('repuestos','insumos','servicios'));
+return view('Ceo.index');
 
     }
 }

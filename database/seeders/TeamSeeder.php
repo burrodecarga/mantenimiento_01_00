@@ -21,7 +21,7 @@ class TeamSeeder extends Seeder
         Team::factory(8)->create()->each(function ($team) {
             $zones = Zone::all()->random()->pluck('id');
             $team->zones()->attach($zones);
-            $users = User::where('id', '>', 7)->get()->random(4)->pluck('id');
+            $users = User::where('id', '>', 8)->get()->random(4)->pluck('id');
             $role = Role::find(7);
             foreach ($users as $user) {
                 User::find($user)->assignRole($role);

@@ -23,7 +23,8 @@ $navlinks=[
 ['name'=>'plans','route'=>'plans.index','active'=>request()->routeIs('plans.index')],
 ['name'=>'timelines','route'=>'timelines.pending','active'=>request()->routeIs('timelines.pending')],
 ['name'=>'timelines','route'=>'timelines.assigned','active'=>request()->routeIs('timelines.assigned')],
-['name'=>'statistics','route'=>'statistics.index','active'=>request()->routeIs('statistics.index')],
+['name'=>'gastos','route'=>'statistics.index','active'=>request()->routeIs('statistics.index')],
+['name'=>'gastos personal','route'=>'statistics.teams','active'=>request()->routeIs('statistics.teams')],
 
 
 

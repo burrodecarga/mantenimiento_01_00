@@ -5,4 +5,6 @@ interface DatosServiceInterface
     public function timelinesCostByTask();
     public function gastosDeMantenimiento();
     public function gastosDeFallas();
+    public function gastosDePersonal();
 }
+

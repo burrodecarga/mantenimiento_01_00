@@ -103,9 +103,9 @@ class TimelineSeeder extends Seeder
 
              $id = $team->users()->pluck('users.id')->toArray();
              $str = implode(',',$id);
-
-             $time = $f->reported_at->diffInHours($f->repareid_at);
-             $days = $f->reported_at->diffInDays($f->repareid_at);
+             $d=$f->repareid_at->addHours(rand(1,4));
+             $time = $f->reported_at->diffInHours($d);
+             $days = $f->reported_at->diffInDays($d);
 
 $replacement = $faker->numberBetween(800, 3000);
 $supply= $faker->numberBetween(300, 1500);

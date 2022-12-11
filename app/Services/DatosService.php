@@ -37,6 +37,13 @@ class DatosService implements DatosServiceInterface
         return $gm;
     }
 
+    public function gastosDePersonal(){
+
+        $gm=Resume::select(DB::raw('MONTH(reported_at) as mes'),DB::raw('COUNT(id) as fallas'))
+        ->groupBy('mes')->get();
+        return $gm;
+    }
+
 
 
 }

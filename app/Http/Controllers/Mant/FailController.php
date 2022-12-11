@@ -13,6 +13,7 @@ use App\Models\Tool;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Interfaces\DatosServiceInterface;
 
 class FailController extends Controller
 {
@@ -152,20 +153,21 @@ return view('mant.fails.repair', compact('fail', 'team'));
 
     }
 
-    public function despeje(Request $request, Fail $fail){
+    public function despeje(Request $request, Fail $fail, DatosServiceInterface $datosServiceInterface){
         $workers = $request->validate([
             'users'=>'required',
            ]);
         $fail->status =1;
         $fail->repareid_at= now();
-        $this->resume($fail,$workers);
+        $this->resume($fail,$workers,$datosServiceInterface);
         $fail->save();
         return redirect()->route('fails.tasks')->with('success','Falla reparada.');
 
     }
 
 
-    public function resume(Fail $fail, $workers){
+    public function resume(Fail $fail, $workers,$datosServiceInterface){
+
 
         $failreplacementstotal=0;
 
@@ -192,6 +194,7 @@ return view('mant.fails.repair', compact('fail', 'team'));
            $users = User::find($w);
            foreach($users as $u){
                $totalworkers= $totalworkers+$u->profile->salary;
+               $datosServiceInterface->assignWork($u->id,$fail->id);
            }
 
         }

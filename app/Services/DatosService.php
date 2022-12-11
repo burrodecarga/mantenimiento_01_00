@@ -4,6 +4,9 @@ use App\Interfaces\DatosServiceInterface;
 use App\Models\Fail;
 use App\Models\Resume;
 use App\Models\Timeline;
+use App\Models\User;
+use App\Models\Work;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class DatosService implements DatosServiceInterface
@@ -42,6 +45,21 @@ class DatosService implements DatosServiceInterface
         $gm=Resume::select(DB::raw('MONTH(reported_at) as mes'),DB::raw('COUNT(id) as fallas'))
         ->groupBy('mes')->get();
         return $gm;
+    }
+
+
+
+    public function assignWork($userId,$failId){
+        $user = User::find($userId);
+$fail = Fail::find($failId);
+        Work::create([
+            'user_id' => $user->id,
+            'fail' => $fail->id,
+            'salary'=>$user->profile->salary,
+            'reported_at' =>Carbon::parse($fail->reported_at),
+            'repareid_at' =>Carbon::parse($fail->repareid_at),
+            'assigned_at' =>Carbon::parse($fail->assigned_at)
+        ]);
     }
 
 

@@ -6,5 +6,6 @@ interface DatosServiceInterface
     public function gastosDeMantenimiento();
     public function gastosDeFallas();
     public function gastosDePersonal();
+    public function assignWork($userId,$failId);
 }
 

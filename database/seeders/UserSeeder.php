@@ -115,14 +115,14 @@ $user = User::create([
 $user->syncRoles(['ceo']);
 
 User::factory(4)->create()->each(function($user) use($team){
-            $user->profile->salary = rand(3000,50000);
+            $user->profile->salary = rand(3000,5000);
             $user->profile->save();
             $team->users()->attach($user->id);
         });
 
 
         User::factory(30)->create()->each(function($user){
-            $user->profile->salary = rand(3000,50000);
+            $user->profile->salary = rand(3000,5000);
             $user->profile->save();
         });
 

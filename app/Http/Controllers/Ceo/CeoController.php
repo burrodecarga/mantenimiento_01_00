@@ -36,8 +36,8 @@ class CeoController extends Controller
 
     public function teams(DatosServiceInterface $datosServiceInterface)
     {
-        $fallas = $datosServiceInterface->gastosDePersonal();
-        dd($fallas);
+        $users = $datosServiceInterface->personalPorFalla();
 
+        return view('ceo.teams', compact('users'));
     }
 }

@@ -83,6 +83,15 @@ class DatosService implements DatosServiceInterface
     }
 
     public function gastosDePersonal()
-    {}
+    {
+            for ($mes = 1; $mes <= 12; $mes++) {
+                $salary = Work::whereMonth('reported_at', $mes)->avg('salary');
+                $subdata['mouth'] = $mes;
+                $subdata['salary'] = $salary;
+                $prev[] = $subdata;
+            }
+        $datos= json_decode(json_encode($prev));
+        return $datos;
+    }
 
 }

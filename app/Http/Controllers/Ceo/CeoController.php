@@ -40,4 +40,17 @@ class CeoController extends Controller
 
         return view('ceo.teams', compact('users'));
     }
+
+    public function salary(DatosServiceInterface $datosServiceInterface)
+    {
+        $fallas = $datosServiceInterface->fallasPorMes();
+        foreach ($fallas as $f) {
+            $fallas_mes[] = ['name' => 'fallas por mes', 'y' => $f->fallas];}
+
+        $gastos = $datosServiceInterface->gastosDePersonal();
+        foreach ($gastos as $g) {
+            $gastos_personal[] = ['name' => 'gastos de personal', 'y' => $g->salary];}
+
+        return view('ceo.salary', compact('gastos_personal','fallas_mes'));
+    }
 }

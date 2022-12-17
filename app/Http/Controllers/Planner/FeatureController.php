@@ -55,12 +55,11 @@ class FeatureController extends Controller
             'symbol'=>'required',
             'isNumeric'=>'integer|required',
            ]);
+           $temp = $data;
+           unset($temp['isNumeric']);
+           $str= implode(' : ',$temp);
+           $data = $data+['resume'=>mb_strtolower($str)];
 
-           $data = $data +['resume'=>mb_strtolower(
-            $data['measure']+' : '.
-            $data['unit']+' : '.
-            $data['symbol']
-            )];
            // dd(mb_strtolower($request->input('description')));
            Feature::create($data+['slug'=>Str::slug($data['unit']),'description'=>mb_strtolower($request->input('description'))]);
            return redirect()->route('features.index')->with('success','caracteristica creada correctamente');
@@ -107,11 +106,10 @@ class FeatureController extends Controller
             'isNumeric'=>'integer|required',
            ]);
 
-           $data = $data +['resume'=>mb_strtolower(
-            $data['measure']+' : '.
-            $data['unit']+' : '.
-            $data['symbol']
-            )];
+           $temp = $data;
+           unset($temp['isNumeric']);
+           $str= implode(' : ',$temp);
+           $data = $data+['resume'=>mb_strtolower($str)];
 
            $feature->update($data+
            ['slug'=>Str::slug($data['unit']),

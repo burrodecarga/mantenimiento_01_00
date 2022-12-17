@@ -53,3 +53,33 @@
 .check{
     @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
 }
+
+.form-title{
+    @apply font-bold font-mono text-gray-700 text-2xl text-center px-4 py-2 uppercase;
+}
+
+.form-title-movil{
+    @apply font-bold font-mono text-gray-700 text-xl text-center px-2 py-1 uppercase;
+}
+
+
+.form-subtitle{
+    @apply font-bold font-mono text-gray-700 text-2xl text-center px-4 py-2;
+}
+
+.form-subtitle-movil{
+    @apply font-bold font-mono text-gray-700 text-sm text-center px-2 py-1;
+}
+
+table.dataTable tr.dtrg-level-0 td {
+    font-size: 0.8em;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    display: inline-block;
+    font-size: clamp(0.7em,5vw,1em);
+  }
+
+  .dataTables_wrapper .dataTables_info{
+    font-size: clamp(0.7em,5vw,1em);
+  }

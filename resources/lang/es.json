@@ -179,5 +179,14 @@
     "add file": "agregar archivo",
     "allergies": "alergias",
     "add role": "agregar role",
-    "role list": "listado de roles"
+    "edit role": "modificar role",
+    "rename":"renombrar",
+    "role list": "listado de roles",
+    "create new role":"crear nuevo role",
+    "add permissions to the new role":"agregar permisos al nuevo role",
+    "submit":"enviar",
+    "add or remove permissions to the role":"agregar o quitar permisos al role",
+    "role details":"detalles del role",
+    "permissions assigned to the role":"permisos asignados al role"
+
 }

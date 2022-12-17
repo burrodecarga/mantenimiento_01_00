@@ -42,7 +42,7 @@ class RoleController extends Controller
     {
         $role = new Role();
         $permissions = Permission::all();
-        $title="add role";
+        $title="create new role";
         $btn="create";
         return view('admin.roles.create', compact('role','permissions','title','btn'));
     }
@@ -81,7 +81,7 @@ class RoleController extends Controller
     {
         $rolePermissions = $role->getAllPermissions()->pluck('id')->toArray();
         $permissions = Permission::all();
-        $title="detail of role";
+        $title="role details";
         $btn="show";
         return view('admin.roles.show',compact('role','rolePermissions','permissions','title','btn'));
     }

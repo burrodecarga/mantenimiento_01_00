@@ -22,7 +22,7 @@ app()->make(\Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissi
 
         $super_admin->givePermissionTo(Permission::all());
 
-        $adminPermissions = ['1', '2', '3', '4', '5', '6', '7', '8', '15'];
+        $adminPermissions = ['1', '2', '3', '4', '5', '6', '7', '8', '15','21'];
         $admin->givePermissionTo($adminPermissions);
 
         $planner = Role::create(['name' => 'planner']);

@@ -195,6 +195,11 @@
     "add subsystem":"agregar subsistema",
     "edit subsystem":"modificar subsistema",
     "system":"sistema",
-    "subsystem":"subsistema"
+    "subsystem":"subsistema",
+    "zone list": "listado de zonas",
+    "zone":"zona",
+    "add zone":"agregar zona",
+    "edit zone":"modificar zona",
+    "input name": "ingrese nombre"
 
 }

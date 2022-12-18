@@ -1,11 +1,11 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white shadow-xl sm:rounded-lg p-6 my-8 max-w-2xl mx-auto">
+        <div class="bg-white shadow-xl sm:rounded-lg p-6 my-8 max-w-lg mx-auto">
             <h1 class="text-2xl text-center text-gray-500 uppercase font-bold">{{ __('zone list') }}</h1>
             <div class="flex items-center justify-end mb-3">
-                <a href="{{ route('zones.create') }}" class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
-                    <i class="fa-solid fa-address-card"></i>
-                    {{ __('add zone') }}
+                <a href="{{ route('zones.create') }}" class="flex items-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
+                    <i class="text-white fas fa-location-dot fa-2x"></i>
+                   <span class="ml-2">{{ __('add zone') }}</span>
                 </a>
             </div>
             <table id="zone" class="">
@@ -17,7 +17,7 @@
                 </thead>
                 <tbody>
                     @foreach ($zones as $zone)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="80%">{{ $zone->name }}</td>
                             <td class="flex items-center justify-between">
                                 {{-- <a href="{{ route('zones.show',$zone->id) }}" title="{{ __('view daitl of zone ').$zone->name }}"><i class="text-blue-500 fa-solid fa-eye"></i></a> --}}

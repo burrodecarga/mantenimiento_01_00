@@ -12,15 +12,15 @@
             <table id="team" class="">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Cost</th>
-                        <th>Members</th>
-                        <th class="text-center">Action</th>
+                        <th class="capitalize">{{ __('name') }}</th>
+                        <th class="capitalize">{{ __('cost') }}</th>
+                        <th class="capitalize">{{ __('members') }}</th>
+                        <th class="capitalize text-center">{{ __('action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($teams as $team)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="40%">
                                 <p class="text-gray-400 font-bold text-sm">{{ $team->name }}</p>
                                 <p class="text-gray-400 font-bold text-xs">{{ $team->specialty() }}</p>

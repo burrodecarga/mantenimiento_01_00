@@ -1,9 +1,9 @@
 <div class="card max-w-2xl mx-auto my-6">
     <div class="card-body text-xs">
-        <h1 class="text-gray-500 text-center text-2xl text-bold">Asignación de Personal a Equipo{{ '  '.$team->name }}</h1>
+        <h1 class="text-gray-500 text-center text-base font-bold p-4 uppercase bg-slate-200">{{ __("Assignment of Personnel to Equipment") }} : {{$team->name }}</h1>
     <div class="grid grid-cols-2 gap-3 border p-4">
         <div class=" border border-r-3 p-3">
-            <h1 class="text-gray-600 text-center text-xl font-bold">Personal disponible</h1>
+            <h1 class="text-gray-600 text-center text-xl font-bold bg-slate-200">{{ __("available workers") }}</h1>
             <input type="text" placeholder="buscar caracteristicas" class="w-full rounded my-2" wire:model="search">
 
             <ul>
@@ -16,7 +16,7 @@
         </div>
 
         <div class=" border border-r-3 p-3">
-            <h1  class="text-gray-500 text-center text-xl font-bold mb-12">Personal Asignado</h1>
+            <h1 class="text-gray-600 text-center text-xl font-bold bg-slate-200">{{ __("assigned workers") }}</h1>
             <h2 class="text-gray-500 text-center text-xl  mb-12">costo: {{ number_format($cost,2) }}</h2>
             <ul>
                @foreach ($teamUsers as $f )

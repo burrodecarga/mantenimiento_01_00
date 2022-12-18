@@ -266,6 +266,17 @@
     "equipment":"equipo",
     "add values ​​to each equipment characteristic":"agregar valores a cada característica del equipo",
     "maintenance protocols":"protocolos de mantenimiento",
-    "times a year":"veces al año"
+    "times a year":"veces al año",
+    "cost":"costo",
+    "members":"integrantes",
+    "action":"acciones",
+    "add team":"agregar equipo",
+    "team name":"nombre del equipo",
+    "input team name":"ingrese nombre del equipo",
+    "boos":"jefe de equipo",
+    "edit team":"modificar equipo",
+    "Assignment of Personnel to Equipment":"asignación de personal a equipo",
+    "available workers":"trabajadores disponibles",
+    "assigned workers":"trabajadores asignados"
 
 }

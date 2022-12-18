@@ -190,6 +190,11 @@
     "permissions assigned to the role":"permisos asignados al role",
     "system list":"listado de sistemas",
     "add system":"agregar sistema",
-    "edit system":"modificar sistema"
+    "edit system":"modificar sistema",
+    "subsystem list":"listado de subsistemas",
+    "add subsystem":"agregar subsistema",
+    "edit subsystem":"modificar subsistema",
+    "system":"sistema",
+    "subsystem":"subsistema"
 
 }

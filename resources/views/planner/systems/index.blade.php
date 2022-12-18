@@ -4,7 +4,7 @@
             <h1 class="text-2xl text-center text-gray-500 uppercase font-bold">{{ __('system list') }}</h1>
             <div class="flex items-center justify-end mb-3 place-content-center">
                 <a href="{{ route('systems.create') }}" class="flex items-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
-                    <i class="text-red-600 fab fa-creative-commons-sampling-plus fa-2x"></i>
+                    <i class="text-white fab fa-creative-commons-sampling-plus fa-2x"></i>
                    <span class="ml-2">{{ __('add system') }}</span>
                 </a>
             </div>
@@ -17,7 +17,7 @@
                 </thead>
                 <tbody>
                     @foreach ($systems as $system)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="80%">{{ $system->name }}</td>
                             <td class="flex items-center justify-between">
                                 <a href="{{ route('systems.edit',$system->id) }}" title="{{ __('edit system ').$system->name }}"><i class="icono text-green-500 fa-solid fa-pen-to-square"></i></a>

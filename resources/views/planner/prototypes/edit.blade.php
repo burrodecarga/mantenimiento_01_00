@@ -5,16 +5,20 @@
             @method('PUT')
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">{{ __($title) }}</h1>
+                    <img src="{{ asset('form/form2.jpg') }}" alt="agregar sistema"
+                        class="max-h-16 w-full object-cover object-center">
+                    <h1
+                        class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
+                        {{ __($title) }}</h1>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 p-3">
-                        <div class="mb-4">
-                            <x-jet-label class="italic my-2 capitalize" value="{{ __('image') }}" for="name" />
+                        <div class="mb-4 bg-slate-200 p-2 rounded">
+                            <x-jet-label class="italic my-2 capitalize text-center font-bold" value="{{ __('prototype image') }}" for="name" />
                             <input type="file" name="url" id="fichero" class="text-center text-xs">
                             <img id="img" class="w-full object-cover">
                             <p id="texto" class="text-xs text-center text-red-500"></p>
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-4 bg-slate-100 rounded p-3">
                             <x-jet-label class="italic capitalize font-bold" value="{{ __('name of prototype') }}" for="name" />
                             <x-jet-input type="text" name="name" class="w-full "
                                 placeholder="{{ __('input name') }}" value="{{ old('name', $prototype->name) }}" />
@@ -35,7 +39,7 @@
                         </div>
 
 
-                        <div class="mb-4">
+                        <div class="mb-4 bg-slate-100 p-3">
                             <a type="button" href="{{ route('prototypes.index') }}"
                                 class="bg-yellow-500 text-white hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                 {{ __('cancel') }}
@@ -43,7 +47,7 @@
 
                             <button type="submit"
                                 class="bg-blue-700 text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                {{ __('submit') }}
+                                {{ __('update') }}
                             </button>
                         </div>
                     </div>

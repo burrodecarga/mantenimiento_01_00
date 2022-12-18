@@ -1,10 +1,11 @@
 <div class="card">
     <div class="card-body">
-        <h1 class="text-gray-500 text-center text-2xl font-bold p-4">Asignación de Caracteristicas a Prototipo{{ '  '.$prototype->fullName() }}</h1>
+        <h1 class="text-gray-500 text-center text-lg font-bold p-4 uppercase bg-slate-200">{{ __('assignment of features to prototype') }}: {{ '  '.$prototype->fullName() }}</h1>
     <div class="grid grid-cols-2 gap-3 border p-4">
         <div class=" border border-r-3 p-3">
-            <h1 class="text-gray-600 text-center text-xl font-bold">Caracteristicas disponibles</h1>
-            <input type="text" placeholder="buscar caracteristicas" class="w-full rounded my-2" wire:model="search">
+            <h1 class="text-gray-600 text-center text-xl font-bold bg-slate-200">
+                {{ __("available features") }}</h1>
+            <input type="text" placeholder="{{ __("search feature") }}" class="w-full rounded my-2" wire:model="search">
 
             <ul>
                @foreach ($features as $key=>$f )
@@ -16,7 +17,7 @@
         </div>
 
         <div class=" border border-r-3 p-3">
-            <h1 class="text-gray-500 text-center text-xl font-bold mb-12">Caracteristicas Asignada</h1>
+            <h1 class="text-gray-500 text-center text-xl font-bold mb-12 bg-slate-200">{{ __("features assigned") }}</h1>
             <ul>
                @foreach ($prototype->features as $f )
                 <li class="p-3 mx-4 my-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded text-white">

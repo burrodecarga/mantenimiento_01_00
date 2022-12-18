@@ -1,40 +1,51 @@
 <x-app-layout>
     <div class="container my-4">
-        <form action="{{ route('prototypes.store') }}" method="POST" class="max-w-2xl mx-auto rounded-lg shadow-lg" enctype="multipart/form-data">
+        <form action="{{ route('prototypes.store') }}" method="POST" class="max-w-2xl mx-auto rounded-lg shadow-lg"
+            enctype="multipart/form-data">
             @csrf
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">{{ __($title) }}</h1>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 p-3">
-                        <div class="mb-4">
-                            <x-jet-label class="italic my-2 capitalize" value="{{ __('image') }}" for="name" />
+                    <img src="{{ asset('form/form2.jpg') }}" alt="agregar sistema"
+                        class="max-h-16 w-full object-cover object-center">
+                    <h1
+                        class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
+                        {{ __($title) }}</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 p-3 border shadow-sm">
+                        <div class="mb-4 bg-slate-200 p-2 rounded">
+                            <x-jet-label class="italic my-2 capitalize text-center font-bold" value="{{ __('prototype image') }}" for="name" />
                             <input type="file" name="url" id="fichero" class="text-center text-xs">
                             <img id="img" class="w-full object-cover">
                             <p id="texto" class="text-xs text-center text-red-500"></p>
                         </div>
 
-                        <div class="mb-4">
-                            <x-jet-label class="italic capitalize font-bold" value="{{ __('name of prototype') }}" for="name" />
+                        <div class="mb-4 bg-slate-100 rounded p-3">
+                            <x-jet-label class="italic capitalize font-bold" value="{{ __('name of prototype') }}"
+                                for="name" />
                             <x-jet-input type="text" name="name" class="w-full "
                                 placeholder="{{ __('input name') }}" value="{{ old('name', $prototype->name) }}" />
                             <x-jet-input-error for="name" />
 
-                            <x-jet-label class="italic capitalize font-bold" value="{{ __('features') }}" for="name" />
+                            <x-jet-label class="italic capitalize font-bold" value="{{ __('features') }}"
+                                for="name" />
                             <x-jet-input type="text" name="cha_1" class="w-full mb-1"
                                 placeholder="{{ __('input feature') }}" value="{{ old('cha_1', $prototype->cha_1) }}" />
                             <x-jet-input type="text" name="cha_2" class="w-full mb-1 "
-                                placeholder="{{ __('input feature') }}" value="{{ old('cha_2', $prototype->cha_2) }}" />
+                                placeholder="{{ __('input feature') }}"
+                                value="{{ old('cha_2', $prototype->cha_2) }}" />
                             <x-jet-input type="text" name="cha_3" class="w-full mb-1 "
-                                placeholder="{{ __('input feature') }}" value="{{ old('cha_3', $prototype->cha_3) }}" />
+                                placeholder="{{ __('input feature') }}"
+                                value="{{ old('cha_3', $prototype->cha_3) }}" />
                             <x-jet-input type="text" name="cha_4" class="w-full mb-1 "
-                                placeholder="{{ __('input feature') }}" value="{{ old('cha_4', $prototype->cha_4) }}" />
-                                <x-jet-label class="italic capitalize font-bold" value="{{ __('description of prototype') }}" for="name" />
-                                <textarea class="w-full mt-2 rounded-lg" name="description" ></textarea>
+                                placeholder="{{ __('input feature') }}"
+                                value="{{ old('cha_4', $prototype->cha_4) }}" />
+                            <x-jet-label class="italic capitalize font-bold"
+                                value="{{ __('description of prototype') }}" for="name" />
+                            <textarea class="w-full mt-2 rounded-lg" name="description"></textarea>
 
                         </div>
 
 
-                        <div class="mb-4">
+                        <div class="mb-4 bg-slate-100 p-3">
                             <a type="button" href="{{ route('prototypes.index') }}"
                                 class="bg-yellow-500 text-white hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                 {{ __('cancel') }}
@@ -42,7 +53,7 @@
 
                             <button type="submit"
                                 class="bg-blue-700 text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                {{ __('submit') }}
+                                {{ __('create') }}
                             </button>
                         </div>
                     </div>

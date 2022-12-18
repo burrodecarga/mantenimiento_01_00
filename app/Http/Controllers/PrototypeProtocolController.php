@@ -31,7 +31,7 @@ class PrototypeProtocolController extends Controller
        $specialties = Specialty::orderBy('name')->get();
        $tasks = Task::orderBy('name')->get();
        $protocol = new Protocol();
-       $title ="add protocol to".$prototype->name;
+       $title =__("add protocol to").": ".$prototype->name;
        $btn="create";
         return view('planner.prototypes.protocols.create',compact('prototype','protocol','specialties','tasks','title','btn'));
     }

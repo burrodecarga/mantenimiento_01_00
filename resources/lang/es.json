@@ -187,6 +187,9 @@
     "submit":"enviar",
     "add or remove permissions to the role":"agregar o quitar permisos al role",
     "role details":"detalles del role",
-    "permissions assigned to the role":"permisos asignados al role"
+    "permissions assigned to the role":"permisos asignados al role",
+    "system list":"listado de sistemas",
+    "add system":"agregar sistema",
+    "edit system":"modificar sistema"
 
 }

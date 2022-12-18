@@ -235,6 +235,10 @@
     "add protocols to prototype":"agregar protocolos a prototipo",
     "input description":"ingrese descripción",
     "available protocols":"protocolos disponibles",
-    "assigned protocols":"protocolos asignados"
+    "assigned protocols":"protocolos asignados",
+    "protocols list":"listado de protocolos",
+    "number of prototypes with this protocol":"cantidad de prototipos con este protocolo",
+    "add protocol":"agregar protocolo",
+    "prototype":"prototipo"
 
 }

@@ -4,8 +4,13 @@
             @csrf
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">{{ __($title) }}</h1>
-                    <div class="grid grid-cols-3 gap-2 text-xs">
+                    <img src="{{ asset('form/form2.jpg') }}" alt="agregar protocolo"
+                        class="max-h-16 w-full object-cover object-center">
+                    <h1
+                        class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
+                        {{ __($title) }}</h1>
+
+                    <div class="grid grid-cols-3 gap-2 text-xs p-4 border shadow-sm my-2 bg-slate-50">
                         <div class="mb-4 col-span-3">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('prototype') }}" for="name" />
                             <select name="prototype_id" class="w-full rounded-lg">
@@ -143,7 +148,7 @@
 
                             <button type="submit"
                                 class="bg-blue-700 text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                {{ __('submit') }}
+                                {{ __('create') }}
                             </button>
                         </div>
                     </div>

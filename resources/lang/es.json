@@ -239,6 +239,16 @@
     "protocols list":"listado de protocolos",
     "number of prototypes with this protocol":"cantidad de prototipos con este protocolo",
     "add protocol":"agregar protocolo",
-    "prototype":"prototipo"
+    "prototype":"prototipo",
+    "feature list":"listado de caracteristicas",
+    "add feature":"agregar característica",
+    "measure":"medida",
+    "input measure":"ingrese medida",
+    "input unit":"ingrese unidad de medida",
+    "unit":"unidad de medida",
+    "symbol":"símbolo",
+    "input symbol":"ingrese símbolo",
+    "numeric":"numérico",
+    "feature type":"tipo de característica"
 
 }

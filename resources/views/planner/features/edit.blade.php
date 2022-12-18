@@ -5,8 +5,13 @@
             @method('PUT')
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">{{ __($title) }}</h1>
-                    <div class="grid  md:grid-cols-2 gap-3">
+                    <img src="{{ asset('form/form2.jpg') }}" alt="agregar sistema"
+                        class="max-h-16 w-full object-cover object-center">
+                    <h1
+                        class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
+                        {{ __($title) }}</h1>
+
+                    <div class="grid  md:grid-cols-2 gap-3 p-4 border shadow-sm my-2 bg-slate-50">
                         <div class="mb-2 md:mb-4">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('measure') }}" for="measure" />
                             <x-jet-input type="text" name="measure" class="w-full "
@@ -21,7 +26,7 @@
                             <x-jet-input-error for="unit" />
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-3">
+                    <div class="grid md:grid-cols-2 gap-3 p-4 border shadow-sm my-2 bg-slate-50">
                         <div class="w-full">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('symbol') }}" for="symbol" />
                             <x-jet-input type="text" name="symbol" class="w-full "
@@ -29,7 +34,7 @@
                             <x-jet-input-error for="symbol" />
                         </div>
                         <div class="w-full text-xs">
-                            <x-jet-label class="italic my-2 capitalize" value="{{ __('numeric') }}" for="isNumeric" />
+                            <x-jet-label class="italic my-2 capitalize" value="{{ __('feature type') }}" for="isNumeric" />
                             <select name="isNumeric" class="w-full rounded-lg">
                                 <option value="1">Número</option>
                                 <option value="0">Texto</option>
@@ -37,7 +42,7 @@
                             <x-jet-input-error for="isNumeric" />
                         </div>
                     </div>
-                    <textarea name="description" class="w-full my-2 rounded" placeholder="{{ __('description') }}">{{ old('description', $feature->description) }}</textarea>
+                    <textarea name="description" class="w-full my-2 rounded p-4 border shadow-sm my-2 bg-slate-50" placeholder="{{ __('description') }}">{{ old('description', $feature->description) }}</textarea>
                     <div class="my-2">
                         <div>
                             <a type="button" href="{{ route('features.index') }}"
@@ -47,7 +52,7 @@
 
                             <button type="submit"
                                 class="bg-blue-700 text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                {{ __('submit') }}
+                                {{ __('update') }}
                             </button>
                         </div>
                     </div>

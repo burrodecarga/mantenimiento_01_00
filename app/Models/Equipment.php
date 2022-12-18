@@ -36,8 +36,12 @@ class Equipment extends Model
         $plan = Plan::find($id);
         $specialties = $plan->goals->where('equipment_id', $this->id)->unique('specialty_id')->pluck('specialty_id');
         return $teams = Team::whereIn('specialty_id',$specialties)->get();
-
     }
+
+    public function images(){
+        return $this->morphMany(Image::class,'imageable');
+    }
+
 
 
 

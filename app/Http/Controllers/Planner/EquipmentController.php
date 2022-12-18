@@ -24,7 +24,7 @@ class EquipmentController extends Controller
         //return $ldate = Carbon::now()->format('ydmhmsss');
         $equipments = Equipment::all();
         //return $equipments;
-        return view('planner.equipments.index',compact('equipments'));
+        return view('planner.equipments.index', compact('equipments'));
     }
 
     /**
@@ -35,12 +35,12 @@ class EquipmentController extends Controller
     public function create()
     {
         $equipment = new Equipment();
-        $equipment->name ='equipo-'. Carbon::now()->format('ydmhmsss');
-        $title="add equipment";
-        $btn="create";
+        $equipment->name = 'equipo-' . Carbon::now()->format('ydmhmsss');
+        $title = "add equipment";
+        $btn = "create";
         $zones = Zone::orderBy('name')->get();
         $prototypes = Prototype::orderBy('name')->get();
-        return view('planner.equipments.create', compact('equipment','title','btn','zones','prototypes'));
+        return view('planner.equipments.create', compact('equipment', 'title', 'btn', 'zones', 'prototypes'));
     }
 
     /**
@@ -52,15 +52,14 @@ class EquipmentController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name'=>'required',
-            'prototype_id'=>'integer|required',
-            'location'=>'required',
-            'service'=>'integer|required',
-           ]);
+            'name' => 'required',
+            'prototype_id' => 'integer|required',
+            'location' => 'required',
+            'service' => 'integer|required',
+        ]);
 
-
-           Equipment::create($data+['slug'=>Str::slug($data['name']),'description'=>$request->input('description')]);
-           return redirect()->route('equipments.index')->with('success','Equipo creado correctamente');
+        Equipment::create($data + ['slug' => Str::slug($data['name']), 'description' => $request->input('description')]);
+        return redirect()->route('equipments.index')->with('success', 'Equipo creado correctamente');
 
     }
 
@@ -72,7 +71,7 @@ class EquipmentController extends Controller
      */
     public function show(Equipment $equipment)
     {
-        //
+      return view('planner.equipments.show', compact('equipment'));
     }
 
     /**
@@ -83,11 +82,11 @@ class EquipmentController extends Controller
      */
     public function edit(Equipment $equipment)
     {
-        $title="edit equipment";
-        $btn="update";
+        $title = "edit equipment";
+        $btn = "update";
         $zones = Zone::orderBy('name')->get();
         $prototypes = Prototype::orderBy('name')->get();
-        return view('planner.equipments.edit', compact('equipment','title','btn','zones','prototypes'));
+        return view('planner.equipments.edit', compact('equipment', 'title', 'btn', 'zones', 'prototypes'));
     }
 
     /**
@@ -100,15 +99,14 @@ class EquipmentController extends Controller
     public function update(Request $request, Equipment $equipment)
     {
         $data = $request->validate([
-            'name'=>'required',
-            'prototype_id'=>'integer|required',
-            'location'=>'required',
-            'service'=>'integer|required',
-           ]);
+            'name' => 'required',
+            'prototype_id' => 'integer|required',
+            'location' => 'required',
+            'service' => 'integer|required',
+        ]);
 
-
-           $equipment->update($data+['slug'=>Str::slug($data['name']),'description'=>$request->input('description')]);
-           return redirect()->route('equipments.index')->with('success','Equipo actualizado correctamente');
+        $equipment->update($data + ['slug' => Str::slug($data['name']), 'description' => $request->input('description')]);
+        return redirect()->route('equipments.index')->with('success', 'Equipo actualizado correctamente');
 
     }
 
@@ -122,38 +120,45 @@ class EquipmentController extends Controller
     {
         $equipment->delete();
 
-        return redirect()->route('equipments.index')->with('success','Equipo eliminado correctamente');
-    }
-    public function addFeatures(Equipment $equipment){
-     $prototypeFeatures = $equipment->prototype->features->pluck('id')->toarray();
-     $equipmentFeatures = $equipment->features->pluck('id')->toarray();
-     $resume = array_filter($prototypeFeatures, function($item) use($equipmentFeatures){
-        if(!in_array($item,$equipmentFeatures)){return $item;}
-     });
-    $equipment->features()->sync($resume);
-    return redirect()->route('equipments.index')->with('success','Caracteristicas de Equipo actualizada correctamente');
-
+        return redirect()->route('equipments.index')->with('success', 'Equipo eliminado correctamente');
     }
 
-    public function addValues(Equipment $equipment){
-       $values = $equipment->features;
-       return view('planner.equipments.features.values',compact('values','equipment'));
+
+    public function addFeatures(Equipment $equipment)
+    {
+        $prototypeFeatures = $equipment->prototype->features->pluck('id')->toarray();
+        $equipmentFeatures = $equipment->features->pluck('id')->toarray();
+        $resume = array_filter($prototypeFeatures, function ($item) use ($equipmentFeatures) {
+            if (!in_array($item, $equipmentFeatures)) {
+                array_push($equipmentFeatures,$item);
+                return $item;}
+        });
+
+        $equipment->features()->sync($equipmentFeatures);
+        return redirect()->route('equipments.index')->with('success', 'Caracteristicas de Equipo actualizada correctamente');
+
     }
 
-    public function storeValues(Request $request,Equipment $equipment){
-      $array = $request->all();
-      unset($array['_token']);
-      unset($array['_method']);
-      foreach($array as $key=>$item){
-        DB::table('equipment_feature')
-        ->where('equipment_id', $equipment->id)
-        ->where('feature_id', $key)
-        ->update(['value' => $item]);
-      }
+    public function addValues(Equipment $equipment)
+    {
+        $values = $equipment->features;
+        return view('planner.equipments.features.values', compact('values', 'equipment'));
+    }
 
-      return redirect()->route('equipments.index')->with('success','Caracteristicas de Equipo actualizada correctamente');
+    public function storeValues(Request $request, Equipment $equipment)
+    {
+        $array = $request->all();
+        unset($array['_token']);
+        unset($array['_method']);
+        foreach ($array as $key => $item) {
+            DB::table('equipment_feature')
+                ->where('equipment_id', $equipment->id)
+                ->where('feature_id', $key)
+                ->update(['value' => $item]);
+        }
+
+        return redirect()->route('equipments.index')->with('success', 'Caracteristicas de Equipo actualizada correctamente');
 
     }
 
 }
-

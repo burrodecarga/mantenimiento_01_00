@@ -249,6 +249,23 @@
     "symbol":"símbolo",
     "input symbol":"ingrese símbolo",
     "numeric":"numérico",
-    "feature type":"tipo de característica"
+    "feature type":"tipo de característica",
+    "protocols":"protocolos",
+    "prototypes":"prototipos",
+    "systems":"sistemas",
+    "subsystems":"subsistemas",
+    "zones":"zonas",
+    "equipments":"equipos",
+    "view detail of equipment":"ver detalle de equipo",
+    "edit equipment":"modificar equipo",
+    "delete equipment":"eliminar equipo",
+    "inherit features for equipment":"heradar características a equipo",
+    "add features to equipment":"agregar características a equipo",
+    "location":"localización",
+    "service":"servicio",
+    "equipment":"equipo",
+    "add values ​​to each equipment characteristic":"agregar valores a cada característica del equipo",
+    "maintenance protocols":"protocolos de mantenimiento",
+    "times a year":"veces al año"
 
 }

@@ -32,6 +32,11 @@ class Prototype extends Model
     }
 
     public function zones(){
+        $str = "";
+        foreach($this->equipments as $e){
+            $str = $e->location().", ".$str;
+        }
+        return $str;
 
     }
 

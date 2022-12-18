@@ -23,6 +23,8 @@ class Protocol extends Model
         return Task::find($this->task_id);
     }
 
+    
+
 
 
 

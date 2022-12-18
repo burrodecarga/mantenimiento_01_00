@@ -21,7 +21,7 @@
                 </thead>
                 <tbody>
                     @foreach ($equipments as $equipment)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="15%">
                                 <div>
                                     <p class="text-gray-700 font-bold text-base">{{ $equipment->prototype->name }}</p>
@@ -63,10 +63,10 @@
 
                             <td class="grid grid-cols-3 gap-4 items-center justify-between">
                                 <a href="{{ route('equipments.show', $equipment->id) }}"
-                                    title="{{ __('view daitl of equipment ') . $equipment->task }}"><i
+                                    title="{{ __('view detail of equipment')." : " . $equipment->task }}"><i
                                         class="icono text-blue-500 fa-solid fa-eye"></i></a>
                                 <a href="{{ route('equipments.edit', $equipment->id) }}"
-                                    title="{{ __('edit equipment ') . $equipment->task }}"><i
+                                    title="{{ __('edit equipment')." : " . $equipment->task }}"><i
                                         class="icono text-green-500 fa-solid fa-pen-to-square"></i></a>
 
                                 <form action="{{ route('equipments.destroy', $equipment->id) }}" method="POST"
@@ -74,15 +74,16 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"><i
+                                        title="{{ __('delete equipment')." : " . $equipment->task }}"
                                             class="icono text-red-500 fa-solid fa-trash-can"></i></button>
                                 </form>
 
                                 <a href="{{ route('equipments.addFeatures', $equipment->id) }}"
-                                    title="{{ __('add features to equipment ') . $equipment->task }}"><i
+                                    title="{{ __('add features to equipment') . $equipment->task }}"><i
                                         class="icono text-green-500 fa-solid fa-closed-captioning"></i>
 
                                     <a href="{{ route('equipments.addValues', $equipment->id) }}"
-                                        title="{{ __('add features to equipment ') . $equipment->task }}">
+                                        title="{{ __('add values ​​to each equipment characteristic')." : " . $equipment->task }}">
                                         <i class="icono text-red-500 fa-solid fa-keyboard"></i>
 
                             </td>

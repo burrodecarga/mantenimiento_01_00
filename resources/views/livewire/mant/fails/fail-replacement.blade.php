@@ -1,12 +1,12 @@
  <article class="shadow-lg border border-gray-100 rounded p-2">
      <div class="card">
          <div class="card-body">
-             <h1 class="text-xl font-bold text-gray-500">Agregar Repuesto</h1>
+             <h1 class="text-xl font-bold text-gray-500">{{ __("add replacement") }}</h1>
              <hr class="mt-2 mb-3">
 
              <form method="post" class="text-xs" wire:submit.prevent="saveReplacement">
                  <select wire:model="replacementId" class="select w-full">
-                    <option value="">Select Replacement</option>
+                    <option value="">{{ __("select replacement") }}</option>
                      @foreach ($replacements as $r)
                          <option value="{{ $r->id }}">{{ $r->name }}</option>
                      @endforeach
@@ -23,7 +23,7 @@
                  <div class="mb-4">
                      <button type="submit"
                          class="bg-blue-700 text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1 text-center">
-                         {{ __('submit') }}
+                         {{ __('create') }}
                      </button>
                  </div>
              </form>

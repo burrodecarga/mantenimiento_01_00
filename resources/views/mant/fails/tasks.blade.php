@@ -5,11 +5,11 @@
 
             <table id="fail">
                 <thead>
-                    <tr>
-                        <th>Equipment</th>
-                        <th>Reported</th>
-                        <th>Asigned</th>
-                        <th class="text-center">Action</th>
+                    <tr class="text-gray-600">
+                        <th class="capitalize">{{ __("equipment") }}</th>
+                        <th class="capitalize">{{ __("reported") }}</th>
+                        <th class="capitalize">{{ __("assigned") }}</th>
+                        <th class="capitalize text-center">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,17 +18,20 @@
                             <td width="">
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->name }}</p>
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->location() }}</p>
+                                <p class="text-gray-400 font-bold text-sm">{{ $fail->type }}</p>
                             </td>
-                            <td width="" class="text-right text-xs text-gray-400">
+                            <td width="" class="text-justify text-xs text-gray-400">
 
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->reported_at->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->reported_at->diffForHumans() }}</p>
+                                <p class="text-red-400 font-bold text-xs">{{ DIA[$fail->reported_at->dayOfWeek] }}</p>
 
                             </td>
-                            <td width="" class="text-right text-xs text-gray-400">
+                            <td width="" class="text-justify text-xs text-gray-400">
                                 @if($fail->teams->count() > 0)
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->assigned_at->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->assigned_at->diffForHumans() }}</p>
+                                <p class="text-red-400 font-bold text-xs">{{ DIA[$fail->assigned_at->dayOfWeek] }}</p>
                                 @endif   </td>
 
 
@@ -80,7 +83,7 @@
                         "infoFiltered": ""
                     },
                     "columnDefs": [{
-                        "targets": [6],
+                        "targets": [3],
                         "orderable": false
                     }]
                 });

@@ -313,6 +313,23 @@
     "services":"servicios",
     "supplies":"insumos",
     "tools":"herramientas",
-    "replacements":"repuestos"
+    "replacements":"repuestos",
+    "tasks list":"listado de tareas",
+    "fault repair":"reparación de falla",
+    "input quantity":"ingrese cantidad",
+    "select replacement":"seleccione repuesto",
+    "input observation":"agregar observacion",
+    "fault images":"imágenes de la falla",
+    "fault cost":"costo de la falla",
+    "fault team":"responsables de la falla",
+    "replacements list":"listado de repuestos",
+    "supplies list":"listado de insumos",
+    "services list":"listado de servicios",
+    "select supply":"seleccione insumo",
+    "select services":"seleccione servicio",
+    "remove item":"eliminar item",
+    "add observations":"agregar observaciones",
+    "input observations":"ingrese observaciones"
+
 
 }

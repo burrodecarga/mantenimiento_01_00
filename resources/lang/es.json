@@ -298,6 +298,10 @@
     "add service":"agregar servicio",
     "supply":"suministro",
     "price":"precio",
-    "service list":"listado de servicios"
+    "service list":"listado de servicios",
+    "add tools":"agregar herramientas",
+    "brand":"marca",
+    "stocks":"existencia",
+    "tool list":"listado de herramientas"
 
 }

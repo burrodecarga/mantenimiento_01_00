@@ -56,6 +56,7 @@ class ToolController extends Controller
             'stock'=>'required|numeric|regex:/^[\d]{0,11}(\.[\d]{1,2})?$/',
             'brand'=>'required',
            ]);
+
              $tool = Tool::create([
                 'name'=>mb_strtolower($request->input('name')),
                 'slug' =>Str::slug($request->input('name')),
@@ -109,17 +110,16 @@ class ToolController extends Controller
             'stock'=>'required|numeric|regex:/^[\d]{0,11}(\.[\d]{1,2})?$/',
             'brand'=>'required',
            ]);
-
                 $tool->name = mb_strtolower($request->input('name'));
                 $tool->slug = Str::slug($request->input('name'));
                 $tool->brand = mb_strtolower($request->input('brand'));
-                $toll->supply = mb_strtolower($request->input('supply'));
+                $tool->supply = mb_strtolower($request->input('supply'));
                 $tool->price = $request->input('price');
                 $tool->stock = $request->input('stock');
                 $tool->description = mb_strtolower($request->input('description'));
-                 $tool->save();
-            return redirect()->route('tools.index')->with('success','Repuesto actualizado correctamente');
+                $tool->save();
 
+            return redirect()->route('tools.index')->with('success','Repuesto actualizado correctamente');
     }
 
 

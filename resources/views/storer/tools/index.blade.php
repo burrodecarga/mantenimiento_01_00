@@ -4,34 +4,32 @@
             <h1 class="text-2xl text-center text-gray-500 uppercase font-bold">{{ __('tool list') }}</h1>
             <div class="flex items-center justify-end mb-3">
                 <a href="{{ route('tools.create') }}" class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
-                    <i class="fa-solid fa-address-card"></i>
+                    <i class="fas fa-hammer"></i>
                     {{ __('add tool') }}
                 </a>
             </div>
             <table id="tool" class="">
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Brand</th>
-                        <th>Supply</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Description</th>
-
-                        <th>Action</th>
+                    <tr class="text-gray-600">
+                        <th class="capitalize">{{ __("name") }}</th>
+                        <th class="capitalize">{{ __("brand") }}</th>
+                        <th class="capitalize">{{ __("supply") }}</th>
+                        <th class="capitalize">{{ __("price") }}</th>
+                        <th class="capitalize">{{ __("stock") }}</th>
+                        <th class="capitalize">{{ __("description") }}</th>
+                        <th class="capitalize text-center">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($tools as $tool)
-                        <tr>
+                        <tr class="text-gray-500 odd:bg-slate-100">
                             <td>{{ $tool->name }}</td>
                             <td>{{ $tool->brand }}</td>
                             <td>{{ $tool->supply }}</td>
-                            <td>{{ $tool->price }}</td>
-                            <td>{{ $tool->stock }}</td>
+                            <td>{{ price($tool->price) }}</td>
+                            <td>{{ numero($tool->stock) }}</td>
                             <td>{{ $tool->description }}</td>
                             <td class="flex items-center justify-between gap-3">
-                                {{-- <a href="{{ route('systems.show',$tool->id) }}" title="{{ __('view daitl of tool ').$tool->name }}"><i class="text-blue-500 fa-solid fa-eye"></i></a> --}}
                                 <a href="{{ route('tools.edit',$tool->id) }}" title="{{ __('edit tool ').$tool->name }}"><i class="icono text-green-500 fa-solid fa-pen-to-square"></i></a>
 
                                 <form action="{{ route('tools.destroy',$tool->id) }}" method="POST" class="form-delete">
@@ -83,7 +81,7 @@
                "infoEmpty":"",
                "infoFiltered":""
            },
-           "columnDefs": [{ "targets": [7], "orderable": false }]
+           "columnDefs": [{ "targets": [6], "orderable": false }]
         });
     } );
 

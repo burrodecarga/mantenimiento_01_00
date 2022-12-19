@@ -15,3 +15,8 @@ define('MES',array('enero','febrero', 'marzo','abril','mayo','junio','julio','ag
 function price($value){
    return number_format($value,2).' ';
 }
+
+function numero($value){
+    return number_format($value,0).' ';
+ }
+

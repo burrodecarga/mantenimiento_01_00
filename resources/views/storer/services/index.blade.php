@@ -4,30 +4,29 @@
             <h1 class="text-2xl text-center text-gray-500 uppercase font-bold">{{ __('service list') }}</h1>
             <div class="flex items-center justify-end mb-3">
                 <a href="{{ route('services.create') }}" class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
-                    <i class="fa-solid fa-address-card"></i>
+                    <i class="fab fa-medapps"></i>
                     {{ __('add service') }}
                 </a>
             </div>
             <table id="service" class="">
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>supply</th>
-                        <th>Price</th>
-                        <th>Description</th>
+                    <tr class="text-gray-600">
+                        <th class="capitalize">{{ __("name") }}</th>
+                        <th class="capitalize">{{ __("supply") }}</th>
+                        <th class="capitalize">{{ __("price") }}</th>
+                        <th class="capitalize">{{ __("description") }}</th>
 
-                        <th>Action</th>
+                        <th class="capitalize text-center">{{ __("action")}}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($services as $service)
-                        <tr>
+                        <tr class="text-gray-500 odd:bg-slate-100">
                             <td>{{ $service->name }}</td>
                             <td>{{ $service->supply }}</td>
-                            <td>{{ $service->price }}</td>
+                            <td>{{ price($service->price) }}</td>
                             <td>{{ $service->description }}</td>
                             <td class="flex items-center justify-between gap-3">
-                                {{-- <a href="{{ route('systems.show',$service->id) }}" title="{{ __('view daitl of service ').$service->name }}"><i class="text-blue-500 fa-solid fa-eye"></i></a> --}}
                                 <a href="{{ route('services.edit',$service->id) }}" title="{{ __('edit service ').$service->name }}"><i class="icono text-green-500 fa-solid fa-pen-to-square"></i></a>
 
                                 <form action="{{ route('services.destroy',$service->id) }}" method="POST" class="form-delete">
@@ -35,12 +34,9 @@
                                 @method('DELETE')
                                 <button type="submit"><i class="icono text-red-500 fa-solid fa-trash-can"></i></button>
                                 </form>
-
                             </td>
-
                         </tr>
                     @endforeach
-
                 </tbody>
             </table>
         </div>

@@ -280,7 +280,7 @@
     "assigned workers":"trabajadores asignados",
     "reported":"reportada",
     "assigned":"asignada",
-    "repareid":"reparada",
+    "repareid":"reparadas",
     "add fail":"agregar falla",
     "status":"condición",
     "assignment of personnel to failure":"assignación de equipo a falla",
@@ -292,6 +292,12 @@
     "start":"inicio",
     "end":"fin",
     "teams":"equipo de tarea",
-    "timeline list":"cronograma de actividades"
+    "timeline list":"cronograma de actividades",
+    "tasks":"tareas",
+    "timelines":"cronograma",
+    "add service":"agregar servicio",
+    "supply":"suministro",
+    "price":"precio",
+    "service list":"listado de servicios"
 
 }

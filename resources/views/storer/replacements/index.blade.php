@@ -4,31 +4,30 @@
             <h1 class="text-2xl text-center text-gray-500 uppercase font-bold">{{ __('replacement list') }}</h1>
             <div class="flex items-center justify-end mb-3">
                 <a href="{{ route('replacements.create') }}" class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
-                    <i class="fa-solid fa-address-card"></i>
+                    <i class="fas fa-repeat"></i>
                     {{ __('add replacement') }}
                 </a>
             </div>
             <table id="replacement" class="">
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Brand</th>
-                        <th>Supply</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Description</th>
-
-                        <th>Action</th>
+                    <tr class="text-gray-600">
+                        <th class="capitalize">{{ __("name") }}</th>
+                        <th class="capitalize">{{ __("brand") }}</th>
+                        <th class="capitalize">{{ __("supply") }}</th>
+                        <th class="capitalize">{{ __("price") }}</th>
+                        <th class="capitalize">{{ __("stock") }}</th>
+                        <th class="capitalize">{{ __("description") }}</th>
+                        <th class="capitalize">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($replacements as $replacement)
-                        <tr>
+                        <tr class="text-gray-500 odd:bg-slate-100">
                             <td>{{ $replacement->name }}</td>
                             <td>{{ $replacement->brand }}</td>
                             <td>{{ $replacement->supply }}</td>
-                            <td>{{ $replacement->price }}</td>
-                            <td>{{ $replacement->stock }}</td>
+                            <td>{{ price($replacement->price) }}</td>
+                            <td>{{ numero($replacement->stock) }}</td>
                             <td>{{ $replacement->description }}</td>
                             <td class="flex items-center justify-between gap-3">
                                 {{-- <a href="{{ route('systems.show',$replacement->id) }}" title="{{ __('view daitl of replacement ').$replacement->name }}"><i class="text-blue-500 fa-solid fa-eye"></i></a> --}}
@@ -83,7 +82,7 @@
                "infoEmpty":"",
                "infoFiltered":""
            },
-           "columnDefs": [{ "targets": [7], "orderable": false }]
+           "columnDefs": [{ "targets": [6], "orderable": false }]
         });
     } );
 

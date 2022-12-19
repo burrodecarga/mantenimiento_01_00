@@ -301,9 +301,18 @@
     "service list":"listado de servicios",
     "add tools":"agregar herramientas",
     "brand":"marca",
-    "stocks":"existencia",
+    "stock":"existencia",
     "tool list":"listado de herramientas",
     "add supply":"agregar insumos",
-    "units":"unidad"
+    "units":"unidad",
+    "add replacement":"agregar repuesto",
+    "input brand":"ingrese marca",
+    "input supply":"ingrese suministrador",
+    "input price":"ingrese precio",
+    "input stock":"ingrese existencia",
+    "services":"servicios",
+    "supplies":"insumos",
+    "tools":"herramientas",
+    "replacements":"repuestos"
 
 }

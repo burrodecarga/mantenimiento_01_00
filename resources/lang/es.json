@@ -302,6 +302,8 @@
     "add tools":"agregar herramientas",
     "brand":"marca",
     "stocks":"existencia",
-    "tool list":"listado de herramientas"
+    "tool list":"listado de herramientas",
+    "add supply":"agregar insumos",
+    "units":"unidad"
 
 }

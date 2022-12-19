@@ -4,27 +4,26 @@
             <h1 class="text-2xl text-center text-gray-500 uppercase font-bold">{{ __('supply list') }}</h1>
             <div class="flex items-center justify-end mb-3">
                 <a href="{{ route('supplies.create') }}" class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
-                    <i class="fa-solid fa-address-card"></i>
+                    <i class="fas fa-bottle-droplet"></i>
                     {{ __('add supply') }}
                 </a>
             </div>
             <table id="supply" class="">
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>unit</th>
-                        <th>Brand</th>
-                        <th>Supply</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Description</th>
-
-                        <th>Action</th>
+                    <tr class="text-gray-600">
+                        <th class="capitalize">{{ __("name") }}</th>
+                        <th class="capitalize">{{ __("units") }}</th>
+                        <th class="capitalize">{{ __("brand") }}</th>
+                        <th class="capitalize">{{ __("supply") }}</th>
+                        <th class="capitalize">{{ __("price") }}</th>
+                        <th class="capitalize">{{ __("stock") }}</th>
+                        <th class="capitalize">{{ __("description") }}</th>
+                        <th class="capitalize">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($supplies as $supply)
-                        <tr>
+                        <tr class="text-gray-500 odd:bg-slate-100">
                             <td>{{ $supply->name }}</td>
                             <td>{{ $supply->unit }}</td>
                             <td>{{ $supply->brand }}</td>
@@ -33,7 +32,6 @@
                             <td>{{ $supply->stock }}</td>
                             <td>{{ $supply->description }}</td>
                             <td class="flex items-center justify-between gap-3">
-                                {{-- <a href="{{ route('systems.show',$supply->id) }}" title="{{ __('view daitl of supply ').$supply->name }}"><i class="text-blue-500 fa-solid fa-eye"></i></a> --}}
                                 <a href="{{ route('supplies.edit',$supply->id) }}" title="{{ __('edit supply ').$supply->name }}"><i class="icono text-green-500 fa-solid fa-pen-to-square"></i></a>
 
                                 <form action="{{ route('supplies.destroy',$supply->id) }}" method="POST" class="form-delete">

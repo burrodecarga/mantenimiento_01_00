@@ -9,7 +9,6 @@
                     <h1
                         class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
                         {{ __($title) }}</h1>
-
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div class="">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('name') }}" for="name" />

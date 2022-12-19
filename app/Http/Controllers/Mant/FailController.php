@@ -14,6 +14,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Interfaces\DatosServiceInterface;
+use App\Models\Equipment;
+use App\Models\Zone;
 
 class FailController extends Controller
 {
@@ -24,8 +26,7 @@ class FailController extends Controller
      */
     public function index()
     {
-        $fails = Fail::orderBy('status','asc')
-                       ->get();
+        $fails = Fail::all();
         return view('mant.fails.index',compact('fails'));
     }
 
@@ -36,7 +37,15 @@ class FailController extends Controller
      */
     public function create()
     {
-        //
+       $fail = new Fail();
+       $zones = Zone::orderBy('name','asc')->get();
+       $title="new failure";
+       if(old('zone_id')){
+        $equipments = Equipment::where('location',old('zone_id'))->get();
+       }else{
+        $equipments= collect();
+       }
+        return view('mant.fails.create',compact('fail','zones','title','equipments'));
     }
 
     /**
@@ -47,7 +56,24 @@ class FailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'equipment_id' => 'required|numeric',
+            'zone_id' => 'required|numeric',
+            'type' => 'required',
+        ]);
+        $fail = Fail::create([
+            'equipment_id'=>$request->input('equipment_id'),
+            'zone_id'=>$request->input('zone_id'),
+            'type'=>$request->input('type'),
+            'status'=>0,
+            'user_id'=>auth()->user()->id,
+            'reported_at'=>now(),
+            'assigned_at' =>now(),
+            'repareid_at' =>now()
+        ]);
+
+        return redirect()->route('fails.index')->with('success','Falla reportada correctamente.');
+
     }
 
     /**
@@ -77,7 +103,11 @@ class FailController extends Controller
      */
     public function edit(Fail $fail)
     {
-        //
+        $zones = Zone::orderBy('name','asc')->get();
+        $title="new failure";
+        $equipment = $fail->equipment_id;
+        $equipments = Equipment::where('location',$fail->zone_id)->get();
+        return view('mant.fails.edit', compact('fail','zones','title','equipments','equipment'));
     }
 
     /**
@@ -224,6 +254,10 @@ return view('mant.fails.repair', compact('fail', 'team'));
     }
 
 
+    public function zone_equipments($id) {
+        return Equipment::where('location',$id)->get();
+
+    }
 
 
 }

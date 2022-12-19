@@ -277,6 +277,16 @@
     "edit team":"modificar equipo",
     "Assignment of Personnel to Equipment":"asignación de personal a equipo",
     "available workers":"trabajadores disponibles",
-    "assigned workers":"trabajadores asignados"
+    "assigned workers":"trabajadores asignados",
+    "reported":"reportada",
+    "assigned":"asignada",
+    "repareid":"reparada",
+    "add fail":"agregar falla",
+    "status":"condición",
+    "assignment of personnel to failure":"assignación de equipo a falla",
+    "available teams":"equipos disponibles",
+    "assigned teams":"equipos asignados",
+    "fail":"falla",
+    "new failure":"agregar falla"
 
 }

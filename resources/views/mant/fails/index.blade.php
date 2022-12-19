@@ -12,40 +12,44 @@
             <table id="fail">
                 <thead>
                     <tr>
-                        <th>Equipment</th>
-                        <th>Reported</th>
-                        <th>Asigned</th>
-                        <th>Repareid</th>
-                        <th>Status</th>
-                        <th>Teams</th>
-                        <th class="text-center">Action</th>
+                        <th class="capitalize hidden">{{ __("id") }}</th>
+                        <th class="capitalize">{{ __("equipment") }}</th>
+                        <th class="capitalize">{{ __("reported") }}</th>
+                        <th class="capitalize">{{ __("assigned") }}</th>
+                        <th class="capitalize">{{ __("repareid") }}</th>
+                        <th class="capitalize">{{ __("status") }}</th>
+                        <th class="capitalize">{{ __("teams") }}</th>
+                        <th class="text-center capitalize">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($fails as $fail)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
+                            <td class="hidden">{{ $fail->id }}</td>
                             <td width="20%">
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->name }}</p>
+                                <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->location() }}</p>
+                                <p class="text-gray-400 text-sm italic">{{ $fail->type }}</p>
 
                             </td>
-                            <td width="12%" class="text-right text-xs text-gray-400">
+                            <td width="12%" class="text-justify text-xs text-gray-400">
 
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->reported_at->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->reported_at->diffForHumans() }}</p>
 
                             </td>
-                            <td width="12%" class="text-right text-xs text-gray-400">
+                            <td width="12%" class="text-justify text-xs text-gray-400">
                                 @if($fail->teams->count() > 0)
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->assigned_at->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->assigned_at->diffForHumans() }}</p>
                                 @endif   </td>
-                            <td width="12%" class="text-right text-xs text-gray-400">
+                            <td width="12%" class="text-justify text-xs text-gray-400">
                                 @if($fail->satus ==1)
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->repareid_at->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->repareid_at->diffForHumans() }}</p>
                                 @endif
                             </td>
-                            <td width="10%" class="text-right text-xs text-gray-400">
+                            <td width="10%" class="text-center text-xs text-gray-400">
                                 <p class="text-gray-400 font-bold text-xs">
                                     @if ($fail->status == 0)
                                         Activa
@@ -125,7 +129,8 @@
                     "columnDefs": [{
                         "targets": [6],
                         "orderable": false
-                    }]
+                    }],
+                    "order": [[0, 'desc']],
                 });
             });
 

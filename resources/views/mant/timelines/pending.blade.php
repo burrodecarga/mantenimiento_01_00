@@ -6,17 +6,21 @@
             <table id="timeline">
                 <thead>
                     <tr>
-                        <th>Equipment</th>
-                        <th>Task</th>
-                        <th>Start</th>
-                        <th>End</th>
-                        <th>Teams</th>
-                        <th class="text-center">Action</th>
+                        <th class="capitalize hidden">{{ __("position") }}</th>
+                        <th class="capitalize hidden">{{ __("start") }}</th>
+                        <th class="capitalize">{{ __("equipment") }}</th>
+                        <th class="capitalize">{{ __("task") }}</th>
+                        <th class="capitalize">{{ __("start") }}</th>
+                        <th class="capitalize">{{ __("end") }}</th>
+                        <th class="capitalize">{{ __("teams") }}</th>
+                        <th class="capitalize">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($timelines as $timeline)
                         <tr class="even:bg-blue-200 odd:bg-white">
+                            <td class="hidden">{{ $timeline->position }}</td>
+                            <td class="hidden">{{ $timeline->start }}</td>
                             <td width="20%">
                                 <p class="text-gray-400 font-bold text-sm">{{ $timeline->equipment() }}</p>
                                 <p class="text-gray-400 font-bold text-xs">{{ $timeline->location() }}</p>
@@ -25,15 +29,18 @@
                             <td width="20%">
                                 <p class="text-red-400 font-bold text-xs">{{ $timeline->specialty() }}</p>
                                 <p class="text-gray-400 font-bold text-sm">{{ $timeline->task }}</p>
+                                <p class="text-gray-400 font-bold text-sm">{{ __("position") }} : {{ $timeline->position }}</p>
+                                <p class="text-gray-400 font-bold text-sm">{{ __("duration") }} : {{ $timeline->duration }} {{ __("hours") }}</p>
 
                             </td>
-                            <td width="12%" class="text-right text-xs text-gray-400">
+                            <td width="12%" class="text-justify text-xs text-gray-400">
 
                                 <p class="text-red-400 font-bold text-xs">{{ $timeline->start->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $timeline->start->format('h:i A') }}</p>
+                                <p class="text-red-400 font-bold text-xs">{{ DIA[$timeline->start->dayOfWeek] }}</p>
 
                             </td>
-                            <td width="12%" class="text-right text-xs text-gray-400">
+                            <td width="12%" class="text-justify text-xs text-gray-400">
 
 
                                 <p class="text-red-400 font-bold text-xs">{{ $timeline->end->format('d-m-Y') }}</p>
@@ -106,7 +113,8 @@
                     "columnDefs": [{
                         "targets": [5],
                         "orderable": false
-                    }]
+                    }],
+                    "order": [[1, 'asc'],[0,'asc']],
                 });
             });
 

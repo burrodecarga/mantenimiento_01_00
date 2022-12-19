@@ -215,8 +215,8 @@
     "task list": "listado de tareas",
     "task":"tarea",
     "detail":"detalle",
-    "_details":"detalles",
-    "duration": "duracion",
+    "details":"detalles",
+    "duration": "duración",
     "position": "posición",
     "permissions": "permisos",
     "security": "seguridad",
@@ -287,6 +287,11 @@
     "available teams":"equipos disponibles",
     "assigned teams":"equipos asignados",
     "fail":"falla",
-    "new failure":"agregar falla"
+    "new failure":"agregar falla",
+    "hours":"horas",
+    "start":"inicio",
+    "end":"fin",
+    "teams":"equipo de tarea",
+    "timeline list":"cronograma de actividades"
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mant;
 
 use App\Http\Controllers\Controller;
+use App\Models\Goal;
 use App\Models\Team;
 use App\Models\Timeline;
 use App\Models\User;
@@ -18,7 +19,6 @@ class TimelineController extends Controller
 
     public function assigned()
     {
-
         $team = auth()->user()->teams()->first();
         if (!$team) {
             $team = auth()->user()->team;

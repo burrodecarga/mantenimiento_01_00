@@ -36,6 +36,7 @@ class TimelineSeeder extends Seeder
         $faker = app(Generator::class);
         $timelines = Timeline::all();
 
+        $i=1;
         foreach ($timelines as $t) {
             $team = Team::all()->random();
             $users = $team->users()->take(rand(1,2))->pluck('users.id');
@@ -43,6 +44,7 @@ class TimelineSeeder extends Seeder
             //  var_dump($monto);
             $str = implode(',', $users->toArray());
             $t->update([
+                'goal_id'=>$i,
                 'status' => $faker->randomElement([1, 1, 1, 1, 0, 1, 0, 1, 0]),
                 'done' => $t->end,
                 'time' => $t->start->diffInHours($t->done),
@@ -52,6 +54,7 @@ class TimelineSeeder extends Seeder
                 'total_workers' => $monto,
             ]);
             $t->save;
+            $i=$i+1;
         }
 
         $timelines = Timeline::all();

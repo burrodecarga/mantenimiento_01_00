@@ -329,7 +329,8 @@
     "select services":"seleccione servicio",
     "remove item":"eliminar item",
     "add observations":"agregar observaciones",
-    "input observations":"ingrese observaciones"
+    "input observations":"ingrese observaciones",
+    "fails":"fallas"
 
 
 }

@@ -20,24 +20,29 @@
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->name }}</p>
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->location() }}</p>
                             </td>
-                            <td width="" class="text-right text-xs text-gray-400">
+                            <td width="" class="text-justify text-xs text-gray-400">
 
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->reported_at->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->reported_at->diffForHumans() }}</p>
+                                <p class="text-red-400 font-bold text-xs">{{ DIA[$fail->reported_at->dayOfWeek] }}</p>
 
                             </td>
 
-                            <td width="" class="text-right text-xs text-gray-400">
+                            <td width="" class="text-justify text-xs text-gray-400">
 
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->repareid_at->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->repareid_at->diffForHumans() }}</p>
+                                <p class="text-red-400 font-bold text-xs">{{ DIA[$fail->repareid_at->dayOfWeek] }}</p>
+
 
                             </td>
 
-                            <td width="" class="text-right text-xs text-gray-400">
+                            <td width="" class="text-justify text-xs text-gray-400">
                                 @if($fail->teams->count() > 0)
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->assigned_at->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $fail->assigned_at->diffForHumans() }}</p>
+                                <p class="text-red-400 font-bold text-xs">{{ DIA[$fail->assigned_at->dayOfWeek] }}</p>
+
                                 @endif   </td>
 
 

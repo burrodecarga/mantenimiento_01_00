@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <div class="grid grid-cols-2 max-w-2xl mx-auto border gap-2 p-4 bg-white rounded">
-                <form class=" mx-auto" wire:submit.prevent="save">
+                <form class="w-full mx-auto" wire:submit.prevent="save">
                     <div class="mb-4">
                         <x-jet-label class="italic my-2 capitalize" value="{{ __('description') }}" for="description" />
                         <textarea type="text" wire:model="description" class="w-full rounded" placeholder="{{ __('input description') }}"></textarea>

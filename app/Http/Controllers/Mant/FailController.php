@@ -154,9 +154,7 @@ class FailController extends Controller
 
     public function repareid()
     {
-
         $team = auth()->user()->teams()->first();
-
         if (!$team) {
             $team = auth()->user()->team;
             if (!$team) {
@@ -170,8 +168,13 @@ class FailController extends Controller
 
     public function repair(Fail $fail)
     {
-        $user = auth()->user();
-        $team = $user->teams()->first();
+        $team = auth()->user()->teams()->first();
+        if (!$team) {
+            $team = auth()->user()->team;
+            if (!$team) {
+                return redirect()->route('dashboard')->with('fail', 'Usuario no está asignado a ningún equipo de tareas');
+            }
+        }
         return view('mant.fails.repair', compact('fail', 'team'));
 
     }

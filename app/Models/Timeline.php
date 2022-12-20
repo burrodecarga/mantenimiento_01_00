@@ -83,6 +83,11 @@ return $team = Team::find($this->team_id);
          }
     }
 
+    public function images(){
+        return $this->morphMany(Image::class,'imageable');
+    }
+
+
 
 
 

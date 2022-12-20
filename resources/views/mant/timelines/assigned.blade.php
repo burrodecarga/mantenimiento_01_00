@@ -27,18 +27,18 @@
                                 <p class="text-gray-400 font-bold text-sm">{{ $timeline->task }}</p>
 
                             </td>
-                            <td width="12%" class="text-right text-xs text-gray-400">
+                            <td width="12%" class="text-justify text-xs text-gray-400">
 
                                 <p class="text-red-400 font-bold text-xs">{{ $timeline->start->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $timeline->start->format('h:i A') }}</p>
-
+                                <p class="text-red-400 font-bold text-xs">{{ DIA[$timeline->start->dayOfWeek] }}</p>
                             </td>
-                            <td width="12%" class="text-right text-xs text-gray-400">
+                            <td width="12%" class="text-justify text-xs text-gray-400">
 
 
                                 <p class="text-red-400 font-bold text-xs">{{ $timeline->end->format('d-m-Y') }}</p>
                                 <p class="text-red-400 font-bold text-xs">{{ $timeline->end->format('h:i A') }}</p>
-
+                                <p class="text-red-400 font-bold text-xs">{{ DIA[$timeline->end->dayOfWeek] }}</p>
                             </td>
 
                             <td width="26%" class="text-justify text-xs text-gray-400">

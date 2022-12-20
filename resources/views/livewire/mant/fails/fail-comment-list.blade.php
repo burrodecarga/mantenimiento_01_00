@@ -7,7 +7,7 @@
             @foreach($comments as $comment)
                 <div class="bg-green-100 border-t border-b border-green-500 text-green-700 px-3 py-2" role="alert">
                       <p class="text-xs flex justify-between items-center">{{ $comment->comment }}
-                        <i class="icono mx-3 text-red-500 cursor-pointer fa-solid fa-trash-can" wire:click="remove({{ $comment->id }})"></i>
+                        <i title="{{ __("remove item") }}" class="icono mx-3 text-red-500 cursor-pointer fa-solid fa-trash-can" wire:click="remove({{ $comment->id }})"></i>
                     </p>
                </div>
             @endforeach

@@ -300,7 +300,8 @@
     "brand":"marca",
     "stock":"existencia",
     "tool list":"listado de herramientas",
-    "add supply":"agregar insumos",
+    "add supply":"agregar insumo",
+    "add supplies":"agregar insumos",
     "units":"unidad",
     "add replacement":"agregar repuesto",
     "input brand":"ingrese marca",
@@ -327,7 +328,14 @@
     "remove item":"eliminar item",
     "add observations":"agregar observaciones",
     "input observations":"ingrese observaciones",
-    "fails":"fallas"
+    "fails":"fallas",
+    "tasks":"tareas",
+    "repareid":"reparadas",
+    "timelines":"cronograma",
+    "resources used in scheduled task":"recursos usados en tarea programada",
+    "add resources to scheduled task":"agregar recursos a tarea programada",
+    "scheduled task images":"imágenes de tarea programada",
+    "final scheduled task report":"reporte final de tarea programada"
 
 
 

@@ -2,6 +2,8 @@
     <div class="container mx-auto my-6">
         <div class="card">
             <div class="card-body">
+                <div class="card-body">
+                    <h1 class="w-full text-center text-mono font-bold bg-slate-400 mb-2 py-2 uppercase font-gray-500">{{ __('add resources to scheduled task') }}</h1>
                 <div class="grid grid-cols-4 gap-4">
                     <div class="col-span-1">
                         @livewire('mant.timelines.timeline-observation', ['timeline' => $timeline])
@@ -25,6 +27,7 @@
     <div class="container mx-auto my-6">
         <div class="card">
             <div class="card-body">
+                <h1 class="w-full text-center text-mono font-bold bg-slate-400 mb-2 py-2 uppercase font-gray-500">{{ __('scheduled task images') }}</h1>
                 <div class="grid grid-cols-5 gap-4">
                     <div class="col-span-3">
                         @livewire('mant.timelines.timeline-image', ['timeline' => $timeline])
@@ -41,6 +44,8 @@
     <div class="container mx-auto my-6">
         <div class="card">
             <div class="card-body">
+                <div class="card-body">
+                    <h1 class="w-full text-center text-mono font-bold bg-slate-400 mb-2 py-2 uppercase font-gray-500">{{ __('resources used in scheduled task') }}</h1>
                 <div class="grid grid-cols-3 gap-4">
                     <div class="">
                         @livewire('mant.timelines.timeline-replacement-list', ['timeline' => $timeline])
@@ -55,10 +60,12 @@
             </div>
         </div>
     </div>
+ 
 
     <div class="container mx-auto my-6">
         <div class="card">
             <div class="card-body">
+                <h1 class="w-full text-center text-mono font-bold bg-slate-400 mb-2 py-2 uppercase font-gray-500">{{ __('final scheduled task report') }}</h1>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="">
                         @livewire('mant.timelines.timeline-comment-list', ['timeline' => $timeline])

@@ -51,8 +51,13 @@ class TimelineController extends Controller
 
     public function work(Timeline $timeline)
     {
-        $user = auth()->user();
-        $team = $user->teams()->first();
+        $team = auth()->user()->teams()->first();
+        if (!$team) {
+            $team = auth()->user()->team;
+            if (!$team) {
+                return redirect()->route('dashboard')->with('timeline', 'Usuario no está asignado a ningún equipo de tareas');
+            }
+        }
         return view('mant.timelines.work', compact('timeline', 'team'));
 
     }

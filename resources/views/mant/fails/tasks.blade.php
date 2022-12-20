@@ -14,7 +14,7 @@
                 </thead>
                 <tbody>
                     @foreach ($fails as $fail)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="">
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->name }}</p>
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->location() }}</p>
@@ -35,7 +35,7 @@
                                 @endif   </td>
 
 
-                            <td class="text-center flex items-center justify-between">
+                            <td class="text-center">
                                 <a href="{{ route('fails.repair', $fail->id) }}"
                                     title="{{ __('fail repair ') . $fail->name }}">
                                     <i class="icono text-green-600 fa-solid fa-person-digging"></i></a>

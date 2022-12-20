@@ -6,16 +6,16 @@
             <table id="fail">
                 <thead>
                     <tr>
-                        <th>Equipment</th>
-                        <th>Reported</th>
-                        <th>Asigned</th>
-                        <th>repareid</th>
-                        <th class="text-center">Action</th>
+                        <th class="capitalize">{{ __("equipment") }}</th>
+                        <th class="capitalize">{{ __("reported") }}</th>
+                        <th class="capitalize">{{ __("assigned") }}</th>
+                        <th class="capitalize">{{ __("repareid") }}</th>
+                        <th class="capitalize text-center">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($fails as $fail)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="">
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->name }}</p>
                                 <p class="text-gray-400 font-bold text-sm">{{ $fail->equipment->location() }}</p>
@@ -41,7 +41,7 @@
                                 @endif   </td>
 
 
-                            <td class="text-center flex items-center justify-between">
+                            <td class="text-center">
                                 <a href="{{ route('fails.show', $fail->id) }}"
                                     title="{{ __('fail repair ') . $fail->name }}">
                                     <i class="icono text-green-600 fa-solid fa-person-digging"></i></a>

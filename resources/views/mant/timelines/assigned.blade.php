@@ -6,17 +6,17 @@
             <table id="timeline">
                 <thead>
                     <tr>
-                        <th>Equipment</th>
-                        <th>Task</th>
-                        <th>Start</th>
-                        <th>End</th>
-                        <th>Detail</th>
-                        <th class="text-center">Action</th>
+                        <th class="capitalize">{{ __("equipment") }}</th>
+                        <th class="capitalize">{{ __("task") }}</th>
+                        <th class="capitalize">{{ __("start") }}</th>
+                        <th class="capitalize">{{ __("end") }}</th>
+                        <th class="capitalize">{{ __("detail") }}</th>
+                        <th class="capitalize text-center">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($timelines as $timeline)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="20%">
                                 <p class="text-gray-400 font-bold text-sm">{{ $timeline->equipment() }}</p>
                                 <p class="text-gray-400 font-bold text-xs">{{ $timeline->location() }}</p>
@@ -44,14 +44,17 @@
                             <td width="26%" class="text-justify text-xs text-gray-400">
                                 <p>{{ $timeline->detail }}</p>
                                 <hr>
+                                <strong>{{ __("replacements") }}:</strong>
                                 @foreach($timeline->fnReplacements() as $r)
                                 <p>{{ $r->quantity.' : '.$r->name }}</p>
                                 @endforeach
                                 <hr>
+                                <strong>{{ __("supplies") }}:</strong>
                                 @foreach($timeline->fnSupplies() as $r)
                                 <p>{{ $r->quantity.' : '.$r->name }}</p>
                                 @endforeach
                                 <hr>
+                                <strong>{{ __("services") }}:</strong>
                                 @foreach($timeline->fnServices() as $r)
                                 <p>{{ $r->quantity.' : '.$r->name }}</p>
                                 @endforeach

@@ -8,7 +8,7 @@
                 <div class="bg-green-100 border-t border-b border-green-500 text-green-700 px-3 py-0" role="alert">
                     <p class="font-bold text-xs">{{ $replacement->name }}</p>
                     <p class="text-xs flex justify-between items-center">Cantidad:{{ $replacement->pivot->quantity }} .
-                        <i class="icono text-red-500 cursor-pointer fa-solid fa-trash-can" wire:click="remove({{ $replacement->pivot->id }})"></i>
+                        <i title="{{ __("remove item") }}" class="icono text-red-500 cursor-pointer fa-solid fa-trash-can" wire:click="remove({{ $replacement->pivot->id }})"></i>
                     </p>
                     <p class="text-xs">Total: {{ $replacement->pivot->total }}.</p>
                 </div>

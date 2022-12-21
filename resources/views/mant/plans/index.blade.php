@@ -20,7 +20,7 @@
                 </thead>
                 <tbody class="">
                     @foreach ($plans as $plan)
-                        <tr class="odd:bg-gray-50">
+                        <tr class="odd:bg-gray-100">
                             <td width="35%">
                                 <div>
                                     <p class="text-gray-700 font-bold text-base">{{ $plan->name }}</p>

@@ -17,17 +17,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
+    <script src="{{ asset('js/locale-all.js') }}"></script>
+
+
+
     <script>
 
         $(document).ready(function() {
 
             var events = @json($events);
             $('#calendar').fullCalendar({
+                locale: 'es',
                 header: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
+
                 events: events
             })
         })

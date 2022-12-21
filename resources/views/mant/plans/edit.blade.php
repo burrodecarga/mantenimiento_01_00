@@ -5,23 +5,27 @@
             @method('put')
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">{{ __($title) }}</h1>
+                    <img src="{{ asset('form/form2.jpg') }}" alt="agregar sistema"
+                        class="max-h-16 w-full object-cover object-center">
+                    <h1
+                        class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
+                        {{ __($title) }}</h1>
                     <div class="grid grid-cols-1 md:grid-cols-6 gap-3">
-                        <div class="mb-4 w-full col-span-6 md:col-span-4">
+                        <div class="w-full col-span-6 md:col-span-4">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('Nombre del Plan') }}"
                                 for="name" />
                             <x-jet-input type="text" name="name" class="w-full "
                                 placeholder="{{ __('input plan name') }}" value="{{ old('name', $plan->name) }}" />
                             <x-jet-input-error for="name" />
                         </div>
-                        <div class="mb-4 w-full col-span-6 md:col-span-1">
+                        <div class="w-full col-span-6 md:col-span-1">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('Fecha inicio') }}"
                                 for="start" />
                             <input type="date" name="start" class="w-full rounded-lg"
                                 placeholder="{{ __('input start') }}" value="{{ old('start', $plan->start->format('Y-m-d')) }}" />
                             <x-jet-input-error for="start" />
                         </div>
-                        <div class="mb-4 w-full col-span-6 md:col-span-1">
+                        <div class="w-full col-span-6 md:col-span-1">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('start time') }}"
                                 for="start_time" />
                             <input type="time" name="start_time" class="w-full rounded-lg "
@@ -65,7 +69,7 @@
                             </select>
                             <x-jet-input-error for="daily_shift" />
                         </div>
-                        <div class="mb-4 w-full col-span-6 md:col-span-2 rounded-lg">
+                        <div class="w-full col-span-6 md:col-span-2 rounded-lg">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('hora de descanso') }}"
                                 for="rest_time" />
                             <input type="time" name="rest_time" class="w-full rounded-lg"
@@ -73,7 +77,7 @@
                                 value="{{ old('rest_time', $plan->work_time->format('h:i')) }}" />
                             <x-jet-input-error for="rest_time" />
                         </div>
-                        <div class="mb-4 w-full col-span-6 md:col-span-2">
+                        <div class="w-full col-span-6 md:col-span-2">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('horas de descanso') }}"
                                 for="rest_hours" />
                             <select name="rest_hours" class="w-full rounded-lg">
@@ -114,7 +118,7 @@
 
                         <button type="submit"
                             class="bg-blue-700 text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                            {{ __('submit') }}
+                            {{ __('update') }}
                         </button>
                     </div>
                 </div>

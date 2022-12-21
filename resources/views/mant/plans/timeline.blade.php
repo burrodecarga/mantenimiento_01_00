@@ -6,27 +6,27 @@
                     <table id="timeline" class="">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Position</th>
-                                <th>secuencia</th>
-                                <th>Date</th>
-                                <th>Inicio</th>
-                                <th>Fin</th>
-                                <th>Tarea</th>
-                                <th>Equipo</th>
+                                <th class="text-center">ID</th>
+                                <th class="hidden">{{ __("position") }}</th>
+                                <th class="hidden">{{ __("sequece") }}</th>
+                                <th class="text-center">{{ __("date") }}</th>
+                                <th>{{ __("start") }}</th>
+                                <th>{{ __("end") }}</th>
+                                <th>{{ __("task") }}</th>
+                                <th>{{ __("team") }}</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($timelines as $timeline)
-                                <tr>
-                                    <td width="5%">{{ $timeline->id }}</td>
-                                    <td width="5%">{{ $timeline->position }}
+                                <tr class="odd:bg-slate-100">
+                                    <td  class="text-center" width="5%">{{ $timeline->id }}</td>
+                                    <td class="hidden" width="5%">{{ $timeline->position }}
                                     </td>
-                                    <td width="5%">{{ $timeline->sequence }}
+                                    <td class="hidden" width="5%">{{ $timeline->sequence }}
                                     </td>
-                                    <td width="15%">
+                                    <td class="text-center" width="20%">
                                         <div class="text-center">
-                                            <p class="text-gray-700 text-xs">
+                                            <p class="text-gray-700 text-xs font-bold">
                                                 {{ $timeline->fecha($timeline->start)}}
                                              </p>
                                              <p class="text-gray-700 text-xs">
@@ -37,7 +37,7 @@
                                     <td width="10%">
                                         <div>
                                             <p class="text-gray-700 text-xs">
-                                                {{ $timeline->start->format('H:i') }}
+                                                {{ $timeline->start->format('h:i A') }}
                                             </p>
 
                                         </div>
@@ -45,7 +45,7 @@
                                     <td width="10%">
                                         <div>
                                             <p class="text-gray-700 text-xs">
-                                                {{ $timeline->end->format('H:i') }}
+                                                {{ $timeline->end->format('h:i A') }}
                                             </p>
                                         </div>
                                     </td>
@@ -58,7 +58,9 @@
                                     </td>
                                     <td width="20%">
                                         <div>
-                                            <p class="text-gray-700 text-xs">{{ $timeline->equipment() }}</p>
+                                            @if($timeline->team_id)
+                                            <p class="text-gray-700 font-bold text-xs">{{ $timeline->specialty() }}</p>
+                                            @endif
                                             <p class="text-gray-700 font-bold text-xs">{{ $timeline->specialty() }}</p>
                                         </div>
                                     </td>

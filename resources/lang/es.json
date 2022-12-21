@@ -368,6 +368,8 @@
     "add plan":"agregar plan",
     "edit plan":"modificar plan",
     "rest time":"hora de descanso",
-    "work time":"hora inicio de jornada"
+    "work time":"hora inicio de jornada",
+    "plan list":"listado de planes",
+    "team":"grupo de tarea"
 
 }

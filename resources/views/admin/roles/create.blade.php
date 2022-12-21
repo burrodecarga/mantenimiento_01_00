@@ -4,7 +4,6 @@
             @csrf
             <div class="card">
                 <div class="card-body">
-
                     <div class="grid grid-cols-5 gap-3">
                         <div class="mb-4 col-span-5 md:col-span-2 md:order-first p-2 border rounded">
                             <x-jet-label class="italic my-2 capitalize" value="{{ __('name') }}" for="name" />

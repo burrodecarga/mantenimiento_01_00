@@ -8,6 +8,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Position</th>
+                                <th>secuencia</th>
                                 <th>Date</th>
                                 <th>Inicio</th>
                                 <th>Fin</th>
@@ -21,7 +22,9 @@
                                     <td width="5%">{{ $timeline->id }}</td>
                                     <td width="5%">{{ $timeline->position }}
                                     </td>
-                                    <td width="20%">
+                                    <td width="5%">{{ $timeline->sequence }}
+                                    </td>
+                                    <td width="15%">
                                         <div class="text-center">
                                             <p class="text-gray-700 text-xs">
                                                 {{ $timeline->fecha($timeline->start)}}

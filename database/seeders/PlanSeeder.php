@@ -37,58 +37,59 @@ class PlanSeeder extends Seeder
                 ]
         );
 
-        $random = Rand(19,27);
-            $equipments = Equipment::inRandomOrder()->limit($random)->get();
-            $plan->equipments()->attach($equipments);
+        // $random = Rand(19,27);
+        //     $equipments = Equipment::inRandomOrder()->limit($random)->get();
+        //     $plan->equipments()->attach($equipments);
 
 
-            foreach($equipments as $e){
+        //     foreach($equipments as $e){
 
-                $protocols = $e->prototype->protocols;
-                $position =0;
-                $restriction =0;
-                 foreach($protocols as $p){
-                   $position = $position+1;
-                   $restriction = $position-1;
+        //         $protocols = $e->prototype->protocols;
+        //         $position =0;
+        //         $restriction =0;
+        //          foreach($protocols as $p){
+        //            $position = $position+1;
+        //            $restriction = $position-1;
 
-                   if($position>13){
-                    $position=1;
-                    $restriction=0;
-                   }
+        //            if($position>13){
+        //             $position=1;
+        //             $restriction=0;
+        //            }
 
-                   $duration = rand(1,3);
+        //            $duration = rand(1,3);
 
-                   $goal = Goal::updateOrCreate(
-                   ['plan_id'=>$plan->id,
-                   'protocol_id'=>$p->id,
-                   'equipment_id'=>$e->id,],
-                   [
-                   'specialty_id'=>$p->specialty_id,
-                   'position'=>$position,
-                   'restriction'=>$restriction,
-                   'task'=>$p->task,
-                   'detail'=>$p->detail,
-                   'frecuency'=>$p->frecuency,
-                   'duration'=>$duration,
-                   'permissions' =>$p->permissions,
-                   'security' =>$p->security,
-                   'workers' =>$p->workers,
-                   'conditions' =>$p->conditions,
-                   'total_replacement' =>rand(578, 5000),
-                   'total_supply' =>rand(578, 5000),
-                   'total_service'=>rand(578, 5000),
-                   'total_workers' =>rand(578, 5000),
-                   'workers_id' =>'',
-                   'total'=>rand(578, 5000),
-                   'start' =>$plan->start,
-                   'end' =>now(),
-                   'done' =>now(),
-                   'days' =>0,
-                   'time'=>0]
-                   );
-                 }
-               }
+        //            $goal = Goal::updateOrCreate(
+        //            ['plan_id'=>$plan->id,
+        //            'protocol_id'=>$p->id,
+        //            'equipment_id'=>$e->id,],
+        //            [
+        //            'specialty_id'=>$p->specialty_id,
+        //            'position'=>$position,
+        //            'restriction'=>$restriction,
+        //            'task'=>$p->task,
+        //            'detail'=>$p->detail,
+        //            'frecuency'=>$p->frecuency,
+        //            'duration'=>$duration,
+        //            'permissions' =>$p->permissions,
+        //            'security' =>$p->security,
+        //            'workers' =>$p->workers,
+        //            'conditions' =>$p->conditions,
+        //            'total_replacement' =>rand(578, 5000),
+        //            'total_supply' =>rand(578, 5000),
+        //            'total_service'=>rand(578, 5000),
+        //            'total_workers' =>rand(578, 5000),
+        //            'workers_id' =>'',
+        //            'total'=>rand(578, 5000),
+        //            'start' =>$plan->start,
+        //            'end' =>now(),
+        //            'done' =>now(),
+        //            'days' =>0,
+        //            'time'=>0]
+        //            );
+        //          }
+        //        }
 
 
-            }
+        //
+    }
 }

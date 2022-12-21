@@ -41,8 +41,8 @@ $this->call(SupplySeeder::class);
 $this->call(ToolSeeder::class);
 $this->call(PlanSeeder::class);
 
-$this->call(GoalSeeder::class);
-$this->call(TimelineSeeder::class);
+//$this->call(GoalSeeder::class);
+//$this->call(TimelineSeeder::class);
 $this->call(WorkSeeder::class);
 
     }

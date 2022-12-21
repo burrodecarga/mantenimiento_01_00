@@ -63,7 +63,7 @@
                                 for="rest_time" />
                             <input type="time" name="rest_time" class="w-full rounded-lg"
                                 placeholder="{{ __('input rest_time') }}"
-                                value="{{ old('rest_time', $plan->rest_time) }}" />
+                                value="{{ old('rest_time', $plan->work_time) }}" />
                             <x-jet-input-error for="rest_time" />
                         </div>
                         <div class="mb-4 w-full col-span-6 md:col-span-2">

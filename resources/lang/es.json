@@ -370,6 +370,7 @@
     "rest time":"hora de descanso",
     "work time":"hora inicio de jornada",
     "plan list":"listado de planes",
-    "team":"grupo de tarea"
+    "team":"grupo de tarea",
+    "maintenance": "mantenimiento"
 
 }

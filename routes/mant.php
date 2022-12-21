@@ -21,6 +21,7 @@ Route::get('/fail/repareid', [FailController::class, 'repareid'])->name('fails.r
 
 Route::resource('/plans',PlanController::class)->names('plans');
 Route::get('/plans/calendar/{plan}',[PlanController::class,'calendar'])->name('plans.calendar');
+Route::get('/plans/equipments/{plan}',[PlanController::class,'equipments'])->name('plans.equipments');
 Route::get('/plans/sequence/{plan}', [PlanController::class, 'sequence'])->name('plans.sequence');
 Route::post('/plans/sequence_update/{plan}', [PlanController::class, 'sequence_update'])->name('plans.sequence_update');
 Route::get('/timelines/assigned', [TimelineController::class, 'assigned'])->name('timelines.assigned');

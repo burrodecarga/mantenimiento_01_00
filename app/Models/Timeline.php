@@ -19,6 +19,11 @@ class Timeline extends Model
         'work_time',
     ];
 
+
+    protected $attributes = [
+        'allDay'=>0
+    ];
+
     public function equipment(){
         return Equipment::find($this->equipment_id)->name;
     }

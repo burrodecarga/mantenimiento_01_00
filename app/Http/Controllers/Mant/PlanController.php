@@ -82,9 +82,16 @@ class PlanController extends Controller
         $request->request->add(['rest_time_hours' => $rest_time_hours]);
         $request->request->remove('rest_time');
 
-        Plan::create($request->all());
-        return redirect()->route('plans.index')->with('success', 'Plan de mantenimiento creado correctamente.');
+        $plan = Plan::create($request->all());
+        return redirect()->route('plans.show',$plan->id)->with('success', 'Plan de mantenimiento creado correctamente.');
 
+    }
+
+
+    public function show(Plan $plan)
+    {
+        $tecnicos = User::role('tecnico')->get();
+        return view('mant.plans.show', compact('plan','tecnicos'));
     }
 
     /**
@@ -93,9 +100,9 @@ class PlanController extends Controller
      * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function show(Plan $plan)
+    public function equipments(Plan $plan)
     {
-        return view('mant.plans.show', compact('plan'));
+        return view('mant.plans.equipments', compact('plan'));
     }
 
     /**
@@ -165,6 +172,7 @@ class PlanController extends Controller
      */
     public function destroy(Plan $plan)
     {
+        Timeline::where('plan_id', $plan->id)->delete();
         $plan->delete();
         return redirect()->route('plans.index')->with('success', 'Plan de mantenimiento Eliminado correctamente.');
     }
@@ -174,10 +182,12 @@ class PlanController extends Controller
 
         Goal::where('id', '<>', 0)->delete();
         $eqipments = $plan->equipments;
-        Goal::truncate();
+        if($eqipments->count()==0){
+            return redirect()->route('plans.show',$plan->id)->with('fail','no hay equipos registrados en el plan, registre equipos primero');
+        }
         $this->getProtocols($eqipments, $plan);
 
-        return redirect()->route('plans.index')->with('success', 'Protocols asignados a Plan de mantenimiento.');
+        return redirect()->route('plans.show',$plan->id)->with('success', 'Protocols asignados a Plan de mantenimiento.');
     }
 
     public function getProtocols($eqipments, $plan)
@@ -241,6 +251,9 @@ class PlanController extends Controller
     public function timeline(Plan $plan)
     {
         $goals = $plan->goals()->orderBy('equipment_id')->orderBy('position')->orderBy('specialty_id')->get();
+        if($goals->count()==0){
+            return redirect()->route('plans.show',$plan->id)->with('fail','no se ha generado cronograma inicial');
+        }
 
         $this->delete_table($plan->id);
 
@@ -250,7 +263,11 @@ class PlanController extends Controller
             $timeline->save();
         }
 
-        $timelines = Timeline::all();
+        $timelines = Timeline::where('plan_id',$plan->id)->get();
+        if($timelines->count()==0){
+            return redirect()->route('plans.show',$plan->id)->with('fail','no se ha generado cronograma inicial');
+        }
+
         $plan_start = $this->plan_init($plan->id);
         $work_start = $plan_start;
         $work_end = $this->plan_end($plan->id);
@@ -263,8 +280,10 @@ class PlanController extends Controller
         $rest_end = Carbon::parse($rest_start)->addHour($plan->rest_hours);
         $duration = 0;
         $week = 0;
-
+        $equipment_id = Timeline::first()->equipment_id;
+        $color = randomColor();
         foreach ($timelines as $timeline) {
+
             if ($timeline->position == 1 && $timeline->sequence == 1) {
 
                 $timeline->start = $this->plan_init($plan->id);
@@ -322,6 +341,13 @@ class PlanController extends Controller
                         }
 
                     }
+
+                    if($timeline->equipment_id<>$equipment_id){
+                        $color = randomColor();
+                        $equipment_id = $timeline->equipment_id;
+                    }
+                    $timeline->color=$color;
+                    $timeline->activity = __("mantenince").' '.$timeline->equipment();
                     $timeline->save();
 
                 }
@@ -342,6 +368,7 @@ class PlanController extends Controller
                 'title' => $timeline->task,
                 'start' => $timeline->start,
                 'end' => $timeline->end,
+                'color'=> $timeline->color
             ];
         }
 
@@ -351,6 +378,10 @@ class PlanController extends Controller
     public function sequence(Plan $plan)
     {
         $timelines = Timeline::where('plan_id', $plan->id)->get()->unique('equipment_id');
+
+        if($timelines->count()==0){
+            return redirect()->route('plans.show',$plan->id)->with('fail','no se ha generado cronograma inicial');
+        }
         if (!$timelines->first()->sequence) {
             $timelines->first()->sequence = 1;
             $timelines->first()->save();

@@ -1,23 +1,35 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white shadow-xl sm:rounded-lg p-6 my-8 max-w-7xl mx-auto">
-            <h1 class="text-2xl text-center text-gray-500 uppercase font-bold">{{ __('goal list') }}</h1>
+            <div class="flex items-center justify-around">
+                <div></div>
+                <div class="justify-center">
+                    <h1 class="text-xl text-center text-gray-500 uppercase font-bold">{{ __('goal list') }}</h1>
+                    <h2 class="text-lg text-center text-gray-500 uppercase font-bold">{{ __('task execution order and priority') }}</h2>
+                </div>
+                <div class="justify-end">
+                    <a href="{{ URL::previous() }}"
+                    class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
+                    <i class="fa-sharp fa-solid fa-list-check"></i>
+                    {{ __('back') }}
+                </a>
+                </div>
+            </div>
             <div class="flex items-center justify-end mb-3">
-
             </div>
             <table id="goal" class="">
                 <thead>
                     <tr>
-                        <th>equipment</th>
-                        <th>Task</th>
-                        <th>Position</th>
-                        <th>Priority</th>
-                        <th>Action</th>
+                        <th class="text-gray-600 capitalize">{{ __("equipment") }}</th>
+                        <th class="text-gray-600 capitalize">{{ __("task") }}</th>
+                        <th class="text-gray-600 capitalize">{{ __("position") }}</th>
+                        <th class="text-gray-600 capitalize">{{ __("priority") }}</th>
+                        <th class="text-gray-600 capitalize">{{ __("action") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($goals as $goal)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="20%">
                                 <p>{{ $goal->location() }}</p>
                                 <p>{{ $goal->equipment() }}</p>
@@ -34,9 +46,7 @@
                             <td width="10%">{{ $goal->priority }}</td>
                             <td class="flex items-center justify-between">
                                 <a href="{{ route('goals.edit',$goal->id) }}" title="{{ __('position of goal ').$goal->name }}"><i class="icono text-green-600 fa-solid fa-arrow-up-1-9"></i></a>
-
                             </td>
-
                         </tr>
                     @endforeach
 

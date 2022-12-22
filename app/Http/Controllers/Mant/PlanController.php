@@ -211,7 +211,7 @@ class PlanController extends Controller
                     [
                         'specialty_id' => $p->specialty_id,
                         'position' => $p->position,
-                        'task' => $e->name . ' - ' . $p->task,
+                        'task' => $p->task,
                         'detail' => $p->detail,
                         'frecuency' => $p->frecuency,
                         'duration' => $p->duration,
@@ -353,7 +353,7 @@ class PlanController extends Controller
                 }
             }
         }
-        return view('mant.plans.timeline', compact('timelines', 'rest_start', 'rest_end'));
+        return view('mant.plans.timeline', compact('timelines', 'rest_start', 'rest_end','plan'));
     }
 
     public function calendar(Plan $plan)

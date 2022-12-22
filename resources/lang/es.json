@@ -371,6 +371,17 @@
     "work time":"hora inicio de jornada",
     "plan list":"listado de planes",
     "team":"grupo de tarea",
-    "maintenance": "mantenimiento"
+    "maintenance": "mantenimiento",
+    "task sequence":"secuencia de tareas",
+    "goal list":"listado de metas",
+    "add resources to maintenance goal":"agregar recursos a la meta de mantenimiento",
+    "resources":"recursos",
+    "position of goal":"posición de la meta",
+    "select service":"seleccionar servicio",
+    "task execution order and priority":"orden de ejecucion de tarea y prioridad",
+    "priority": "prioridad",
+    "select restriction":"seleccionar restricción",
+    "position change":"modificación de posición"
+
 
 }

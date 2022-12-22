@@ -2,8 +2,17 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white shadow-xl sm:rounded-lg p-6 my-8 max-w-7xl mx-auto">
             <div class="card">
-                <div class="card-body">
-                    <table id="timeline" class="">
+                <div class="card-body font-normal">
+                    <h1 class="text-lg text-center text-gray-500 uppercase font-bold">{{ __('timelines')." : ".$plan->name }}</h1>
+                    <h2 class="text-sm text-center text-gray-400 uppercase font-bold">{{ $plan->start->format('d-m-Y h:i A') }}</hh2>
+                    <div  class="flex items-center justify-end mb-3 text-sm">
+                        <a href="{{ URL::previous() }}"
+                        class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
+                        <i class="fa-sharp fa-solid fa-list-check"></i>
+                        {{ __('back') }}
+                    </a>
+                    </div>
+                    <table id="timeline" class="text-sm">
                         <thead>
                             <tr>
                                 <th class="text-center">ID</th>

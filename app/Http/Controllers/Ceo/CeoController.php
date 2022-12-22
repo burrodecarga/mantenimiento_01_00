@@ -10,6 +10,12 @@ class CeoController extends Controller
     public function index(DatosServiceInterface $datosServiceInterface)
     {
         $resp = $datosServiceInterface->gastosDeMantenimiento();
+
+        $repuestos_mant[] = ['name' => 'repuestos mantenimiento', 'y' => 0];
+            $insumos_mant[] = ['name' => 'insumos mantenimiento', 'y' => 0];
+            $servicios_mant[] = ['name' => 'servicios mantenimiento', 'y' => 0];
+            $personal_mant[] = ['name' => 'personal mantenimiento', 'y' => 0];
+            $total_mant[] = ['name' => 'gasto mantenimiento', 'y' => 0];
         foreach ($resp as $r) {
             $repuestos_mant[] = ['name' => 'repuestos mantenimiento', 'y' => $r->repuestos_mant];
             $insumos_mant[] = ['name' => 'insumos mantenimiento', 'y' => $r->insumos_mant];
@@ -20,6 +26,12 @@ class CeoController extends Controller
 
         $fallas = $datosServiceInterface->gastosDeFallas();
 
+            $repuestos_falla[] = ['name' => 'repuestos de fallas', 'y' => 0];
+            $insumos_falla[] = ['name' => 'insumos de fallas', 'y' => 0];
+            $servicios_falla[] = ['name' => 'servicios de fallas', 'y' =>0];
+            $personal_falla[] = ['name' => 'personal de fallas', 'y' => 0];
+            $total_falla[] = ['name' => 'gasto de fallas', 'y' => 0];
+
         foreach ($fallas as $r) {
             $repuestos_falla[] = ['name' => 'repuestos de fallas', 'y' => $r->repuestos_falla];
             $insumos_falla[] = ['name' => 'insumos de fallas', 'y' => $r->insumos_falla];
@@ -27,6 +39,7 @@ class CeoController extends Controller
             $personal_falla[] = ['name' => 'personal de fallas', 'y' => $r->personal_falla];
             $total_falla[] = ['name' => 'gasto de fallas', 'y' => $r->costos_falla];
         }
+
 
         return view('Ceo.index', compact('repuestos_mant', 'insumos_mant', 'servicios_mant', 'personal_mant', 'total_mant',
             'repuestos_falla', 'insumos_falla', 'servicios_falla', 'personal_falla', 'total_falla'

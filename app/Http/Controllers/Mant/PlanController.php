@@ -372,7 +372,7 @@ class PlanController extends Controller
             ];
         }
 
-        return view('mant.plans.calendar', ['events' => $events]);
+        return view('mant.plans.calendar', ['events' => $events,'plan'=>$plan]);
     }
 
     public function sequence(Plan $plan)

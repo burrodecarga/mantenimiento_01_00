@@ -2,6 +2,11 @@
     <div class="container mx-auto py-6">
         <div class="card">
             <div class="card-body">
+                <img src="{{ asset('form/form2.jpg') }}" alt="agregar sistema"
+                    class="max-h-16 w-full object-cover object-center">
+                <h1
+                    class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
+                    {{ $plan->name }}</h1>
                   <div id="calendar"></div>
             </div>
         </div>

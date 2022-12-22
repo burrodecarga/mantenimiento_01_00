@@ -382,7 +382,8 @@
     "priority": "prioridad",
     "select restriction":"seleccionar restricción",
     "position change":"modificación de posición",
-    "teams assign":"assignar grupo de tarea"
+    "teams assign":"assignar grupo de tarea",
+    "back":"regresar"
 
 
 }

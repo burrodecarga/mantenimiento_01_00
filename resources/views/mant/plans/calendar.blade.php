@@ -7,6 +7,13 @@
                 <h1
                     class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
                     {{ $plan->name }}</h1>
+                    <div class="flex items-center justify-end mb-3">
+                        <a href="{{ URL::previous() }}"
+                        class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
+                        <i class="fa-sharp fa-solid fa-list-check"></i>
+                        {{ __('back') }}
+                    </a>
+                    </div>
                   <div id="calendar"></div>
             </div>
         </div>

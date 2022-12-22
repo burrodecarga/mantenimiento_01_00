@@ -21,7 +21,9 @@ class GoalController extends Controller
     {
 
         $goals = Goal::where('equipment_id', $goal->equipment_id)->get();
-        return view('mant.goals.positions', compact('goals'));
+        $goal = Goal::where('equipment_id', $goal->equipment_id)->first();
+        $plan_id = $goal->plan_id;
+        return view('mant.goals.positions', compact('goals','plan_id'));
     }
 
     public function edit(Goal $goal)

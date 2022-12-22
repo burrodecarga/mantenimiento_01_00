@@ -1,14 +1,18 @@
 <x-app-layout>
     <div class="card my-6 mx-auto max-w-md">
         <div class="card-body">
+            <img src="{{ asset('form/form2.jpg') }}" alt="agregar sistema"
+                class="max-h-16 w-full object-cover object-center">
+            <h1
+                class="text-gray-500 font-bold text-2xl px-3 py-2 w-full bg-slate-100 font-mono text-center uppercase">
+                {{ __("teams assign") }}</h1>
             <div class="w-full bg-gray-200 rounded p-4 mx-auto mb-4">
-                <h1 class="text-center text-lg font-bold uppercase">Asignación de equipos de trabajo</h1>
-                <p class="text-gray-600 italic text-sm">Ubicación:{{ $equipment->location() }}</p>
-                <p class="text-gray-600 italic text-sm">Equipo:{{ $equipment->name }}</p>
-                <p class="text-gray-600 italic text-sm">Tipo: {{ $equipment->prototype->name }}</p>
-                <p class="text-gray-600 italic text-sm">Tareas: {{ $equipment->prototype->protocols->count() }}</p>
-                <p class="text-gray-600 italic text-sm">Tiempo Estimado: {{ $equipment->prototype->protocols->sum('duration') }} hrs.</p>
-                <p>Trabajadores para tareas:{{ $equipment->prototype->protocols->sum('workers') }}</p>
+                <p class="text-gray-600 italic text-sm capitalize">{{ __("location") }}:{{ $equipment->location() }}</p>
+                <p class="text-gray-600 italic text-sm capitalize">{{ __("equipment") }}:{{ $equipment->name }}</p>
+                <p class="text-gray-600 italic text-sm capitalize">{{ __("type") }}: {{ $equipment->prototype->name }}</p>
+                <p class="text-gray-600 italic text-sm capitalize">{{ __("tasks") }}: {{ $equipment->prototype->protocols->count() }}</p>
+                <p class="text-gray-600 italic text-sm capitalize">{{ __("estimated time") }}: {{ $equipment->prototype->protocols->sum('duration') }} hrs.</p>
+                <p class="text-gray-600 italic text-sm capitalize">{{ __("workers") }}:{{ $equipment->prototype->protocols->sum('workers') }}</p>
             </div>
             <form action="{{ route('goals.assign') }}">
 
@@ -29,7 +33,7 @@
 
                             <button type="submit"
                                 class="bg-blue-700 text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                {{ __('submit') }}
+                                {{ __('update') }}
                             </button>
 
                 </div>

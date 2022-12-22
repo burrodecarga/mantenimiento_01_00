@@ -381,7 +381,8 @@
     "task execution order and priority":"orden de ejecucion de tarea y prioridad",
     "priority": "prioridad",
     "select restriction":"seleccionar restricción",
-    "position change":"modificación de posición"
+    "position change":"modificación de posición",
+    "teams assign":"assignar grupo de tarea"
 
 
 }

@@ -8,7 +8,7 @@
                     <h2 class="text-lg text-center text-gray-500 uppercase font-bold">{{ __('task execution order and priority') }}</h2>
                 </div>
                 <div class="justify-end">
-                    <a href="{{ URL::previous() }}"
+                    <a href="{{ route('plans.resources',$plan_id) }}"
                     class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
                     <i class="fa-sharp fa-solid fa-list-check"></i>
                     {{ __('back') }}

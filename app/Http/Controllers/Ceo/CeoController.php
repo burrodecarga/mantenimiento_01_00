@@ -11,11 +11,13 @@ class CeoController extends Controller
     {
         $resp = $datosServiceInterface->gastosDeMantenimiento();
 
-        $repuestos_mant[] = ['name' => 'repuestos mantenimiento', 'y' => 0];
+            $repuestos_mant[] = ['name' => 'repuestos mantenimiento', 'y' => 0];
             $insumos_mant[] = ['name' => 'insumos mantenimiento', 'y' => 0];
             $servicios_mant[] = ['name' => 'servicios mantenimiento', 'y' => 0];
             $personal_mant[] = ['name' => 'personal mantenimiento', 'y' => 0];
             $total_mant[] = ['name' => 'gasto mantenimiento', 'y' => 0];
+
+
         foreach ($resp as $r) {
             $repuestos_mant[] = ['name' => 'repuestos mantenimiento', 'y' => $r->repuestos_mant];
             $insumos_mant[] = ['name' => 'insumos mantenimiento', 'y' => $r->insumos_mant];
@@ -50,17 +52,24 @@ class CeoController extends Controller
     public function teams(DatosServiceInterface $datosServiceInterface)
     {
         $users = $datosServiceInterface->personalPorFalla();
-
         return view('ceo.teams', compact('users'));
     }
 
     public function salary(DatosServiceInterface $datosServiceInterface)
     {
         $fallas = $datosServiceInterface->fallasPorMes();
+
+        $fallas_mes[] = ['name' => 'fallas por mes', 'y' => 0];
+
         foreach ($fallas as $f) {
             $fallas_mes[] = ['name' => 'fallas por mes', 'y' => $f->fallas];}
 
         $gastos = $datosServiceInterface->gastosDePersonal();
+
+
+
+        $gastos_personal[] = ['name' => 'gastos de personal', 'y' => 0];
+
         foreach ($gastos as $g) {
             $gastos_personal[] = ['name' => 'gastos de personal', 'y' => $g->salary];}
 

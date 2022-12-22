@@ -1,29 +1,27 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white shadow-xl sm:rounded-lg p-6 my-8 max-w-2xl mx-auto">
-            <h1 class="text-2xl text-center text-gray-500 uppercase font-bold">{{ __('user list') }}</h1>
+            <h1 class="text-base text-center text-gray-500 uppercase font-bold">{{ __('workers list') }}</h1>
+            <h2 class="text-sm text-center text-gray-500 uppercase font-bold">{{ __('failures attended by worker') }}</h2>
             <div class="flex items-center justify-end mb-3">
-                {{-- <a href="{{ route('users.create') }}" class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
-                    <i class="fa-solid fa-address-card"></i>
-                    {{ __('add user') }}
-                </a> --}}
+
             </div>
             <table id="user" class="">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>MONTH</th>
-                        <th class="text-center">FAILS</th>
-                        <th class="text-justify">SALARY AVG</th>
+                        <th class="capitalize">{{ __("name") }}</th>
+                        <th class="capitalize">{{ __("month") }}</th>
+                        <th class=" capitalizetext-center">{{ __("fails") }}</th>
+                        <th class=" capitalizetext-justify">{{ __("salary avg") }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
-                        <tr>
+                        <tr class="odd:bg-slate-100">
                             <td width="50%">{{ $user->name }}</td>
                             <td width="10%">{{ MES[$user->mouth-1] }}</td>
-                            <td width="10%">{{ $user->quantity }}</td>
-                            <td width="30%">{{ price($user->salary) }}</td>
+                            <td class="text-center" width="10%">{{ $user->quantity }}</td>
+                            <td class="text-center" width="30%">{{ price($user->salary) }}</td>
                         </tr>
                     @endforeach
 

@@ -383,7 +383,10 @@
     "select restriction":"seleccionar restricción",
     "position change":"modificación de posición",
     "teams assign":"assignar grupo de tarea",
-    "back":"regresar"
+    "back":"regresar",
+    "failures attended by worker":"fallas atendidas por trabajador",
+    "workers list":"listado de trabajadores",
+    "salary avg":"salario promedio"
 
 
 }

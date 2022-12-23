@@ -198,6 +198,8 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\DatosServiceProvider::class,
+        App\Providers\CeoServiceProvider::class,
+
 
     ],
 

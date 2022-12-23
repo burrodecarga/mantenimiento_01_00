@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Ceo;
 
 use App\Http\Controllers\Controller;
+use App\Interfaces\CeoServiceInterface;
 use App\Interfaces\DatosServiceInterface;
 
 class CeoController extends Controller
@@ -75,4 +76,10 @@ class CeoController extends Controller
 
         return view('ceo.salary', compact('gastos_personal','fallas_mes'));
     }
+
+    public function equipments(CeoServiceInterface $ceoServiceInterface ){
+        $d =$ceoServiceInterface->prueba();
+    }
+
+
 }

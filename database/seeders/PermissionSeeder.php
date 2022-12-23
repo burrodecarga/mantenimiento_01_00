@@ -209,6 +209,8 @@ Permission::create(['name' => 'timelines.assigned', 'permission' => 'timelines a
 Permission::create(['name' => 'statistics.index', 'permission' => 'statistics index']);
 Permission::create(['name' => 'statistics.teams', 'permission' => 'statistics teams']);
 Permission::create(['name' => 'statistics.salary', 'permission' => 'statistics salary']);
+Permission::create(['name' => 'statistics.equipments', 'permission' => 'statistics equipments']);
+
 
         }
 }

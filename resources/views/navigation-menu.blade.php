@@ -26,7 +26,10 @@ $navlinks=[
 ['name'=>'gastos','route'=>'statistics.index','active'=>request()->routeIs('statistics.index')],
 ['name'=>'personal por falla','route'=>'statistics.teams','active'=>request()->routeIs('statistics.teams')],
 ['name'=>'gastos personal','route'=>'statistics.salary','active'=>request()->routeIs('statistics.salary')],
-['name'=>'equipos','route'=>'statistics.equipments','active'=>request()->routeIs('statistics.equipments')],
+['name'=>'equipments','route'=>'statistics.equipments','active'=>request()->routeIs('statistics.fails')],
+['name'=>'fails','route'=>'statistics.fails','active'=>request()->routeIs('statistics.equipments')],
+['name'=>'types','route'=>'statistics.types','active'=>request()->routeIs('statistics.types')],
+['name'=>'zones','route'=>'statistics.zones','active'=>request()->routeIs('statistics.zones')],
 
 
 

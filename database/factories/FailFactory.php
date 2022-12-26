@@ -20,9 +20,11 @@ class FailFactory extends Factory
     public function definition()
     {
 
+        $equipment = Equipment::all()->random();
 
         return [
-            'equipment_id'=>Equipment::all()->random()->id,
+            'equipment_id'=>$equipment->id,
+            'zone_id'=>$equipment->location,
             'type'=>$this->faker->randomElement(FALLA),
             'status'=>$this->faker->randomElement([0,1,1,1,1,0,1,0,1,0]),
             'user_id'=>User::all()->random()->id,

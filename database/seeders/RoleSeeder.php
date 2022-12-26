@@ -75,7 +75,7 @@ app()->make(\Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissi
 
         $ceo = Role::create(['name' => 'ceo']);
         $ceoPermissions = [
-            '138','139','140','141'
+            '138','139','140','141','142','143','144'
         ];
         $ceo->givePermissionTo($ceoPermissions);
 

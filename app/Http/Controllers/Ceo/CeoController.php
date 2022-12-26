@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Ceo;
 use App\Http\Controllers\Controller;
 use App\Interfaces\CeoServiceInterface;
 use App\Interfaces\DatosServiceInterface;
+use App\Models\Equipment;
+use App\Models\Zone;
 
 class CeoController extends Controller
 {
@@ -77,9 +79,87 @@ class CeoController extends Controller
         return view('ceo.salary', compact('gastos_personal','fallas_mes'));
     }
 
-    public function equipments(CeoServiceInterface $ceoServiceInterface ){
-        $d =$ceoServiceInterface->prueba();
+    public function fails(CeoServiceInterface $ceoServiceInterface ){
+        $fails =$ceoServiceInterface->fails();
+        $fallas_mes[] = ['name' => 'fallas por mes', 'y' => 0];
+        foreach($fails as $f) {
+            $fallas_mes[] = ['name' => 'fallas', 'y' => $f->fails];
+        }
+
+        $repareid =$ceoServiceInterface->repareid();
+        $fallas_mes_reparadas[] = ['name' => 'fallas reparadas', 'y' => 0];
+        foreach($repareid as $f) {
+            $fallas_mes_reparadas[] = ['name' => 'fallas', 'y' => $f->fails];
+        }
+
+        $actives = $ceoServiceInterface->actives();
+        $fallas_mes_activas[] = ['name' => 'fallas activas', 'y' => 0];
+        foreach($actives as $f) {
+            $fallas_mes_activas[] = ['name' => 'fallas', 'y' => $f->fails];
+        }
+
+        return view('ceo.fails', compact('fallas_mes','fallas_mes_reparadas','fallas_mes_activas'));
     }
+
+    public function equipments(CeoServiceInterface $ceoServiceInterface ){
+
+        $byEquipments = $ceoServiceInterface->byEquipment();
+
+        $data [] = [
+            'x'=>0,
+            'y'=>0,
+            'name'=>'fallas por equipo',
+        ];
+        foreach($byEquipments as $f) {
+            $equipment = Equipment::find($f->equipment_id);
+            $data[] = [
+                'x'=>$f->mes,
+                'y'=>$f->quantity,
+                'name' =>$equipment->name];
+        }
+
+        return view('ceo.equipments', compact('data'));
+    }
+
+
+    public function zones(CeoServiceInterface $ceoServiceInterface){
+        $byZones = $ceoServiceInterface->byZone();
+        $data [] = [
+        'x'=>0,
+        'y'=>0,
+        'name'=>'fallas por zona',
+       ];
+        foreach($byZones as $f) {
+            $zone = Zone::find($f->zone_id);
+            $data[]=[
+                'x'=>$f->mes,
+                'y'=>$f->quantity,
+                'name'=>$zone->name,
+                'color'=>randomColor()
+            ];
+
+        }
+
+        return view('ceo.zones', compact('data'));
+    }
+
+
+    public function types(CeoServiceInterface $ceoServiceInterface){
+        $byTypes = $ceoServiceInterface->byType();
+        foreach($byTypes as $f) {
+            $data[]=[
+                'x'=>$f->mes,
+                'y'=>$f->quantity,
+                'name'=>$f->type,
+                'color'=>randomColor()
+            ];
+        }
+
+        return view('ceo.types', compact('data'));
+    }
+
+
+
 
 
 }

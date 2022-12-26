@@ -210,6 +210,12 @@ Permission::create(['name' => 'statistics.index', 'permission' => 'statistics in
 Permission::create(['name' => 'statistics.teams', 'permission' => 'statistics teams']);
 Permission::create(['name' => 'statistics.salary', 'permission' => 'statistics salary']);
 Permission::create(['name' => 'statistics.equipments', 'permission' => 'statistics equipments']);
+Permission::create(['name' => 'statistics.fails', 'permission' => 'statistics fails']);
+Permission::create(['name' => 'statistics.types', 'permission' => 'statistics types']);
+Permission::create(['name' => 'statistics.zones', 'permission' => 'statistics zones']);
+
+
+
 
 
         }

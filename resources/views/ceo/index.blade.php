@@ -21,7 +21,9 @@
 
         <script>
             Highcharts.chart('container', {
-
+                chart: {
+                    type: 'column'
+                },
                 title: {
                     text: 'Listado de gastos año en curso'
                 },
@@ -37,7 +39,9 @@
                 },
 
                 xAxis: {
-                    categories: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+                    categories: ['dic', 'ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov',
+                        'dic'
+                    ],
                     crosshair: true
                 },
 
@@ -56,8 +60,7 @@
                     }
                 },
 
-                series: [
-                    {
+                series: [{
                         name: <?php echo json_encode($repuestos_mant[0]['name']); ?>,
                         data: @json($repuestos_mant)
                     },

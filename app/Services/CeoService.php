@@ -2,18 +2,30 @@
 
 use App\Interfaces\CeoServiceInterface;
 use App\Models\Fail;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class CeoService implements CeoServiceInterface
 {
     public function prueba()
     {
-        echo "Funciona correctamente";
+        $fails = DB::table('works')->select('salary','fail')
+        ->select(DB::raw('MONTH(reported_at) as mes, COUNT(*) as fails,user_id, AVG(salary) as salary'))
+        ->groupBy('mes','user_id')
+        ->orderBy('mes','asc')
+        ->having('fails','>=',1)
+        ->orderBy('fails','desc')->get();
+
+        dd($fails);
+
+
+
+
     }
 
     public function fails(){
         $fails = DB::table('fails')
-        ->select(DB::raw('MONTH(reported_at) as mes, COUNT(*) as fails '))
+        ->select(DB::raw('MONTH(reported_at) as mes, COUNT(1) as fails'))
         ->groupBy('mes')
         ->get();
         return $fails;

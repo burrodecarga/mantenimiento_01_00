@@ -30,6 +30,7 @@ $navlinks=[
 ['name'=>'fails','route'=>'statistics.fails','active'=>request()->routeIs('statistics.equipments')],
 ['name'=>'types','route'=>'statistics.types','active'=>request()->routeIs('statistics.types')],
 ['name'=>'zones','route'=>'statistics.zones','active'=>request()->routeIs('statistics.zones')],
+['name'=>'dynamic','route'=>'statistics.dynamic','active'=>request()->routeIs('statistics.dynamic')],
 
 
 

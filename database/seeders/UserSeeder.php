@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Profile;
 use App\Models\Specialty;
 use App\Models\Team;
 use App\Models\User;
@@ -121,6 +122,9 @@ class UserSeeder extends Seeder
             $user->profile->salary = rand(3000, 5000);
             $user->profile->save();
         });
+
+
+
 
     }
 

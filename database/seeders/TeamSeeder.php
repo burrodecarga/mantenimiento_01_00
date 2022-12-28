@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Fail;
+use App\Models\Profile;
 use App\Models\Team;
 use App\Models\User;
 use App\Models\Zone;
@@ -34,5 +35,8 @@ class TeamSeeder extends Seeder
         $team = Team::find(1);
         $fails = Fail::all()->random(4)->pluck('id');
         $team->fails()->attach($fails);
+
+        $n =rand(3000,5000);
+        Profile::where('salary',0)->update(['salary'=>$n]);
     }
 }

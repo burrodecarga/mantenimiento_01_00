@@ -44,7 +44,7 @@ class DatosService implements DatosServiceInterface
 
     public function fallasPorMes()
     {
-        $gm = Resume::select(DB::raw('MONTH(reported_at) as mes'), DB::raw('COUNT(id) as fallas'))
+        $gm = Fail::select(DB::raw('MONTH(reported_at) as mes'), DB::raw('COUNT(id) as fallas'))
             ->groupBy('mes')->get();
         return $gm;
     }

@@ -22,6 +22,10 @@
         <script>
             Highcharts.chart('container', {
 
+                chart: {
+                    type: 'column'
+                },
+
                 title: {
                     text: 'gastos de personal año en curso'
                 },
@@ -37,9 +41,17 @@
                 },
 
                 xAxis: {
-                    categories: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+                    categories: ['dic', 'ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov',
+                        'dic'
+                    ],
                     crosshair: true
                 },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{series.name} </span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{point.category}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} $</b></td></tr>',
+                },
+
 
                 legend: {
                     layout: 'vertical',
@@ -56,8 +68,7 @@
                     }
                 },
 
-                series: [
-                    {
+                series: [{
                         name: <?php echo json_encode($gastos_personal[0]['name']); ?>,
                         data: @json($gastos_personal)
                     },

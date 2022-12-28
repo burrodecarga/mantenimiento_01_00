@@ -42,7 +42,7 @@
                 },
 
                 xAxis: {
-                    categories: ['','ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+                    categories: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
                     crosshair: true
                 },
 
@@ -57,7 +57,7 @@
                         label: {
                             connectorAllowed: false
                         },
-                        pointStart:0,
+                        pointStart:1,
                         crosshair: true
                     }
                 },

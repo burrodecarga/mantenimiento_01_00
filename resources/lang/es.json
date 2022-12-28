@@ -386,7 +386,8 @@
     "back":"regresar",
     "failures attended by worker":"fallas atendidas por trabajador",
     "workers list":"listado de trabajadores",
-    "salary avg":"salario promedio"
+    "salary avg":"salario promedio",
+    "expenses":"gastos"
 
 
 }

@@ -28,7 +28,7 @@ class FailFactory extends Factory
             'type'=>$this->faker->randomElement(FALLA),
             'status'=>$this->faker->randomElement([0,1,1,1,1,0,1,0,1,0]),
             'user_id'=>User::all()->random()->id,
-            'reported_at'=>$fecha=Carbon::parse($this->faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now', $timezone = null)),
+            'reported_at'=>$fecha=Carbon::parse($this->faker->dateTimeBetween($startDate = '-1  years', $endDate = 'now', $timezone = null)),
             'repareid_at'=>$fecha->addDays(rand(1,3))
         ];
     }

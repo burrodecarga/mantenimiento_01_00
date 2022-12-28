@@ -46,14 +46,16 @@
                    "last":"Último",
                    "first":"Primero",
                },
+
+
                "lengthMenu":"Mostrar  <select class='custom-select custom-select-sm'>"+
-                             "<option value='5'>5</option>"+
-                             "<option value='10'>10</option>"+
-                             "<option value='15'>15</option>"+
-                             "<option value='20'>20</option>"+
-                             "<option value='25'>25</option>"+
-                             "<option value='50'>50</option>"+
-                             "<option value='100'>100</option>"+
+                             "<option value='6'>6</option>"+
+                             "<option value='12'>12</option>"+
+                             "<option value='24'>24</option>"+
+                             "<option value='36'>36</option>"+
+                             "<option value='48'>48</option>"+
+                             "<option value='96'>96</option>"+
+                             "<option value='192'>192</option>"+
                              "<option value='-1'>Todos</option>"+
                              "</select> Registros",
                "loadingRecord":"Cargando....",
@@ -61,7 +63,8 @@
                "emptyTable":"No hay Registros",
                "zeroRecords":"No hay coincidencias",
                "infoEmpty":"",
-               "infoFiltered":""
+               "infoFiltered":"",
+               "pageLength" : "12",
            },
            "columnDefs": [{ "targets": [], "orderable": false }]
         });

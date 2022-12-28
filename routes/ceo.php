@@ -12,5 +12,9 @@ Route::get('/statistics/fails', [CeoController::class, 'fails'])->name('statisti
 Route::get('/statistics/types', [CeoController::class, 'types'])->name('statistics.types');
 Route::get('/statistics/zones', [CeoController::class, 'zones'])->name('statistics.zones');
 
+Route::get('/statistics/dynamic', [CeoController::class, 'dynamic'])->name('statistics.dynamic');
+Route::get('/statistics/workers/data', [CeoController::class, 'workers'])->name('statistics.workers');
+
+
 
 

@@ -213,6 +213,7 @@ Permission::create(['name' => 'statistics.equipments', 'permission' => 'statisti
 Permission::create(['name' => 'statistics.fails', 'permission' => 'statistics fails']);
 Permission::create(['name' => 'statistics.types', 'permission' => 'statistics types']);
 Permission::create(['name' => 'statistics.zones', 'permission' => 'statistics zones']);
+Permission::create(['name' => 'statistics.dynamic', 'permission' => 'statistics dynamic']);
 
 
 

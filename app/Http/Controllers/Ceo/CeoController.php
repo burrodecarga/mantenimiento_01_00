@@ -30,7 +30,7 @@ class CeoController extends Controller
         }
 
         $fallas = $datosServiceInterface->gastosDeFallas();
-
+        
             $repuestos_falla[] = ['name' => 'repuestos de fallas', 'y' => 0];
             $insumos_falla[] = ['name' => 'insumos de fallas', 'y' => 0];
             $servicios_falla[] = ['name' => 'servicios de fallas', 'y' =>0];
@@ -159,7 +159,12 @@ class CeoController extends Controller
     }
 
 
+public function dynamic(){
+    return view('ceo.dynamic');
+}
 
-
+public function workers(CeoServiceInterface $ceoServiceInterface){
+    $fails = $ceoServiceInterface->prueba();
+}
 
 }
